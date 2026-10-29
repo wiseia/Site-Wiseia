@@ -1,0 +1,1926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spectra Design System</title>
+<!-- preview capture: the Overview frame reports once DM Sans is in and its Unicorn Studio
+     "Breakthrough" canvas has painted; the extra wait lets the shader settle (the hero has no intro) -->
+<meta name="preview-ready-selector" content="body.ds-overview-ready">
+<meta name="preview-ready-after-ms" content="1500">
+<link rel="icon" href="assets/overview/assets/spectra.aura.build/favicon.ico">
+<script src="assets/overview/assets/cdn.tailwindcss.com/3.4.17.js"></script>
+<script src="assets/overview/assets/spectra.aura.build/iconify-preload.js"></script>
+<script src="assets/overview/assets/code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<script src="assets/overview/assets/spectra.aura.build/tailwind-config.js"></script>
+<script src="assets/overview/assets/d3js.org/d3.v7.min.js"></script>
+<link rel="stylesheet" href="assets/overview/assets/fonts.googleapis.com/css2__q8921a011.css"><style id="all-fonts-style-font-dm-sans">.font-dm-sans { font-family: 'DM Sans', sans-serif !important; }</style>
+<link rel="stylesheet" href="assets/overview/assets/spectra.aura.build/spectra.css">
+<link rel="stylesheet" href="assets/catalog/catalog.css">
+</head>
+<body class="antialiased text-forest-950 selection:bg-emerald-200 selection:text-emerald-900 bg-forest-950 overflow-x-hidden">
+
+<!-- Navbar = the page's own <header> (logo, uppercase link row, Account + Pre-order pill). Its route
+     links are the two catalog views; the scroll states are driven by the Overview frame's scroll. -->
+<header id="ds-nav" class="fixed flex md:px-12 transition-all duration-300 group z-50 text-white w-full pt-6 pr-6 pb-6 pl-6 top-0 right-0 left-0 items-center justify-between mix-blend-difference">
+    <div class="flex cursor-pointer text-current gap-x-2 gap-y-x-2 items-center" role="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" style="color: rgb(255, 255, 255); width: 28px; height: 28px" class="text-current w-[28px] h-[28px]" data-solar="glasses-outline" data-icon-set="solar" data-icon-replaced="true" stroke-width="1"><path fill="#ffffff" fill-rule="evenodd" d="M6.237 4.712a.75.75 0 0 0-.474-1.423l-.555.185c-.57.19-1.055.351-1.439.527c-.409.187-.767.416-1.051.776c-.285.36-.426.76-.515 1.2c-.083.415-.129.923-.183 1.522l-.698 7.67a5 5 0 0 0-.072.823C1.255 18.611 3.38 20.75 6 20.75a4.75 4.75 0 0 0 4.689-3.986l.219-.078a3.25 3.25 0 0 1 2.184 0l.22.078A4.75 4.75 0 0 0 18 20.75c2.62 0 4.744-2.14 4.75-4.758q0-.421-.073-.823L21.98 7.5c-.054-.6-.1-1.107-.183-1.521c-.089-.441-.23-.842-.515-1.201s-.642-.59-1.051-.776c-.384-.176-.868-.337-1.439-.527l-.555-.185a.75.75 0 0 0-.474 1.423l.518.172c.617.206 1.024.343 1.326.481c.286.13.414.235.5.343c.085.107.157.256.219.564c.065.326.105.753.164 1.401l.415 4.569a4.75 4.75 0 0 0-7.585 2.942a4.75 4.75 0 0 0-2.64 0a4.75 4.75 0 0 0-7.585-2.942l.048-.532l.367-4.037c.059-.648.099-1.075.164-1.4c.062-.309.134-.458.22-.565c.085-.108.213-.212.499-.343c.302-.138.709-.275 1.326-.48zM21.19 15.376l.06.656a3.25 3.25 0 1 1-.06-.656m-18.38 0l-.06.656a3.25 3.25 0 1 0 .06-.656" clip-rule="evenodd" class=""></path></svg>
+        <span class="uppercase text-xl font-normal tracking-tight">Spectra</span>
+    </div>
+
+    <nav class="flex text-white/80 uppercase text-xs sm:text-sm font-medium gap-x-5 md:gap-x-10 items-center" aria-label="Design system views">
+        <a id="nav-overview" href="#overview" class="hover:text-white transition-colors duration-200">Overview</a>
+        <a id="nav-components" href="#components" class="hover:text-white transition-colors duration-200">Components</a>
+    </nav>
+
+    <div class="ds-inert hidden md:flex items-center gap-8 text-xs font-medium tracking-wide text-white">
+        <a href="#" class="uppercase hover:text-white transition-colors text-white/70 font-sans">Account</a>
+        <a href="#" class="hover:bg-neutral-900 transition-all uppercase text-[11px] font-semibold text-white tracking-wider font-sans bg-black border-white/10 border rounded-full pt-2.5 pr-6 pb-2.5 pl-6">Pre-order</a>
+    </div>
+</header>
+
+<iframe id="overview-frame" title="Overview" src="assets/overview/index.html"></iframe>
+
+<div id="view-components">
+<aside id="ds-side" aria-label="Component groups">
+  <p>Components</p>
+  <a href="#components-typography"><b>01</b>Typography</a>
+  <a href="#components-colors"><b>02</b>Colors</a>
+  <a href="#components-backgrounds"><b>03</b>Backgrounds</a>
+  <a href="#components-surfaces"><b>04</b>Surfaces</a>
+  <a href="#components-icons"><b>05</b>Icons</a>
+  <a href="#components-actions"><b>06</b>Actions</a>
+  <a href="#components-navigation"><b>07</b>Navigation</a>
+  <a href="#components-badges"><b>08</b>Badges and status</a>
+  <a href="#components-controls"><b>09</b>Controls</a>
+  <a href="#components-cards"><b>10</b>Cards</a>
+  <a href="#components-data"><b>11</b>Data display</a>
+  <a href="#components-motion"><b>12</b>Motion</a>
+  <a href="#components-content"><b>13</b>Content groups</a>
+</aside>
+<main id="ds-main">
+
+<section class="ds-group" id="components-typography">
+<div class="ds-head">
+  <div class="ds-kicker"><span class="n">01</span><i></i><span>Foundations</span></div>
+  <h2>Typography</h2>
+</div>
+<p class="ds-note" style="margin:0 0 24px">Two voices. Display copy is <code>.font-dm-sans</code> (DM Sans, the page's only web font, almost always at weight 300 with <code>tracking-tighter</code>); every other line falls to the Play-CDN <code>font-sans</code> stack, overridden in the config to the system UI face (ui-sans-serif, system-ui, -apple-system…). Index chips and handles use Tailwind's <code>font-mono</code>. Sizes are the Tailwind utilities declared on each element, widest breakpoint first.</p>
+<div class="ds-typelist">
+
+<div class="ds-type"><div><div class="role">Display · Heading 1</div><div class="face">DM Sans 300<code>h1.leading-[0.9].tracking-tighter &gt; span.block.font-dm-sans.font-light</code></div></div>
+<div class="sample onlight"><h1 class="leading-[0.9] text-forest-950 md:text-7xl xl:text-8xl text-5xl tracking-tighter mix-blend-darken">
+                            <span class="block tracking-tighter font-dm-sans font-light">SPECTRA</span>
+                            <span class="block md:ml-4 tracking-tighter ml-2 text-forest-800 font-dm-sans font-light">DESIGN</span>
+                            <span class="block tracking-tighter font-dm-sans font-light">SYSTEM</span>
+                        </h1></div>
+<div class="sizes">xl 6rem | md 4.5rem | 3rem</div></div>
+
+<div class="ds-type"><div><div class="role">Heading 2 · Closing band</div><div class="face">DM Sans 300 / 400<code>h2.text-5xl.md:text-6xl.lg:text-7xl.font-light.leading-[0.9]</code></div></div>
+<div class="sample ondark"><h2 class="text-5xl md:text-6xl lg:text-7xl font-dm-sans font-light text-white tracking-tighter mb-8 leading-[0.9]">Lorem ipsum dolor <span class="text-emerald-400 font-normal">sit amet?</span></h2></div>
+<div class="sizes">lg 4.5rem | md 3.75rem | 3rem</div></div>
+
+<div class="ds-type"><div><div class="role">Heading 2 · Feature</div><div class="face">DM Sans 400<code>h2.text-4xl.md:text-5xl.lg:text-6xl.font-normal.leading-[0.95]</code></div></div>
+<div class="sample onlight"><h2 class="text-4xl md:text-5xl lg:text-6xl text-forest-950 tracking-tighter font-dm-sans font-normal mb-6 leading-[0.95]">
+                    Lorem Ipsum Dolor <span class="text-emerald-600 font-dm-sans font-normal">Sit-Amet</span> Consectetur Adipiscing
+                </h2></div>
+<div class="sizes">lg 3.75rem | md 3rem | 2.25rem</div></div>
+
+<div class="ds-type"><div><div class="role">Heading 2 · Section</div><div class="face">DM Sans 300<code>h2.text-4xl.md:text-5xl.tracking-tighter.font-light</code></div></div>
+<div class="sample ondark"><h2 class="text-4xl md:text-5xl text-forest-50 leading-tight tracking-tighter font-dm-sans font-light">Labore <span class="text-emerald-500 font-dm-sans font-light">Dolorem</span></h2></div>
+<div class="sizes">md 3rem | 2.25rem</div></div>
+
+<div class="ds-type"><div><div class="role">Price</div><div class="face">DM Sans 300<code>span.text-5xl.lg:text-6xl.font-light.tracking-tighter + span.text-sm</code></div></div>
+<div class="sample ondark"><div class="flex items-baseline gap-1"><span class="text-5xl lg:text-6xl font-light text-white font-dm-sans tracking-tighter">$99</span><span class="text-forest-400 font-sans text-sm">/ mo</span></div></div>
+<div class="sizes">lg 3.75rem | 3rem</div></div>
+
+<div class="ds-type"><div><div class="role">Stat</div><div class="face">DM Sans 300<code>span.text-4xl.tracking-tight &gt; span.text-2xl.text-forest-400</code></div></div>
+<div class="sample ondark"><span class="block text-4xl text-white drop-shadow-sm tracking-tight font-dm-sans font-light">120<span class="not-italic text-2xl text-forest-400 font-dm-sans font-light">Hz</span></span></div>
+<div class="sizes">2.25rem · unit 1.5rem</div></div>
+
+<div class="ds-type"><div><div class="role">Heading 3 · Media card</div><div class="face">DM Sans 300<code>h3.text-3xl.tracking-tighter.font-light</code></div></div>
+<div class="sample ondark"><h3 class="text-3xl text-white tracking-tighter font-dm-sans font-light">Lorem Ipsum</h3></div>
+<div class="sizes">1.875rem</div></div>
+
+<div class="ds-type"><div><div class="role">Heading 3 · Glass card</div><div class="face">DM Sans 300<code>h3.text-xl.md:text-2xl.leading-snug.tracking-tight.font-light</code></div></div>
+<div class="sample ondark"><h3 class="text-xl md:text-2xl leading-snug mb-2 tracking-tight font-dm-sans font-light text-white">Lorem Ipsum Dolor Sit.</h3></div>
+<div class="sizes">md 1.5rem | 1.25rem</div></div>
+
+<div class="ds-type"><div><div class="role">Question</div><div class="face">DM Sans 400<code>.faq-toggle &gt; span.text-xl.md:text-2xl.font-normal.tracking-tight</code></div></div>
+<div class="sample onlight"><span class="text-xl md:text-2xl font-dm-sans font-normal text-forest-950 tracking-tight">Lorem ipsum dolor sit amet consectetur?</span></div>
+<div class="sizes">md 1.5rem | 1.25rem</div></div>
+
+<div class="ds-type"><div><div class="role">Quote</div><div class="face">System UI 300 · uppercase<code>p.text-lg.md:text-xl.font-light.uppercase.leading-snug.tracking-tight</code></div></div>
+<div class="sample ondark"><p class="text-lg md:text-xl text-forest-100 font-light uppercase leading-snug tracking-tight font-sans">"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam."</p></div>
+<div class="sizes">md 1.25rem | 1.125rem</div></div>
+
+<div class="ds-type"><div><div class="role">Statement</div><div class="face">System UI 500 · uppercase copy<code>p.text-lg.md:text-xl.font-medium.leading-snug.tracking-tight</code></div></div>
+<div class="sample ondark"><p class="text-lg md:text-xl font-medium text-white leading-snug tracking-tight font-sans">LOREM IPSUM <span class="text-forest-400 font-sans">&nbsp;DOLOR SIT AMET</span></p></div>
+<div class="sizes">md 1.25rem | 1.125rem</div></div>
+
+<div class="ds-type"><div><div class="role">Heading 4 · Feature</div><div class="face">DM Sans 600 / System UI 600<code>h3.text-xl.font-semibold.tracking-tight</code></div></div>
+<div class="sample onlight"><h3 class="text-xl font-semibold text-forest-950 tracking-tight font-dm-sans">Lorem Ipsum</h3></div>
+<div class="sizes">1.25rem</div></div>
+
+<div class="ds-type"><div><div class="role">Lead · Text 1</div><div class="face">System UI 400<code>p.text-base.md:text-lg.tracking-wide.text-forest-800/80</code></div></div>
+<div class="sample onlight"><p class="text-base md:text-lg font-normal text-forest-800/80 tracking-wide font-sans">
+                            Frosted forest-green glass, airy light type and soft emerald glows drifting over a blurred, living network field.
+                        </p></div>
+<div class="sizes">md 1.125rem | 1rem</div></div>
+
+<div class="ds-type"><div><div class="role">Body · Text 2</div><div class="face">System UI 400<code>p.text-sm.leading-relaxed.text-forest-400</code></div></div>
+<div class="sample ondark"><p class="text-sm text-forest-400 leading-relaxed font-sans">Ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut.</p></div>
+<div class="sizes">0.875rem</div></div>
+
+<div class="ds-type"><div><div class="role">Nav link</div><div class="face">System UI 500 · uppercase<code>header nav a.text-sm.font-medium.text-white/80</code></div></div>
+<div class="sample ondark"><span class="text-white/80 uppercase text-sm font-medium">Features</span></div>
+<div class="sizes">0.875rem</div></div>
+
+<div class="ds-type"><div><div class="role">Eyebrow</div><div class="face">System UI 500 · tracking-widest<code>span.text-xs.font-medium.uppercase.tracking-widest</code></div></div>
+<div class="sample onlight"><span class="text-xs font-medium uppercase tracking-widest text-forest-900 font-sans">Lorem</span></div>
+<div class="sizes">0.75rem</div></div>
+
+<div class="ds-type"><div><div class="role">Index chip</div><div class="face">ui-monospace 700<code>span.text-xs.font-mono.font-bold.tracking-widest</code></div></div>
+<div class="sample onlight"><span class="text-xs font-mono font-bold tracking-widest text-emerald-700 bg-emerald-100/50 px-2 py-0.5 rounded font-sans">01</span></div>
+<div class="sizes">0.75rem</div></div>
+
+<div class="ds-type"><div><div class="role">Handle · Meta</div><div class="face">ui-monospace 400<code>span.text-xs.text-forest-400.font-mono</code></div></div>
+<div class="sample ondark"><span class="text-xs text-forest-400 font-mono">Lorem Ipsum, DOLOR</span></div>
+<div class="sizes">0.75rem</div></div>
+
+<div class="ds-type"><div><div class="role">Micro label</div><div class="face">System UI 500–700 · uppercase<code>span.text-[10px].uppercase.tracking-wider / tracking-widest</code></div></div>
+<div class="sample ondark"><span class="text-[10px] font-medium text-white uppercase tracking-wider font-sans">Connected</span></div>
+<div class="sizes">10px</div></div>
+
+</div>
+</section>
+
+<section class="ds-group" id="components-colors">
+<div class="ds-head">
+  <div class="ds-kicker"><span class="n">02</span><i></i><span>Foundations</span></div>
+  <h2>Colors</h2>
+</div>
+<p class="ds-note" style="margin:0 0 24px">The palette is the config's <code>forest</code> scale (50–950, "Deep Black Green" at 950) plus Tailwind's default <code>emerald</code>. Translucency carries the glass: the same forest-950 runs from /20 to /95.</p>
+<p class="ds-sub">Brand and Accent</p>
+<div class="ds-colors">
+<div class="ds-sw"><div class="ds-chip"><span class="aa text-emerald-400">Aa</span></div><div><strong>Accent on dark</strong><code>#34d399</code><code class="tok">emerald-400</code><p>Headline spans, live dots and the D3 latency line on forest-950.</p></div></div>
+<div class="ds-sw"><div class="ds-chip"><div class="fill bg-emerald-500"></div></div><div><strong>Accent fill</strong><code>#10b981</code><code class="tok">emerald-500</code><p>Most Popular tag, check discs, pricing CTA start.</p></div></div>
+<div class="ds-sw"><div class="ds-chip light"><span class="aa text-emerald-600">Aa</span></div><div><strong>Accent on light</strong><code>#059669</code><code class="tok">emerald-600</code><p>Headline spans, feature icons and doc links on forest-50 / white.</p></div></div>
+<div class="ds-sw"><div class="ds-chip light"><span class="text-xs font-mono font-bold tracking-widest text-emerald-700 bg-emerald-100/50 px-2 py-0.5 rounded">01</span></div><div><strong>Index ink</strong><code>#047857 on rgb(209 250 229 / .5)</code><code class="tok">emerald-700 · emerald-100/50</code><p>Section index chips on the light ground.</p></div></div>
+<div class="ds-sw"><div class="ds-chip"><div class="fill bg-gradient-to-r from-[#d1fae5] to-[#34d399]"></div></div><div><strong>Primary CTA fill</strong><code>linear-gradient(to right, #d1fae5, #34d399)</code><p>Hero primary button, label emerald-950 #022c22, shadow emerald-500/30.</p></div></div>
+<div class="ds-sw"><div class="ds-chip"><div class="fill bg-gradient-to-r from-emerald-500 to-emerald-600"></div></div><div><strong>Featured CTA fill</strong><code>linear-gradient(to right, #10b981, #059669)</code><code class="tok">emerald-500 → emerald-600</code><p>Featured pricing button.</p></div></div>
+</div>
+<p class="ds-sub">Surfaces</p>
+<div class="ds-colors">
+<div class="ds-sw"><div class="ds-chip light"><div class="fill bg-forest-50"></div></div><div><strong>Page ground</strong><code>#f2f8f6</code><code class="tok">forest-50</code><p>Body and every light section.</p></div></div>
+<div class="ds-sw"><div class="ds-chip light"><div class="fill bg-white"></div></div><div><strong>Raised card</strong><code>#ffffff</code><code class="tok">white</code><p>Feature panel and footer card (rounded-[2.5rem], shadow forest-900/5).</p></div></div>
+<div class="ds-sw"><div class="ds-chip"><div class="fill bg-forest-950"></div></div><div><strong>Dark section</strong><code>#0a1814</code><code class="tok">forest-950</code><p>Technology, partners, pricing and closing bands.</p></div></div>
+<div class="ds-sw"><div class="ds-chip"><img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b361f672-271a-4e77-9412-6a1094c00dd7_320w.webp" alt=""><div class="fill bg-forest-950/80 backdrop-blur-2xl"></div></div><div><strong>Dark glass</strong><code>rgb(10 24 20 / .8) + blur 40px</code><code class="tok">forest-950/80 · backdrop-blur-2xl</code><p>Hero footer cards and stat pills (/90).</p></div></div>
+<div class="ds-sw"><div class="ds-chip"><img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b361f672-271a-4e77-9412-6a1094c00dd7_320w.webp" alt=""><div class="fill bg-white/60 backdrop-blur-md"></div></div><div><strong>Light glass</strong><code>rgb(255 255 255 / .6) + blur 12px</code><code class="tok">white/60 · backdrop-blur-md</code><p>Hero preview card.</p></div></div>
+<div class="ds-sw"><div class="ds-chip"><div class="fill bg-forest-900/20"></div></div><div><strong>Card on dark</strong><code>rgb(29 57 47 / .2)</code><code class="tok">forest-900/20</code><p>Process and pricing cards on forest-950 (hover /40).</p></div></div>
+<div class="ds-sw"><div class="ds-chip"><div class="fill bg-gradient-to-b from-forest-900/80 to-forest-950/80"></div></div><div><strong>Featured card</strong><code>linear-gradient(to bottom, rgb(29 57 47 / .8), rgb(10 24 20 / .8))</code><code class="tok">forest-900/80 → forest-950/80</code><p>Featured pricing card.</p></div></div>
+<div class="ds-sw"><div class="ds-chip"><div class="fill bg-forest-800"></div></div><div><strong>Selected segment</strong><code>#224437</code><code class="tok">forest-800</code><p>Active billing option inside the forest-900/50 well.</p></div></div>
+</div>
+<p class="ds-sub">Text and Icons</p>
+<div class="ds-colors">
+<div class="ds-sw"><div class="ds-chip light"><span class="aa text-forest-950">Aa</span></div><div><strong>Primary on light</strong><code>#0a1814</code><code class="tok">forest-950</code><p>Hero title, section titles, questions.</p></div></div>
+<div class="ds-sw"><div class="ds-chip light"><span class="aa text-forest-800">Aa</span></div><div><strong>Hero accent line</strong><code>#224437</code><code class="tok">forest-800</code><p>Second hero line (indented ml-2 / md:ml-4).</p></div></div>
+<div class="ds-sw"><div class="ds-chip light"><span class="aa text-forest-600">Aa</span></div><div><strong>Body on light</strong><code>#2f6a52</code><code class="tok">forest-600</code><p>Feature lead, FAQ answers, support copy.</p></div></div>
+<div class="ds-sw"><div class="ds-chip light"><span class="aa text-forest-500">Aa</span></div><div><strong>Muted on light</strong><code>#3f8568</code><code class="tok">forest-500</code><p>Feature descriptions, footer links, accent spans.</p></div></div>
+<div class="ds-sw"><div class="ds-chip"><span class="aa text-white">Aa</span></div><div><strong>Primary on dark</strong><code>#ffffff</code><code class="tok">white</code><p>Headings, prices, button labels on forest-950.</p></div></div>
+<div class="ds-sw"><div class="ds-chip"><span class="aa text-forest-100">Aa</span></div><div><strong>Quote on dark</strong><code>#e1efe8</code><code class="tok">forest-100</code><p>Testimonials and process titles.</p></div></div>
+<div class="ds-sw"><div class="ds-chip"><span class="aa text-forest-300">Aa</span></div><div><strong>Body on dark</strong><code>#96c3ad</code><code class="tok">forest-300</code><p>Section intros and pricing descriptions.</p></div></div>
+<div class="ds-sw"><div class="ds-chip"><span class="aa text-forest-400">Aa</span></div><div><strong>Muted on dark</strong><code>#62a386</code><code class="tok">forest-400</code><p>Handles, stat units, card copy.</p></div></div>
+</div>
+<p class="ds-sub">Borders</p>
+<div class="ds-colors">
+<div class="ds-sw"><div class="ds-chip"><div class="frame border border-white/10"></div></div><div><strong>Hairline on dark</strong><code>rgb(255 255 255 / .1)</code><code class="tok">white/10</code><p>Glass cards, toggle well, scrolled header bottom edge.</p></div></div>
+<div class="ds-sw"><div class="ds-chip"><div class="frame border border-white/5"></div></div><div><strong>Faint on dark</strong><code>rgb(255 255 255 / .05)</code><code class="tok">white/5</code><p>Process / pricing cards and band top borders.</p></div></div>
+<div class="ds-sw"><div class="ds-chip light"><div class="frame border border-forest-900/10"></div></div><div><strong>Divider on light</strong><code>rgb(29 57 47 / .1)</code><code class="tok">forest-900/10</code><p>FAQ rows.</p></div></div>
+<div class="ds-sw"><div class="ds-chip light"><div class="frame border border-forest-900/5"></div></div><div><strong>Card edge on light</strong><code>rgb(29 57 47 / .05)</code><code class="tok">forest-900/5</code><p>White panels and media cards.</p></div></div>
+<div class="ds-sw"><div class="ds-chip"><div class="frame border border-emerald-500/30"></div></div><div><strong>Accent edge</strong><code>rgb(16 185 129 / .3)</code><code class="tok">emerald-500/30</code><p>Featured pricing card, card hover.</p></div></div>
+<div class="ds-sw"><div class="ds-chip light"><div class="frame border border-forest-100"></div></div><div><strong>Icon chip edge</strong><code>#e1efe8</code><code class="tok">forest-100</code><p>Round icon chips and social buttons.</p></div></div>
+</div>
+<p class="ds-sub">Overlays</p>
+<div class="ds-colors">
+<div class="ds-sw"><div class="ds-chip"><img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b361f672-271a-4e77-9412-6a1094c00dd7_320w.webp" alt=""><div class="fill bg-gradient-to-t from-forest-950/90 via-forest-950/20 to-transparent opacity-90"></div></div><div><strong>Media fade</strong><code>linear-gradient(to top, rgb(10 24 20 / .9), rgb(10 24 20 / .2), transparent) · opacity .9</code><code class="tok">forest-950/90 → /20</code><p>Large application card.</p></div></div>
+<div class="ds-sw"><div class="ds-chip"><img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b361f672-271a-4e77-9412-6a1094c00dd7_320w.webp" alt=""><div class="fill bg-forest-950/30"></div></div><div><strong>Media tint</strong><code>rgb(10 24 20 / .3) → hover /10</code><code class="tok">forest-950/30</code><p>Small application cards.</p></div></div>
+<div class="ds-sw"><div class="ds-chip"><img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b361f672-271a-4e77-9412-6a1094c00dd7_320w.webp" alt=""><div class="fill bg-gradient-to-t from-forest-950/60 to-transparent"></div></div><div><strong>Doc image fade</strong><code>linear-gradient(to top, rgb(10 24 20 / .6), transparent)</code><code class="tok">forest-950/60</code><p>Documentation card.</p></div></div>
+<div class="ds-sw"><div class="ds-chip"><img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b361f672-271a-4e77-9412-6a1094c00dd7_320w.webp" alt=""><span class="absolute bottom-2 left-2 right-2 h-6 rounded-full bg-black/30 backdrop-blur-md border border-white/10"></span></div><div><strong>Pill on media</strong><code>rgb(0 0 0 / .3) + blur 12px</code><code class="tok">black/30 · backdrop-blur-md</code><p>Connected status pill over the preview photo.</p></div></div>
+<div class="ds-sw"><div class="ds-chip"><div class="fill bg-black/95"></div></div><div><strong>Scrolled header</strong><code>rgb(0 0 0 / .95) + blur 24px</code><code class="tok">black/95 · backdrop-blur-xl</code><p>Navbar once the page moves past 20px.</p></div></div>
+</div>
+<p class="ds-sub">Interactive States</p>
+<p class="ds-cap" style="margin:0 0 10px">Process card</p>
+<div class="ds-states">
+<div class="ds-state"><div class="ds-chip"><div class="fill bg-forest-900/20 border border-white/5" style="inset:14px;border-radius:12px"></div></div><small>Default</small><code>forest-900/20 · white/5</code></div>
+<div class="ds-state"><div class="ds-chip"><div class="fill bg-forest-900/40 border border-emerald-500/30" style="inset:14px;border-radius:12px"></div></div><small>Hover</small><code>forest-900/40 · emerald-500/30</code></div>
+</div>
+<p class="ds-cap" style="margin:0 0 10px">Dark CTA button</p>
+<div class="ds-states">
+<div class="ds-state"><div class="ds-chip light"><div class="fill bg-forest-950" style="inset:14px;border-radius:12px"></div></div><small>Default</small><code>forest-950</code></div>
+<div class="ds-state"><div class="ds-chip light"><div class="fill bg-emerald-600 shadow-lg shadow-emerald-600/20" style="inset:14px;border-radius:12px"></div></div><small>Hover</small><code>emerald-600 · shadow emerald-600/20</code></div>
+</div>
+<p class="ds-cap" style="margin:0 0 10px">Outline button on dark</p>
+<div class="ds-states">
+<div class="ds-state"><div class="ds-chip"><div class="fill border border-white/10" style="inset:14px;border-radius:12px"></div></div><small>Default</small><code>border white/10 · text white</code></div>
+<div class="ds-state"><div class="ds-chip"><div class="fill bg-white" style="inset:14px;border-radius:12px"></div></div><small>Hover</small><code>bg white · text forest-950</code></div>
+</div>
+<p class="ds-cap" style="margin:0 0 10px">Social button</p>
+<div class="ds-states">
+<div class="ds-state"><div class="ds-chip light"><div class="fill bg-forest-50 border border-forest-100" style="inset:14px;border-radius:12px"></div></div><small>Default</small><code>forest-50 · forest-100 · text forest-600</code></div>
+<div class="ds-state"><div class="ds-chip light"><div class="fill bg-forest-950 border border-forest-950" style="inset:14px;border-radius:12px"></div></div><small>Hover</small><code>forest-950 · text white</code></div>
+</div>
+<p class="ds-cap" style="margin:0 0 10px">Billing toggle</p>
+<div class="ds-states">
+<div class="ds-state"><div class="ds-chip"><div class="fill " style="inset:14px;border-radius:12px"></div></div><small>Default</small><code>text forest-400 → hover white</code></div>
+<div class="ds-state"><div class="ds-chip"><div class="fill bg-forest-800 shadow-lg border border-white/5" style="inset:14px;border-radius:12px"></div></div><small>Selected</small><code>forest-800 · text white</code></div>
+</div>
+</section>
+
+<section class="ds-group" id="components-backgrounds">
+<div class="ds-head">
+  <div class="ds-kicker"><span class="n">03</span><i></i><span>Foundations</span></div>
+  <h2>Backgrounds</h2>
+</div>
+
+<div class="ds-spec">
+  <h3>Hero ground · live</h3>
+  <div class="ds-window" id="ds-window">
+    <span class="bg-black/30 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span class="text-[10px] font-medium text-white uppercase tracking-wider font-sans">Live · Unicorn Studio</span></span>
+  </div>
+  <code class="ds-meta"><b>.fixed.inset-0.z-[-1]</b> &gt; img 0dd9b13b…_3840w.webp <b>object-bottom brightness-[0.6] saturate-[0.8] blur-xl object-cover</b> + <b>bg-gradient-to-t from-forest-100/90 via-forest-50/50 to-forest-50/70 mix-blend-overlay</b> + <b>bg-gradient-to-b from-forest-50/90 via-transparent to-forest-950/40</b> · <b>.aura-background-component.absolute.h-screen.mix-blend-screen</b> (mask: black 0–80%, then fades) &gt; <b>[data-us-project="n869sLSzeDV4vFdUlTwJ"]</b> · unicornStudio.umd.js v1.4.29 · scene "Breakthrough (Remix)" v2.0.2 · 60 fps · dpi 1.5 · fixed 12-column hairlines <b>border-forest-950 opacity-[0.08]</b></code>
+  <p class="ds-note">This window looks straight through the catalog scrim to the Overview's own ground, which runs behind this whole view. Scene stack from the project file: <code>gradient → aurora (pointer 0.3) → voronoi → glyphDither (eyes3 sprite)</code>, screen-blended over the blurred network photograph, so it reads as a pale aurora drifting behind the hero. In Overview it follows the pointer; parked behind the catalog it drifts on its own.</p>
+</div>
+
+<div class="ds-two">
+  <div class="ds-spec">
+    <h3>Dark band</h3>
+    <div class="ds-bgbox bg-forest-950"><div class="absolute inset-0 z-0 pointer-events-none grid grid-cols-12 gap-4 px-6 md:px-12 w-full max-w-[1600px] mx-auto opacity-[0.05]">
+                <div class="border-l border-white h-full col-start-1"></div>
+                <div class="border-l border-white h-full col-start-3 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-5 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-7 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-9 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-11 hidden md:block"></div>
+                <div class="border-r border-white h-full col-end-13"></div>
+            </div></div>
+    <code class="ds-meta"><b>section.bg-forest-950.relative.overflow-hidden</b> + 12-column hairlines <b>border-white opacity-[0.05]</b> · Technology, Partners</code>
+  </div>
+  <div class="ds-spec">
+    <h3>Pricing band · centre glow</h3>
+    <div class="ds-bgbox bg-forest-950"><div class="absolute inset-0 z-0 pointer-events-none grid grid-cols-12 gap-4 px-6 md:px-12 w-full max-w-[1600px] mx-auto opacity-[0.05]">
+                <div class="border-l border-white h-full col-start-1"></div>
+                <div class="border-l border-white h-full col-start-3 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-5 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-7 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-9 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-11 hidden md:block"></div>
+                <div class="border-r border-white h-full col-end-13"></div>
+            </div><div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-900/20 blur-[120px] rounded-full pointer-events-none z-0"></div></div>
+    <code class="ds-meta">+ <b>w-[800px] h-[800px] bg-emerald-900/20 blur-[120px] rounded-full</b> centred</code>
+  </div>
+  <div class="ds-spec">
+    <h3>Closing band · top glow</h3>
+    <div class="ds-bgbox bg-forest-950"><div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none"></div></div>
+    <code class="ds-meta"><b>section.bg-forest-950.border-t.border-white/5</b> + <b>w-[600px] h-[600px] bg-emerald-500/10 blur-[100px]</b> at top centre</code>
+  </div>
+  <div class="ds-spec">
+    <h3>Light ground</h3>
+    <div class="ds-bgbox bg-forest-50 border-t border-forest-900/5"></div>
+    <code class="ds-meta"><b>section.bg-forest-50</b> #f2f8f6 · Applications, Feature panel, Support (border-t forest-900/5), Footer</code>
+  </div>
+</div>
+</section>
+
+<section class="ds-group" id="components-surfaces">
+<div class="ds-head">
+  <div class="ds-kicker"><span class="n">04</span><i></i><span>Foundations</span></div>
+  <h2>Surfaces</h2>
+</div>
+
+<p class="ds-sub">On the hero ground</p>
+<div class="ds-stage hero"><div class="ds-ground"><div class="absolute top-0 right-0 bottom-0 left-0">
+        <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0dd9b13b-ea30-4e17-8a26-53d1f9d1c6d3_3840w.webp" alt="Background Network" class="object-bottom brightness-[0.6] saturate-[0.8] opacity-100 w-full h-full object-cover blur-xl">
+        <div class="bg-gradient-to-t from-forest-100/90 via-forest-50/50 to-forest-50/70 absolute inset-0 mix-blend-overlay"></div>
+        <div class="bg-gradient-to-b from-forest-50/90 via-transparent to-forest-950/40 absolute inset-0"></div>
+    </div><div class="absolute inset-0 z-0 pointer-events-none grid grid-cols-12 gap-4 px-6 md:px-12 w-full max-w-[1600px] mx-auto opacity-[0.08]">
+        <div class="border-l border-forest-950 h-full col-start-1"></div>
+        <div class="border-l border-forest-950 h-full col-start-3 hidden md:block"></div>
+        <div class="border-l border-forest-950 h-full col-start-5 hidden md:block"></div>
+        <div class="border-l border-forest-950 h-full col-start-7 hidden md:block"></div>
+        <div class="border-l border-forest-950 h-full col-start-9 hidden md:block"></div>
+        <div class="border-l border-forest-950 h-full col-start-11 hidden md:block"></div>
+        <div class="border-r border-forest-950 h-full col-end-13"></div>
+    </div></div>
+  <div class="ds-cards relative">
+    <div class="ds-cell"><div class="relative w-full bg-white/60 backdrop-blur-md rounded-[2rem] shadow-2xl shadow-forest-900/5 p-4 md:p-6 overflow-hidden border border-white/40" style="height:180px"><span class="text-xs font-mono font-bold text-forest-400 bg-forest-50 px-2 py-1 rounded font-sans">white/60</span></div><span class="ds-cap">Light glass</span></div>
+    <div class="ds-cell"><div class="w-full bg-forest-950/80 backdrop-blur-2xl text-white rounded-[2rem] p-6 md:p-8 shadow-2xl shadow-forest-950/20 border border-white/10 relative overflow-hidden" style="height:180px"><span class="text-[10px] font-mono opacity-60">forest-950/80</span></div><span class="ds-cap">Dark glass</span></div>
+  </div>
+</div>
+<code class="ds-meta"><b>bg-white/60 backdrop-blur-md rounded-[2rem] shadow-2xl shadow-forest-900/5 border-white/40</b> (hover:scale-[1.01] 700ms) · <b>bg-forest-950/80 backdrop-blur-2xl rounded-[2rem] shadow-2xl shadow-forest-950/20 border-white/10</b> (hover:-translate-y-1)</code>
+
+<p class="ds-sub">On the dark band</p>
+<div class="ds-stage dark"><div class="absolute inset-0 z-0 pointer-events-none grid grid-cols-12 gap-4 px-6 md:px-12 w-full max-w-[1600px] mx-auto opacity-[0.05]">
+                <div class="border-l border-white h-full col-start-1"></div>
+                <div class="border-l border-white h-full col-start-3 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-5 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-7 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-9 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-11 hidden md:block"></div>
+                <div class="border-r border-white h-full col-end-13"></div>
+            </div>
+  <div class="ds-cards relative">
+    <div class="ds-cell"><div class="w-full p-8 bg-forest-900/20 rounded-3xl border border-white/5" style="height:170px"><span class="text-xs font-bold uppercase tracking-widest text-forest-500 font-sans">forest-900/20</span></div><span class="ds-cap">Card on dark · <code>rounded-3xl</code></span></div>
+    <div class="ds-cell"><div class="w-full bg-forest-900/10 backdrop-blur-md border border-white/5 rounded-2xl p-8" style="height:170px"><span class="text-xs text-forest-400 font-mono">forest-900/10</span></div><span class="ds-cap">Quote card · <code>rounded-2xl</code></span></div>
+    <div class="ds-cell"><div class="w-full relative bg-gradient-to-b from-forest-900/80 to-forest-950/80 backdrop-blur-xl border border-emerald-500/30 rounded-[2.5rem] p-8 shadow-2xl shadow-emerald-900/20" style="height:170px"><span class="text-xs font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded font-sans border border-emerald-500/20">featured</span></div><span class="ds-cap">Featured card · <code>rounded-[2.5rem]</code></span></div>
+    <div class="ds-cell"><div class="flex items-center p-1.5 bg-forest-900/50 backdrop-blur-sm rounded-full border border-white/10 relative" style="height:56px;width:100%"></div><span class="ds-cap">Toggle well · <code>forest-900/50</code></span></div>
+  </div>
+</div>
+
+<p class="ds-sub">On the light ground</p>
+<div class="ds-stage light">
+  <div class="ds-cards">
+    <div class="ds-cell"><div class="w-full bg-white rounded-[2.5rem] shadow-2xl shadow-forest-900/5 border border-forest-900/5" style="height:180px"></div><span class="ds-cap" style="color:#3f8568;text-shadow:none">Raised panel · <code style="color:#2f6a52">bg-white rounded-[2.5rem]</code></span></div>
+    <div class="ds-cell"><div class="w-full rounded-3xl overflow-hidden border border-forest-900/5 shadow-2xl shadow-forest-900/10" style="height:180px"><img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/73497bc9-224a-4cab-a551-92adf0b5a098_320w.webp" alt="" class="w-full h-full object-cover"></div><span class="ds-cap" style="color:#3f8568;text-shadow:none">Media frame · <code style="color:#2f6a52">rounded-3xl border-forest-900/5</code></span></div>
+    <div class="ds-cell"><div class="flex gap-2"><div class="w-8 h-8 rounded-full bg-forest-50 border border-forest-100 flex items-center justify-center text-forest-600"><iconify-icon icon="lucide:wifi" width="16"></iconify-icon></div><div class="w-10 h-10 rounded-full bg-forest-50 border border-forest-100 flex items-center justify-center text-forest-600"><iconify-icon icon="ri:github-fill" width="18"></iconify-icon></div></div><span class="ds-cap" style="color:#3f8568;text-shadow:none">Icon chip · <code style="color:#2f6a52">bg-forest-50 border-forest-100 rounded-full</code></span></div>
+  </div>
+</div>
+
+<p class="ds-sub">On media</p>
+<div class="ds-stage flush" style="height:300px"><img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/ec163a08-5822-4721-9052-374f7d0e2a91_1600w.webp" alt="" class="absolute inset-0 w-full h-full object-cover"><div class="absolute inset-0 bg-forest-950/20 mix-blend-multiply"></div>
+  <div class="relative flex flex-wrap items-end gap-6 p-8 h-full">
+    <div class="relative bg-white/10 backdrop-blur-xl border border-white/30 p-6 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.2)] w-64 z-10 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/10 before:to-transparent before:pointer-events-none">
+                    <div class="flex justify-between items-center mb-4 relative z-10">
+                        <h4 class="text-white font-medium font-sans tracking-wide text-sm">Render Score</h4>
+                        <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+                    </div>
+                    
+                    
+                    
+                    <div class="mt-2 flex items-center justify-between text-[10px] uppercase tracking-widest font-semibold relative z-10">
+                        <span class="text-forest-100/70">Quality</span>
+                        <span class="text-emerald-300 bg-emerald-900/40 px-2 py-0.5 rounded border border-emerald-500/30">Optimal</span>
+                    </div>
+                </div>
+    <div class="bg-forest-950/90 backdrop-blur-md border border-white/10 px-4 py-2.5 rounded-lg text-xs font-medium text-white w-44 shadow-lg">forest-950/90 pill</div>
+    <div class="bg-black/30 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span><span class="text-[10px] font-medium text-white uppercase tracking-wider font-sans">Connected</span></div>
+  </div>
+</div>
+<code class="ds-meta"><b>bg-white/10 backdrop-blur-xl border-white/30 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.2)]</b> + before:bg-gradient-to-b from-white/10 · <b>bg-forest-950/90 backdrop-blur-md border-white/10 rounded-lg</b> · <b>bg-black/30 backdrop-blur-md rounded-full border-white/10</b></code>
+</section>
+
+<section class="ds-group" id="components-icons">
+<div class="ds-head">
+  <div class="ds-kicker"><span class="n">05</span><i></i><span>Foundations</span></div>
+  <h2>Icons</h2>
+</div>
+<p class="ds-note" style="margin:0 0 24px">Three Iconify sets through <code>&lt;iconify-icon&gt;</code> 1.0.7 (data preloaded from the captured API answers): <code>lucide</code> for UI glyphs, <code>solar</code> linear for features, tiers and quote marks, <code>ri</code> for socials. The first quote card asks for <code>solar:chip-linear</code>, which Iconify does not have; it renders empty there, as on the live page.</p>
+<p class="ds-sub">On light</p>
+<div class="ds-stage light"><div class="ds-icons">
+<div class="ds-icon"><div class="stage text-forest-600"><iconify-icon icon="lucide:wifi" width="16" stroke-width="1.5"></iconify-icon></div><code style="color:#0a1814;text-shadow:none">lucide:wifi<i style="color:#3f8568">16px · hero card chip</i></code></div>
+<div class="ds-icon"><div class="stage text-forest-600"><iconify-icon icon="lucide:battery-medium" width="16" stroke-width="1.5"></iconify-icon></div><code style="color:#0a1814;text-shadow:none">lucide:battery-medium<i style="color:#3f8568">16px · hero card chip</i></code></div>
+<div class="ds-icon"><div class="stage text-forest-900"><iconify-icon icon="lucide:cpu" width="12" stroke-width="1.5"></iconify-icon></div><code style="color:#0a1814;text-shadow:none">lucide:cpu<i style="color:#3f8568">12px · hotspot tooltip</i></code></div>
+<div class="ds-icon"><div class="stage text-forest-950"><iconify-icon icon="lucide:arrow-right" stroke-width="1.5"></iconify-icon></div><code style="color:#0a1814;text-shadow:none">lucide:arrow-right<i style="color:#3f8568">Applications link</i></code></div>
+<div class="ds-icon"><div class="stage text-forest-400"><iconify-icon icon="lucide:plus" width="20" stroke-width="1.5"></iconify-icon></div><code style="color:#0a1814;text-shadow:none">lucide:plus<i style="color:#3f8568">20px · .icon-plus</i></code></div>
+<div class="ds-icon"><div class="stage text-forest-400"><iconify-icon icon="lucide:minus" width="20" stroke-width="1.5"></iconify-icon></div><code style="color:#0a1814;text-shadow:none">lucide:minus<i style="color:#3f8568">20px · .icon-minus</i></code></div>
+<div class="ds-icon"><div class="stage text-emerald-600"><iconify-icon icon="solar:map-point-linear" width="24" stroke-width="1.5"></iconify-icon></div><code style="color:#0a1814;text-shadow:none">solar:map-point-linear<i style="color:#3f8568">24px · feature</i></code></div>
+<div class="ds-icon"><div class="stage text-emerald-600"><iconify-icon icon="solar:magic-stick-3-linear" width="24" stroke-width="1.5"></iconify-icon></div><code style="color:#0a1814;text-shadow:none">solar:magic-stick-3-linear<i style="color:#3f8568">24px · feature</i></code></div>
+<div class="ds-icon"><div class="stage text-emerald-600"><iconify-icon icon="solar:graph-new-linear" width="24" stroke-width="1.5"></iconify-icon></div><code style="color:#0a1814;text-shadow:none">solar:graph-new-linear<i style="color:#3f8568">24px · feature</i></code></div>
+<div class="ds-icon"><div class="stage text-emerald-600"><iconify-icon icon="solar:layers-linear" width="24" stroke-width="1.5"></iconify-icon></div><code style="color:#0a1814;text-shadow:none">solar:layers-linear<i style="color:#3f8568">24px · feature</i></code></div>
+<div class="ds-icon"><div class="stage text-forest-950"><iconify-icon icon="solar:glasses-linear" width="28" stroke-width="1.5"></iconify-icon></div><code style="color:#0a1814;text-shadow:none">solar:glasses-linear<i style="color:#3f8568">28px · footer brand</i></code></div>
+<div class="ds-icon"><div class="stage text-forest-600"><iconify-icon icon="ri:twitter-x-line" width="18" stroke-width="1.5"></iconify-icon></div><code style="color:#0a1814;text-shadow:none">ri:twitter-x-line<i style="color:#3f8568">18px · social</i></code></div>
+<div class="ds-icon"><div class="stage text-forest-600"><iconify-icon icon="ri:instagram-line" width="18" stroke-width="1.5"></iconify-icon></div><code style="color:#0a1814;text-shadow:none">ri:instagram-line<i style="color:#3f8568">18px · social</i></code></div>
+<div class="ds-icon"><div class="stage text-forest-600"><iconify-icon icon="ri:linkedin-fill" width="18" stroke-width="1.5"></iconify-icon></div><code style="color:#0a1814;text-shadow:none">ri:linkedin-fill<i style="color:#3f8568">18px · social</i></code></div>
+<div class="ds-icon"><div class="stage text-forest-600"><iconify-icon icon="ri:github-fill" width="18" stroke-width="1.5"></iconify-icon></div><code style="color:#0a1814;text-shadow:none">ri:github-fill<i style="color:#3f8568">18px · social</i></code></div>
+</div></div>
+<p class="ds-sub">On dark</p>
+<div class="ds-stage dark"><div class="ds-icons">
+<div class="ds-icon"><div class="stage text-forest-200"><iconify-icon icon="lucide:scan" width="24" stroke-width="1.5"></iconify-icon></div><code>lucide:scan<i>24px · process</i></code></div>
+<div class="ds-icon"><div class="stage text-forest-200"><iconify-icon icon="lucide:cpu" width="24" stroke-width="1.5"></iconify-icon></div><code>lucide:cpu<i>24px · process</i></code></div>
+<div class="ds-icon"><div class="stage text-forest-200"><iconify-icon icon="lucide:eye" width="24" stroke-width="1.5"></iconify-icon></div><code>lucide:eye<i>24px · process</i></code></div>
+<div class="ds-icon"><div class="stage text-emerald-500"><iconify-icon icon="lucide:arrow-right" width="16" stroke-width="1.5"></iconify-icon></div><code>lucide:arrow-right<i>16px · process (hover reveal)</i></code></div>
+<div class="ds-icon"><div class="stage text-white"><iconify-icon icon="lucide:arrow-up-right" width="16" stroke-width="1.5"></iconify-icon></div><code>lucide:arrow-up-right<i>16px · glass card</i></code></div>
+<div class="ds-icon"><div class="stage text-white"><iconify-icon icon="lucide:monitor" width="24" stroke-width="1.5"></iconify-icon></div><code>lucide:monitor<i>24px · media card</i></code></div>
+<div class="ds-icon"><div class="stage text-emerald-500/50"><iconify-icon icon="solar:palette-linear" width="32" stroke-width="1.5"></iconify-icon></div><code>solar:palette-linear<i>32px · quote card</i></code></div>
+<div class="ds-icon"><div class="stage text-emerald-500/50"><iconify-icon icon="solar:planet-linear" width="32" stroke-width="1.5"></iconify-icon></div><code>solar:planet-linear<i>32px · quote card</i></code></div>
+<div class="ds-icon"><div class="stage text-emerald-500/50"><iconify-icon icon="solar:buildings-2-linear" width="32" stroke-width="1.5"></iconify-icon></div><code>solar:buildings-2-linear<i>32px · quote card · tier</i></code></div>
+<div class="ds-icon"><div class="stage text-emerald-500/50"><iconify-icon icon="solar:heart-pulse-linear" width="32" stroke-width="1.5"></iconify-icon></div><code>solar:heart-pulse-linear<i>32px · quote card</i></code></div>
+<div class="ds-icon"><div class="stage text-emerald-500/50"><iconify-icon icon="solar:gamepad-linear" width="32" stroke-width="1.5"></iconify-icon></div><code>solar:gamepad-linear<i>32px · quote card</i></code></div>
+<div class="ds-icon"><div class="stage text-emerald-500/50"><iconify-icon icon="solar:music-note-linear" width="32" stroke-width="1.5"></iconify-icon></div><code>solar:music-note-linear<i>32px · quote card</i></code></div>
+<div class="ds-icon"><div class="stage text-emerald-500/50"><iconify-icon icon="solar:wheel-angle-linear" width="32" stroke-width="1.5"></iconify-icon></div><code>solar:wheel-angle-linear<i>32px · quote card</i></code></div>
+<div class="ds-icon"><div class="stage text-forest-300"><iconify-icon icon="solar:user-linear" width="24" stroke-width="1.5"></iconify-icon></div><code>solar:user-linear<i>24px · tier</i></code></div>
+<div class="ds-icon"><div class="stage text-emerald-400"><iconify-icon icon="solar:crown-star-linear" width="28" stroke-width="1.5"></iconify-icon></div><code>solar:crown-star-linear<i>28px · featured tier</i></code></div>
+<div class="ds-icon"><div class="stage text-emerald-500"><iconify-icon icon="solar:check-circle-linear" width="18" stroke-width="1.5"></iconify-icon></div><code>solar:check-circle-linear<i>18px · plan list</i></code></div>
+<div class="ds-icon"><div class="stage text-emerald-400"><iconify-icon icon="solar:check-read-linear" stroke-width="1.5"></iconify-icon></div><code>solar:check-read-linear<i>featured list</i></code></div>
+<div class="ds-icon"><div class="stage text-white"><iconify-icon icon="solar:arrow-right-linear" width="20" stroke-width="1.5"></iconify-icon></div><code>solar:arrow-right-linear<i>20px · buttons</i></code></div>
+</div></div>
+<p class="ds-sub">Inline SVG</p>
+<div class="ds-two">
+<div class="ds-stage dark"><div class="ds-icon"><div class="stage"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" style="color: rgb(255, 255, 255); width: 28px; height: 28px" class="text-current w-[28px] h-[28px]" data-solar="glasses-outline" data-icon-set="solar" data-icon-replaced="true" stroke-width="1"><path fill="#ffffff" fill-rule="evenodd" d="M6.237 4.712a.75.75 0 0 0-.474-1.423l-.555.185c-.57.19-1.055.351-1.439.527c-.409.187-.767.416-1.051.776c-.285.36-.426.76-.515 1.2c-.083.415-.129.923-.183 1.522l-.698 7.67a5 5 0 0 0-.072.823C1.255 18.611 3.38 20.75 6 20.75a4.75 4.75 0 0 0 4.689-3.986l.219-.078a3.25 3.25 0 0 1 2.184 0l.22.078A4.75 4.75 0 0 0 18 20.75c2.62 0 4.744-2.14 4.75-4.758q0-.421-.073-.823L21.98 7.5c-.054-.6-.1-1.107-.183-1.521c-.089-.441-.23-.842-.515-1.201s-.642-.59-1.051-.776c-.384-.176-.868-.337-1.439-.527l-.555-.185a.75.75 0 0 0-.474 1.423l.518.172c.617.206 1.024.343 1.326.481c.286.13.414.235.5.343c.085.107.157.256.219.564c.065.326.105.753.164 1.401l.415 4.569a4.75 4.75 0 0 0-7.585 2.942a4.75 4.75 0 0 0-2.64 0a4.75 4.75 0 0 0-7.585-2.942l.048-.532l.367-4.037c.059-.648.099-1.075.164-1.4c.062-.309.134-.458.22-.565c.085-.108.213-.212.499-.343c.302-.138.709-.275 1.326-.48zM21.19 15.376l.06.656a3.25 3.25 0 1 1-.06-.656m-18.38 0l-.06.656a3.25 3.25 0 1 0 .06-.656" clip-rule="evenodd" class=""></path></svg></div><code>solar glasses-outline (inline SVG)<i>navbar logo, 28px</i></code></div></div>
+<div class="ds-stage light"><div class="ds-row">
+<div class="ds-icon"><div class="stage text-emerald-950"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="send" class="lucide lucide-send w-4 h-4"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" class=""></path><path d="m21.854 2.147-10.94 10.939" class=""></path></svg></div><code style="color:#0a1814;text-shadow:none">lucide send (inline SVG)<i style="color:#3f8568">primary button, w-4 h-4</i></code></div>
+<div class="ds-icon"><div class="stage text-emerald-800"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-[16px] h-[16px]" data-lucide="arrow-right" data-icon-set="lucide" data-icon-replaced="true" style="width: 16px; height: 16px;"><path d="M5 12h14" class=""></path><path d="m12 5 7 7-7 7"></path></svg></div><code style="color:#0a1814;text-shadow:none">lucide arrow-right (inline SVG)<i style="color:#3f8568">secondary button, 16px</i></code></div>
+</div></div>
+</div>
+</section>
+
+<section class="ds-group" id="components-actions">
+<div class="ds-head">
+  <div class="ds-kicker"><span class="n">06</span><i></i><span>Components</span></div>
+  <h2>Actions</h2>
+</div>
+
+<div class="ds-spec">
+  <h3>Hero buttons · on the hero ground</h3>
+  <div class="ds-stage hero"><div class="ds-ground"><div class="absolute top-0 right-0 bottom-0 left-0">
+        <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0dd9b13b-ea30-4e17-8a26-53d1f9d1c6d3_3840w.webp" alt="Background Network" class="object-bottom brightness-[0.6] saturate-[0.8] opacity-100 w-full h-full object-cover blur-xl">
+        <div class="bg-gradient-to-t from-forest-100/90 via-forest-50/50 to-forest-50/70 absolute inset-0 mix-blend-overlay"></div>
+        <div class="bg-gradient-to-b from-forest-50/90 via-transparent to-forest-950/40 absolute inset-0"></div>
+    </div></div>
+    <div class="flex flex-wrap gap-4 gap-x-4 gap-y-4 relative"><button class="group shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all duration-300 overflow-hidden font-medium text-emerald-950 bg-gradient-to-r from-[#d1fae5] to-[#34d399] rounded-xl pt-4 pr-8 pb-4 pl-8 relative shadow-lg" style="box-shadow:0 15px 33px -12px rgba(16, 185, 129, 0.9), inset 0 4px 6.3px rgba(209, 250, 229, 1), inset 0 -5px 6.3px rgba(5, 150, 105, 1); border-radius:9999px">
+                        <div class="group-hover:translate-y-0 transition-transform duration-300 bg-white/20 absolute top-0 right-0 bottom-0 left-0 translate-y-full"></div>
+                        <span class="relative flex items-center gap-2 font-sans">
+                            Lorem Ipsum Dolor
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="send" class="lucide lucide-send w-4 h-4"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" class=""></path><path d="m21.854 2.147-10.94 10.939" class=""></path></svg>
+                        </span>
+                    </button>
+    <button class="hover:bg-emerald-50 hover:text-emerald-700 transition-all flex text-sm font-medium text-emerald-700 bg-slate-50/50 rounded-full pt-3 pr-6 pb-3 pl-6 shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] gap-x-2 gap-y-2 items-center" style="box-shadow: 0 18px 35px rgba(6, 78, 59, 0.25), 0 0 0 1px rgba(16, 185, 129, 0.2);  color: #065f46; position: relative; --border-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(16, 185, 129, 0.2), rgba(255, 255, 255, 0.8)); --border-radius-before: 9999px">
+
+  <span class="text-sm font-medium text-emerald-900/70 tracking-tight font-sans">
+    Dolor Sit
+  </span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-[16px] h-[16px]" data-lucide="arrow-right" data-icon-set="lucide" data-icon-replaced="true" style="width: 16px; height: 16px;"><path d="M5 12h14" class=""></path><path d="m12 5 7 7-7 7"></path></svg>
+  <style id="border-gradient-shared-style">
+  [style*="--border-gradient"]::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: var(--border-radius-before, inherit);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    background: var(--border-gradient);
+    pointer-events: none;
+  }</style>
+</button></div>
+  </div>
+  <code class="ds-meta"><b>Primary</b> button.group.rounded-xl.bg-gradient-to-r.from-[#d1fae5].to-[#34d399] · text-emerald-950 · shadow-lg shadow-emerald-500/30 → hover /50 · white/20 sheen slides up from translate-y-full on hover (300ms) · lucide send · <b>Secondary</b> button.rounded-full.bg-slate-50/50.text-emerald-700 · six-step 0.06 shadow stack + inline <b>--border-gradient</b> hairline (spectra.css ::before) · hover:bg-emerald-50</code>
+</div>
+
+<div class="ds-two">
+  <div class="ds-spec">
+    <h3>Dark solid · on light</h3>
+    <div class="ds-stage white"><button class="inline-flex items-center gap-3 bg-forest-950 text-white px-8 py-4 rounded-xl font-medium hover:bg-emerald-600 hover:shadow-lg hover:shadow-emerald-600/20 transition-all duration-300 font-sans group">
+                        Lorem Ipsum Dolor
+                        <iconify-icon icon="solar:arrow-right-linear" width="20" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                    </button></div>
+    <code class="ds-meta">button.bg-forest-950.rounded-xl.px-8.py-4 → hover:bg-emerald-600 shadow-lg shadow-emerald-600/20 · arrow hover:translate-x-1</code>
+  </div>
+  <div class="ds-spec">
+    <h3>Pill · on dark</h3>
+    <div class="ds-stage dark"><button class="px-8 py-4 bg-white text-forest-950 rounded-full font-medium font-sans text-sm hover:scale-105 transition-transform duration-300 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_-10px_rgba(16,185,129,0.4)]">
+            Lorem Ipsum Dolor
+        </button></div>
+    <code class="ds-meta">button.bg-white.text-forest-950.rounded-full · shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] → hover emerald glow + scale-105</code>
+  </div>
+  <div class="ds-spec">
+    <h3>Plan buttons · on dark</h3>
+    <div class="ds-stage dark"><div class="flex flex-col gap-4"><button class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-medium hover:shadow-lg hover:shadow-emerald-500/25 hover:scale-[1.02] transition-all duration-300 font-sans text-sm relative overflow-hidden">
+                    <span class="relative z-10 flex items-center justify-center gap-2">
+                        Lorem Ipsum
+                        <iconify-icon icon="solar:arrow-right-linear" width="18"></iconify-icon>
+                    </span>
+                </button><button class="w-full py-4 rounded-xl border border-white/10 text-white font-medium hover:bg-white hover:text-forest-950 transition-all duration-300 font-sans text-sm">
+                    Lorem Ipsum
+                </button></div></div>
+    <code class="ds-meta"><b>Featured</b> bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-xl · hover shadow-emerald-500/25 scale-[1.02] · <b>Outline</b> border-white/10 → hover:bg-white hover:text-forest-950</code>
+  </div>
+  <div class="ds-spec">
+    <h3>Navbar actions · on dark</h3>
+    <div class="ds-stage dark"><div class="flex items-center gap-8 text-xs font-medium tracking-wide text-white">
+        <a href="#" class="uppercase hover:text-white transition-colors text-white/70 font-sans">Account</a>
+        <a href="#" class="hover:bg-neutral-900 transition-all uppercase text-[11px] font-semibold text-white tracking-wider font-sans bg-black border-white/10 border rounded-full pt-2.5 pr-6 pb-2.5 pl-6">Pre-order</a>
+    </div></div>
+    <code class="ds-meta">a.uppercase.text-white/70 · a.rounded-full.bg-black.border-white/10.text-[11px].font-semibold.tracking-wider → hover:bg-neutral-900</code>
+  </div>
+</div>
+
+<p class="ds-sub">Links</p>
+<div class="ds-two">
+  <div class="ds-spec">
+    <div class="ds-stage light"><div class="flex flex-wrap items-center gap-10"><a href="#" class="group flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-forest-950 hover:text-emerald-600 transition-colors font-sans">
+                        Lorem Ipsum
+                        <iconify-icon icon="lucide:arrow-right" class="group-hover:translate-x-1 transition-transform" stroke-width="2"></iconify-icon>
+                    </a><a href="#" class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-emerald-600 hover:text-emerald-800 transition-colors font-sans group/link">
+                            Lorem Ipsum
+                            <iconify-icon icon="lucide:arrow-right" width="16" class="group-hover/link:translate-x-1 transition-transform"></iconify-icon>
+                        </a></div></div>
+    <code class="ds-meta">text-xs / text-sm font-bold uppercase tracking-widest · arrow group-hover:translate-x-1 · forest-950 → hover emerald-600 · emerald-600 → hover emerald-800</code>
+  </div>
+  <div class="ds-spec">
+    <div class="ds-stage dark"><a href="#" class="inline-block text-xs font-bold text-forest-200 border-b border-white/20 pb-0.5 hover:border-emerald-400 hover:text-emerald-400 transition-colors uppercase tracking-widest font-sans">
+                                Lorem Ipsum
+                            </a></div>
+    <code class="ds-meta">a.text-xs.font-bold.uppercase.tracking-widest.text-forest-200.border-b.border-white/20 → hover emerald-400</code>
+  </div>
+</div>
+
+<p class="ds-sub">Round icon buttons</p>
+<div class="ds-two">
+  <div class="ds-spec">
+    <div class="ds-stage light"><div class="flex items-center gap-3"><a href="#" class="w-10 h-10 rounded-full bg-forest-50 border border-forest-100 flex items-center justify-center text-forest-600 hover:bg-forest-950 hover:text-white hover:border-forest-950 transition-all duration-300">
+                            <iconify-icon icon="ri:twitter-x-line" width="18"></iconify-icon>
+                        </a><a href="#" class="w-10 h-10 rounded-full bg-forest-50 border border-forest-100 flex items-center justify-center text-forest-600 hover:bg-forest-950 hover:text-white hover:border-forest-950 transition-all duration-300">
+                            <iconify-icon icon="ri:instagram-line" width="18"></iconify-icon>
+                        </a><a href="#" class="w-10 h-10 rounded-full bg-forest-50 border border-forest-100 flex items-center justify-center text-forest-600 hover:bg-forest-950 hover:text-white hover:border-forest-950 transition-all duration-300">
+                            <iconify-icon icon="ri:linkedin-fill" width="18"></iconify-icon>
+                        </a><a href="#" class="w-10 h-10 rounded-full bg-forest-50 border border-forest-100 flex items-center justify-center text-forest-600 hover:bg-forest-950 hover:text-white hover:border-forest-950 transition-all duration-300">
+                            <iconify-icon icon="ri:github-fill" width="18"></iconify-icon>
+                        </a></div></div>
+    <code class="ds-meta">a.w-10.h-10.rounded-full.bg-forest-50.border-forest-100.text-forest-600 → hover:bg-forest-950 text-white (300ms)</code>
+  </div>
+  <div class="ds-spec">
+    <div class="ds-stage flush" style="height:120px"><img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4a5db304-521a-4815-86d8-0c7198201df9_1600w.webp" alt="" class="absolute inset-0 w-full h-full object-cover"><div class="absolute inset-0 bg-forest-950/40"></div>
+      <div class="relative flex items-center gap-6 h-full px-8"><div class="w-8 h-8 rounded-full border border-white/20 bg-white/5 flex items-center justify-center group-hover:bg-emerald-500/20 group-hover:border-emerald-500/50 group-hover:text-emerald-400 transition-colors">
+                                <iconify-icon icon="lucide:arrow-up-right" width="16" stroke-width="1.5"></iconify-icon>
+                            </div><div class="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:bg-emerald-500 group-hover:border-emerald-500 transition-all text-white">
+                                    <iconify-icon icon="lucide:monitor" width="24" stroke-width="1.5"></iconify-icon>
+                                </div></div></div>
+    <code class="ds-meta">w-8 h-8 border-white/20 bg-white/5 (glass card; group-hover emerald-500/20) · w-12 h-12 bg-white/10 backdrop-blur-md border-white/20 (media card; group-hover:bg-emerald-500)</code>
+  </div>
+</div>
+</section>
+
+<section class="ds-group" id="components-navigation">
+<div class="ds-head">
+  <div class="ds-kicker"><span class="n">07</span><i></i><span>Components</span></div>
+  <h2>Navigation</h2>
+</div>
+
+<div class="ds-spec">
+  <h3>Navbar · top of page</h3>
+  <div class="ds-stage hero flush ds-bleed"><div class="ds-ground"><div class="absolute top-0 right-0 bottom-0 left-0">
+        <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0dd9b13b-ea30-4e17-8a26-53d1f9d1c6d3_3840w.webp" alt="Background Network" class="object-bottom brightness-[0.6] saturate-[0.8] opacity-100 w-full h-full object-cover blur-xl">
+        <div class="bg-gradient-to-t from-forest-100/90 via-forest-50/50 to-forest-50/70 absolute inset-0 mix-blend-overlay"></div>
+        <div class="bg-gradient-to-b from-forest-50/90 via-transparent to-forest-950/40 absolute inset-0"></div>
+    </div></div>
+    <header class="relative mix-blend-difference flex md:px-12 transition-all duration-300 group z-50 text-white w-full pt-6 pr-6 pb-6 pl-6 top-0 right-0 left-0 items-center justify-between">
+    <div class="flex cursor-pointer text-current gap-x-2 gap-y-x-2 items-center" role="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" style="color: rgb(255, 255, 255); width: 28px; height: 28px" class="text-current w-[28px] h-[28px]" data-solar="glasses-outline" data-icon-set="solar" data-icon-replaced="true" stroke-width="1"><path fill="#ffffff" fill-rule="evenodd" d="M6.237 4.712a.75.75 0 0 0-.474-1.423l-.555.185c-.57.19-1.055.351-1.439.527c-.409.187-.767.416-1.051.776c-.285.36-.426.76-.515 1.2c-.083.415-.129.923-.183 1.522l-.698 7.67a5 5 0 0 0-.072.823C1.255 18.611 3.38 20.75 6 20.75a4.75 4.75 0 0 0 4.689-3.986l.219-.078a3.25 3.25 0 0 1 2.184 0l.22.078A4.75 4.75 0 0 0 18 20.75c2.62 0 4.744-2.14 4.75-4.758q0-.421-.073-.823L21.98 7.5c-.054-.6-.1-1.107-.183-1.521c-.089-.441-.23-.842-.515-1.201s-.642-.59-1.051-.776c-.384-.176-.868-.337-1.439-.527l-.555-.185a.75.75 0 0 0-.474 1.423l.518.172c.617.206 1.024.343 1.326.481c.286.13.414.235.5.343c.085.107.157.256.219.564c.065.326.105.753.164 1.401l.415 4.569a4.75 4.75 0 0 0-7.585 2.942a4.75 4.75 0 0 0-2.64 0a4.75 4.75 0 0 0-7.585-2.942l.048-.532l.367-4.037c.059-.648.099-1.075.164-1.4c.062-.309.134-.458.22-.565c.085-.108.213-.212.499-.343c.302-.138.709-.275 1.326-.48zM21.19 15.376l.06.656a3.25 3.25 0 1 1-.06-.656m-18.38 0l-.06.656a3.25 3.25 0 1 0 .06-.656" clip-rule="evenodd" class=""></path></svg>
+        <span class="uppercase text-xl font-normal tracking-tight">Spectra</span>
+    </div>
+
+    <nav class="hidden lg:flex text-white/80 uppercase text-sm font-medium gap-x-10 items-center">
+        <a href="#" class="hover:text-white transition-colors duration-200">Features</a>
+        <a href="#" class="hover:text-white transition-colors duration-200">About</a>
+        <a href="#" class="hover:text-white transition-colors duration-200">Docs</a>
+        <a href="#" class="hover:text-white transition-colors duration-200">Pricing</a>
+    </nav>
+
+    <div class="flex items-center gap-8 text-xs font-medium tracking-wide text-white">
+        <a href="#" class="uppercase hover:text-white transition-colors text-white/70 font-sans">Account</a>
+        <a href="#" class="hover:bg-neutral-900 transition-all uppercase text-[11px] font-semibold text-white tracking-wider font-sans bg-black border-white/10 border rounded-full pt-2.5 pr-6 pb-2.5 pl-6">Pre-order</a>
+    </div>
+</header>
+  </div>
+  <code class="ds-meta">header#main-header.fixed.z-50.text-white + <b>mix-blend-difference</b> while scrollY ≤ 20: white type inverts against the pale hero, so the bar reads dark without a fill · links hidden below lg</code>
+</div>
+<div class="ds-spec">
+  <h3>Navbar · scrolled</h3>
+  <div class="ds-stage hero flush ds-bleed"><div class="ds-ground"><div class="absolute top-0 right-0 bottom-0 left-0">
+        <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0dd9b13b-ea30-4e17-8a26-53d1f9d1c6d3_3840w.webp" alt="Background Network" class="object-bottom brightness-[0.6] saturate-[0.8] opacity-100 w-full h-full object-cover blur-xl">
+        <div class="bg-gradient-to-t from-forest-100/90 via-forest-50/50 to-forest-50/70 absolute inset-0 mix-blend-overlay"></div>
+        <div class="bg-gradient-to-b from-forest-50/90 via-transparent to-forest-950/40 absolute inset-0"></div>
+    </div></div>
+    <header class="relative bg-black/95 backdrop-blur-xl border-b border-white/10 flex md:px-12 transition-all duration-300 group z-50 text-white w-full pt-6 pr-6 pb-6 pl-6 top-0 right-0 left-0 items-center justify-between">
+    <div class="flex cursor-pointer text-current gap-x-2 gap-y-x-2 items-center" role="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" style="color: rgb(255, 255, 255); width: 28px; height: 28px" class="text-current w-[28px] h-[28px]" data-solar="glasses-outline" data-icon-set="solar" data-icon-replaced="true" stroke-width="1"><path fill="#ffffff" fill-rule="evenodd" d="M6.237 4.712a.75.75 0 0 0-.474-1.423l-.555.185c-.57.19-1.055.351-1.439.527c-.409.187-.767.416-1.051.776c-.285.36-.426.76-.515 1.2c-.083.415-.129.923-.183 1.522l-.698 7.67a5 5 0 0 0-.072.823C1.255 18.611 3.38 20.75 6 20.75a4.75 4.75 0 0 0 4.689-3.986l.219-.078a3.25 3.25 0 0 1 2.184 0l.22.078A4.75 4.75 0 0 0 18 20.75c2.62 0 4.744-2.14 4.75-4.758q0-.421-.073-.823L21.98 7.5c-.054-.6-.1-1.107-.183-1.521c-.089-.441-.23-.842-.515-1.201s-.642-.59-1.051-.776c-.384-.176-.868-.337-1.439-.527l-.555-.185a.75.75 0 0 0-.474 1.423l.518.172c.617.206 1.024.343 1.326.481c.286.13.414.235.5.343c.085.107.157.256.219.564c.065.326.105.753.164 1.401l.415 4.569a4.75 4.75 0 0 0-7.585 2.942a4.75 4.75 0 0 0-2.64 0a4.75 4.75 0 0 0-7.585-2.942l.048-.532l.367-4.037c.059-.648.099-1.075.164-1.4c.062-.309.134-.458.22-.565c.085-.108.213-.212.499-.343c.302-.138.709-.275 1.326-.48zM21.19 15.376l.06.656a3.25 3.25 0 1 1-.06-.656m-18.38 0l-.06.656a3.25 3.25 0 1 0 .06-.656" clip-rule="evenodd" class=""></path></svg>
+        <span class="uppercase text-xl font-normal tracking-tight">Spectra</span>
+    </div>
+
+    <nav class="hidden lg:flex text-white/80 uppercase text-sm font-medium gap-x-10 items-center">
+        <a href="#" class="hover:text-white transition-colors duration-200">Features</a>
+        <a href="#" class="hover:text-white transition-colors duration-200">About</a>
+        <a href="#" class="hover:text-white transition-colors duration-200">Docs</a>
+        <a href="#" class="hover:text-white transition-colors duration-200">Pricing</a>
+    </nav>
+
+    <div class="flex items-center gap-8 text-xs font-medium tracking-wide text-white">
+        <a href="#" class="uppercase hover:text-white transition-colors text-white/70 font-sans">Account</a>
+        <a href="#" class="hover:bg-neutral-900 transition-all uppercase text-[11px] font-semibold text-white tracking-wider font-sans bg-black border-white/10 border rounded-full pt-2.5 pr-6 pb-2.5 pl-6">Pre-order</a>
+    </div>
+</header>
+  </div>
+  <code class="ds-meta">scrollY &gt; 20 → <b>bg-black/95 backdrop-blur-xl border-b border-white/10</b>, mix-blend-difference removed (transition-all 300ms)</code>
+</div>
+<div class="ds-spec">
+  <h3>Footer</h3>
+  <div class="ds-stage light flush"><footer class="relative bg-forest-50 pt-6 pb-12 md:pb-12 px-6 md:px-12 overflow-hidden">
+    <div class="max-w-[1600px] mx-auto bg-white rounded-[2.5rem] border border-forest-900/5 shadow-2xl shadow-forest-900/5 relative overflow-hidden p-8 md:p-16 reveal-on-scroll delay-100">
+        
+        <div class="absolute bottom-[-6%] left-1/2 -translate-x-1/2 text-[18vw] leading-none font-dm-sans font-bold text-forest-900/[0.02] select-none pointer-events-none tracking-tighter whitespace-nowrap z-0">
+            SPECTRA
+        </div>
+
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mb-20">
+            <div class="lg:col-span-5 flex flex-col justify-between h-full">
+                <div>
+                    <div class="flex items-center gap-2 mb-6 text-forest-950">
+                        <iconify-icon icon="solar:glasses-linear" width="28" stroke-width="1.5"></iconify-icon>
+                        <span class="text-xl font-medium tracking-tight font-dm-sans">Spectra</span>
+                    </div>
+                    <p class="text-forest-500 text-base leading-relaxed max-w-md font-sans mb-8">
+                        Ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <a href="#" class="w-10 h-10 rounded-full bg-forest-50 border border-forest-100 flex items-center justify-center text-forest-600 hover:bg-forest-950 hover:text-white hover:border-forest-950 transition-all duration-300">
+                            <iconify-icon icon="ri:twitter-x-line" width="18"></iconify-icon>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-forest-50 border border-forest-100 flex items-center justify-center text-forest-600 hover:bg-forest-950 hover:text-white hover:border-forest-950 transition-all duration-300">
+                            <iconify-icon icon="ri:instagram-line" width="18"></iconify-icon>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-forest-50 border border-forest-100 flex items-center justify-center text-forest-600 hover:bg-forest-950 hover:text-white hover:border-forest-950 transition-all duration-300">
+                            <iconify-icon icon="ri:linkedin-fill" width="18"></iconify-icon>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-forest-50 border border-forest-100 flex items-center justify-center text-forest-600 hover:bg-forest-950 hover:text-white hover:border-forest-950 transition-all duration-300">
+                            <iconify-icon icon="ri:github-fill" width="18"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+                
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-100 font-mono">01</span>
+                        <h4 class="font-semibold text-forest-950 font-dm-sans tracking-tight">Product</h4>
+                    </div>
+                    <ul class="space-y-3.5">
+                        <li><a href="#" class="text-sm text-forest-500 hover:text-forest-950 transition-colors font-sans font-medium">Features</a></li>
+                        <li><a href="#" class="text-sm text-forest-500 hover:text-forest-950 transition-colors font-sans font-medium">Pricing</a></li>
+                        <li><a href="#" class="text-sm text-forest-500 hover:text-forest-950 transition-colors font-sans font-medium">Integrations</a></li>
+                        <li><a href="#" class="text-sm text-forest-500 hover:text-forest-950 transition-colors font-sans font-medium">Changelog</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                     <div class="flex items-center gap-2 mb-6">
+                        <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-100 font-mono">02</span>
+                        <h4 class="font-semibold text-forest-950 font-dm-sans tracking-tight">Resources</h4>
+                    </div>
+                    <ul class="space-y-3.5">
+                        <li><a href="#" class="text-sm text-forest-500 hover:text-forest-950 transition-colors font-sans font-medium">Documentation</a></li>
+                        <li><a href="#" class="text-sm text-forest-500 hover:text-forest-950 transition-colors font-sans font-medium">Tutorials</a></li>
+                        <li><a href="#" class="text-sm text-forest-500 hover:text-forest-950 transition-colors font-sans font-medium">Blog</a></li>
+                        <li><a href="#" class="text-sm text-forest-500 hover:text-forest-950 transition-colors font-sans font-medium">Support</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                     <div class="flex items-center gap-2 mb-6">
+                        <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-100 font-mono">03</span>
+                        <h4 class="font-semibold text-forest-950 font-dm-sans tracking-tight">Company</h4>
+                    </div>
+                    <ul class="space-y-3.5">
+                        <li><a href="#" class="text-sm text-forest-500 hover:text-forest-950 transition-colors font-sans font-medium">About</a></li>
+                        <li><a href="#" class="text-sm text-forest-500 hover:text-forest-950 transition-colors font-sans font-medium">Careers</a></li>
+                        <li><a href="#" class="text-sm text-forest-500 hover:text-forest-950 transition-colors font-sans font-medium">Contact</a></li>
+                        <li><a href="#" class="text-sm text-forest-500 hover:text-forest-950 transition-colors font-sans font-medium">Partners</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="relative z-10 border-t border-forest-900/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-forest-400 font-sans">
+            <p>© 2025 Spectra. All rights reserved.</p>
+            <div class="flex items-center gap-6">
+                <a href="#" class="hover:text-forest-950 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-forest-950 transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-forest-950 transition-colors">Cookies Settings</a>
+            </div>
+        </div>
+
+    </div>
+</footer></div>
+  <code class="ds-meta">footer.bg-forest-50 &gt; div.bg-white.rounded-[2.5rem].shadow-2xl.shadow-forest-900/5 · brand column + three numbered link columns (mono emerald chips) · <b>SPECTRA</b> watermark text-[18vw] font-bold text-forest-900/[0.02] · bottom row border-forest-900/5</code>
+</div>
+</section>
+
+<section class="ds-group" id="components-badges">
+<div class="ds-head">
+  <div class="ds-kicker"><span class="n">08</span><i></i><span>Components</span></div>
+  <h2>Badges and status</h2>
+</div>
+
+<p class="ds-sub">Section index</p>
+<div class="ds-two">
+  <div class="ds-spec"><div class="ds-stage light"><div class="flex items-center gap-3 mb-6 opacity-80">
+                            <span class="text-xs font-mono font-bold tracking-widest text-emerald-700 bg-emerald-100/50 px-2 py-0.5 rounded font-sans">01</span>
+                            <div class="h-px w-8 bg-forest-900/30"></div>
+                            <span class="text-xs font-medium uppercase tracking-widest text-forest-900 font-sans">Lorem</span>
+                        </div></div>
+    <code class="ds-meta">mono chip emerald-700 on emerald-100/50 · h-px w-8 bg-forest-900/30 · eyebrow text-xs uppercase tracking-widest</code></div>
+  <div class="ds-spec"><div class="ds-stage dark"><div class="flex items-center gap-3 mb-4">
+                            <span class="text-xs font-mono font-bold tracking-widest text-emerald-400 bg-emerald-900/30 px-2 py-0.5 rounded font-sans">02</span>
+                            <div class="h-px w-8 bg-forest-600"></div>
+                            <span class="text-xs font-medium uppercase tracking-widest text-forest-400 font-sans">Ipsum</span>
+                        </div></div>
+    <code class="ds-meta">mono chip emerald-400 on emerald-900/30 · rule bg-forest-600 · eyebrow text-forest-400</code></div>
+</div>
+
+<p class="ds-sub">Number chips</p>
+<div class="ds-two">
+  <div class="ds-spec"><div class="ds-stage light"><div class="ds-row"><span class="text-xs font-mono font-bold text-forest-400 bg-forest-50 px-2 py-1 rounded font-sans">02 // SYSTEM ACTIVE</span><span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-100 font-mono">01</span></div></div>
+    <code class="ds-meta">text-xs font-mono font-bold text-forest-400 bg-forest-50 · text-[10px] text-emerald-600 bg-emerald-50 border-emerald-100</code></div>
+  <div class="ds-spec"><div class="ds-stage dark"><div class="ds-row"><span class="text-xs font-mono font-bold text-forest-500 bg-white/5 px-2 py-1 rounded font-sans border border-white/5">01</span><span class="text-xs font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded font-sans border border-emerald-500/20">02</span><div class="text-white"><div class="flex items-center gap-2 mb-3 opacity-60">
+                                <span class="text-[10px] font-mono font-sans">03</span>
+                                <div class="h-px w-4 bg-white/30"></div>
+                            </div></div></div></div>
+    <code class="ds-meta">bg-white/5 border-white/5 text-forest-500 · featured bg-emerald-500/10 border-emerald-500/20 text-emerald-400 · card index text-[10px] font-mono opacity-60 + h-px w-4 bg-white/30</code></div>
+</div>
+
+<p class="ds-sub">Tags</p>
+<div class="ds-stage dark"><div class="ds-row"><span class="text-xs font-medium text-emerald-400 uppercase tracking-widest font-sans border border-emerald-500/20 px-2 py-0.5 rounded-md bg-emerald-500/5">Lorem</span><span class="text-xs font-medium text-emerald-300 uppercase tracking-widest font-sans border border-emerald-400/20 px-2 py-0.5 rounded-md bg-emerald-400/10">Ipsumdol</span><div class="inline-block bg-emerald-500 text-emerald-950 text-[10px] font-bold uppercase tracking-widest py-1.5 px-4 rounded-full shadow-lg shadow-emerald-500/20 font-sans">
+                    Most Popular
+                </div><span class="text-[9px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-1.5 py-0.5 rounded-md font-mono">-20%</span><span class="text-[10px] uppercase tracking-widest font-semibold"><span class="text-emerald-300 bg-emerald-900/40 px-2 py-0.5 rounded border border-emerald-500/30">Optimal</span></span></div></div>
+<code class="ds-meta">plan tag border-emerald-500/20 bg-emerald-500/5 rounded-md · featured emerald-400/10 · <b>Most Popular</b> bg-emerald-500 text-emerald-950 text-[10px] font-bold rounded-full shadow-emerald-500/20 (absolute, centred on the featured card's top edge) · discount text-[9px] font-mono bg-emerald-500/20 border-emerald-500/30 · quality bg-emerald-900/40 border-emerald-500/30</code>
+
+<p class="ds-sub">Live status</p>
+<div class="ds-two">
+  <div class="ds-spec"><div class="ds-stage flush" style="height:150px"><img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/73497bc9-224a-4cab-a551-92adf0b5a098_1600w.webp" alt="" class="absolute inset-0 w-full h-full object-cover"><div class="bg-gradient-to-t from-forest-950/60 to-transparent absolute inset-0"></div>
+    <div class="relative flex flex-wrap items-center gap-4 h-full px-6"><div class="inline-flex bg-black/30 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                <span class="text-[10px] font-medium text-white uppercase tracking-wider font-sans">Connected</span>
+                            </div><div class="inline-flex bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-white font-sans">V 2.4 Docs</span>
+                        </div></div></div>
+    <code class="ds-meta">glass pills on media: black/30 + backdrop-blur-md, white/10 + border-white/20 · dot bg-emerald-400 animate-pulse</code></div>
+  <div class="ds-spec"><div class="ds-stage dark"><div class="flex flex-col items-start gap-2"><div class="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
+            <div class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
+            <span class="text-[10px] font-medium text-emerald-200 uppercase tracking-widest font-sans">Lorem Ipsum</span>
+        </div><div class="mt-16 text-center reveal-on-scroll delay-300">
+            <p class="text-sm text-forest-500 font-sans">
+                <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 mr-2 animate-pulse"></span>
+                Ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor.
+            </p>
+        </div></div></div>
+    <code class="ds-meta">pill rounded-full border-white/10 bg-white/5 backdrop-blur-sm · w-1.5 h-1.5 pulse · offer line text-sm text-forest-500 with a w-2 h-2 pulse dot</code></div>
+</div>
+</section>
+
+<section class="ds-group" id="components-controls">
+<div class="ds-head">
+  <div class="ds-kicker"><span class="n">09</span><i></i><span>Components</span></div>
+  <h2>Controls</h2>
+</div>
+
+<div class="ds-spec">
+  <h3>Billing toggle</h3>
+  <div class="ds-stage dark"><div class="flex justify-center pt-3"><div class="flex items-center p-1.5 bg-forest-900/50 backdrop-blur-sm rounded-full border border-white/10 relative">
+                <div class="relative z-10 grid grid-cols-2 gap-2">
+                    <button class="px-8 py-2.5 rounded-full bg-forest-800 text-white shadow-lg border border-white/5 text-sm font-medium font-sans tracking-wide transition-all">Monthly</button>
+                    <button class="px-8 py-2.5 rounded-full text-forest-400 hover:text-white text-sm font-medium font-sans tracking-wide transition-all relative group">
+                        Annual
+                        <span class="absolute -top-3 -right-3 text-[9px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-1.5 py-0.5 rounded-md font-mono">-20%</span>
+                    </button>
+                </div>
+            </div></div></div>
+  <code class="ds-meta">well p-1.5 bg-forest-900/50 backdrop-blur-sm rounded-full border-white/10 · <b>selected</b> bg-forest-800 shadow-lg border-white/5 text-white · <b>default</b> text-forest-400 → hover white · static in the source (no script switches it)</code>
+</div>
+
+<div class="ds-spec">
+  <h3>Accordion</h3>
+  <div class="ds-stage light"><div class="lg:col-span-7 flex flex-col">
+                <div class="group border-b border-forest-900/10 reveal-on-scroll delay-100">
+                    <button class="faq-toggle w-full py-8 flex items-center justify-between text-left focus:outline-none cursor-pointer group-hover:text-emerald-700 transition-colors" aria-expanded="false">
+                        <span class="text-xl md:text-2xl font-dm-sans font-normal text-forest-950 group-hover:text-emerald-800 transition-colors tracking-tight">Consequat duis aute irure dolor in reprehenderit?</span>
+                        <div class="w-10 h-10 rounded-full border border-forest-900/10 flex items-center justify-center text-forest-400 group-hover:border-emerald-500/30 group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-all duration-300 relative">
+                            <iconify-icon icon="lucide:plus" width="20" stroke-width="1.5" class="absolute transition-transform duration-300 opacity-100 icon-plus"></iconify-icon>
+                            <iconify-icon icon="lucide:minus" width="20" stroke-width="1.5" class="absolute transition-transform duration-300 opacity-0 rotate-90 icon-minus"></iconify-icon>
+                        </div>
+                    </button>
+                    <div class="faq-content grid grid-rows-[0fr] transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]">
+                        <div class="overflow-hidden">
+                            <div class="pb-8 pr-12">
+                                <p class="text-forest-600 font-sans text-base leading-relaxed">
+                                    Aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group border-b border-forest-900/10 reveal-on-scroll delay-200">
+                    <button class="faq-toggle w-full py-8 flex items-center justify-between text-left focus:outline-none cursor-pointer group-hover:text-emerald-700 transition-colors" aria-expanded="false">
+                        <span class="text-xl md:text-2xl font-dm-sans font-normal text-forest-950 group-hover:text-emerald-800 transition-colors tracking-tight">Adipiscing elit sed do eiusmod tempor incididunt?</span>
+                        <div class="w-10 h-10 rounded-full border border-forest-900/10 flex items-center justify-center text-forest-400 group-hover:border-emerald-500/30 group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-all duration-300 relative">
+                            <iconify-icon icon="lucide:plus" width="20" stroke-width="1.5" class="absolute transition-transform duration-300 opacity-100 icon-plus"></iconify-icon>
+                            <iconify-icon icon="lucide:minus" width="20" stroke-width="1.5" class="absolute transition-transform duration-300 opacity-0 rotate-90 icon-minus"></iconify-icon>
+                        </div>
+                    </button>
+                    <div class="faq-content grid grid-rows-[0fr] transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]">
+                        <div class="overflow-hidden">
+                            <div class="pb-8 pr-12">
+                                <p class="text-forest-600 font-sans text-base leading-relaxed">
+                                    Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group border-b border-forest-900/10 reveal-on-scroll delay-300">
+                    <button class="faq-toggle w-full py-8 flex items-center justify-between text-left focus:outline-none cursor-pointer group-hover:text-emerald-700 transition-colors" aria-expanded="false">
+                        <span class="text-xl md:text-2xl font-dm-sans font-normal text-forest-950 group-hover:text-emerald-800 transition-colors tracking-tight">Ea commodo consequat duis aute irure dolor?</span>
+                        <div class="w-10 h-10 rounded-full border border-forest-900/10 flex items-center justify-center text-forest-400 group-hover:border-emerald-500/30 group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-all duration-300 relative">
+                            <iconify-icon icon="lucide:plus" width="20" stroke-width="1.5" class="absolute transition-transform duration-300 opacity-100 icon-plus"></iconify-icon>
+                            <iconify-icon icon="lucide:minus" width="20" stroke-width="1.5" class="absolute transition-transform duration-300 opacity-0 rotate-90 icon-minus"></iconify-icon>
+                        </div>
+                    </button>
+                    <div class="faq-content grid grid-rows-[0fr] transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]">
+                        <div class="overflow-hidden">
+                            <div class="pb-8 pr-12">
+                                <p class="text-forest-600 font-sans text-base leading-relaxed">
+                                    Laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum lorem ipsum dolor sit.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="group border-b border-forest-900/10 reveal-on-scroll delay-300">
+                    <button class="faq-toggle w-full py-8 flex items-center justify-between text-left focus:outline-none cursor-pointer group-hover:text-emerald-700 transition-colors" aria-expanded="false">
+                        <span class="text-xl md:text-2xl font-dm-sans font-normal text-forest-950 group-hover:text-emerald-800 transition-colors tracking-tight">Lorem ipsum dolor sit amet consectetur?</span>
+                        <div class="w-10 h-10 rounded-full border border-forest-900/10 flex items-center justify-center text-forest-400 group-hover:border-emerald-500/30 group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-all duration-300 relative">
+                            <iconify-icon icon="lucide:plus" width="20" stroke-width="1.5" class="absolute transition-transform duration-300 opacity-100 icon-plus"></iconify-icon>
+                            <iconify-icon icon="lucide:minus" width="20" stroke-width="1.5" class="absolute transition-transform duration-300 opacity-0 rotate-90 icon-minus"></iconify-icon>
+                        </div>
+                    </button>
+                    <div class="faq-content grid grid-rows-[0fr] transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]">
+                        <div class="overflow-hidden">
+                            <div class="pb-8 pr-12">
+                                <p class="text-forest-600 font-sans text-base leading-relaxed">
+                                    Elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div></div>
+  <code class="ds-meta">button.faq-toggle[aria-expanded] + div.faq-content.grid.grid-rows-[0fr] → 1fr (500ms cubic-bezier(0.25,1,0.5,1)) · lucide plus/minus cross-rotate 90° · one open at a time · open row text-emerald-700, hover chip emerald-50 / emerald-500/30 · the page's own script (click a row)</code>
+</div>
+
+<div class="ds-spec">
+  <h3>Hotspot</h3>
+  <div class="ds-stage flush" style="height:260px"><img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/936684c5-c133-46f6-b75b-466ea6d602bd_1600w.webp" alt="" class="absolute inset-0 w-full h-full object-cover"><div class="absolute top-1/3 right-1/4 w-8 h-8 flex items-center justify-center cursor-pointer group/dot">
+                                <div class="w-2.5 h-2.5 bg-white rounded-full shadow-lg z-10"></div>
+                                <div class="absolute inset-0 bg-white/30 rounded-full animate-ping"></div>
+                                <div class="absolute right-4 top-4 bg-white/95 backdrop-blur px-3 py-2 rounded-lg text-[10px] text-forest-900 font-medium opacity-0 group-hover/dot:opacity-100 transition-opacity whitespace-nowrap shadow-lg border border-forest-100">
+                                    <div class="flex items-center gap-2 font-sans">
+                                        <iconify-icon icon="lucide:cpu" width="12"></iconify-icon>
+                                        Micro-OLED Array
+                                    </div>
+                                </div>
+                            </div></div>
+  <code class="ds-meta">w-2.5 h-2.5 white dot + bg-white/30 animate-ping halo · hover (group/dot) reveals a bg-white/95 backdrop-blur tooltip with lucide cpu, text-[10px] forest-900 · its label is the page's (hidden until hover)</code>
+</div>
+</section>
+
+<section class="ds-group" id="components-cards">
+<div class="ds-head">
+  <div class="ds-kicker"><span class="n">10</span><i></i><span>Components</span></div>
+  <h2>Cards</h2>
+</div>
+
+<div class="ds-spec">
+  <h3>Hero preview card</h3>
+  <div class="ds-stage hero"><div class="ds-ground"><div class="absolute top-0 right-0 bottom-0 left-0">
+        <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0dd9b13b-ea30-4e17-8a26-53d1f9d1c6d3_3840w.webp" alt="Background Network" class="object-bottom brightness-[0.6] saturate-[0.8] opacity-100 w-full h-full object-cover blur-xl">
+        <div class="bg-gradient-to-t from-forest-100/90 via-forest-50/50 to-forest-50/70 absolute inset-0 mix-blend-overlay"></div>
+        <div class="bg-gradient-to-b from-forest-50/90 via-transparent to-forest-950/40 absolute inset-0"></div>
+    </div><div class="absolute inset-0 z-0 pointer-events-none grid grid-cols-12 gap-4 px-6 md:px-12 w-full max-w-[1600px] mx-auto opacity-[0.08]">
+        <div class="border-l border-forest-950 h-full col-start-1"></div>
+        <div class="border-l border-forest-950 h-full col-start-3 hidden md:block"></div>
+        <div class="border-l border-forest-950 h-full col-start-5 hidden md:block"></div>
+        <div class="border-l border-forest-950 h-full col-start-7 hidden md:block"></div>
+        <div class="border-l border-forest-950 h-full col-start-9 hidden md:block"></div>
+        <div class="border-l border-forest-950 h-full col-start-11 hidden md:block"></div>
+        <div class="border-r border-forest-950 h-full col-end-13"></div>
+    </div></div>
+    <div class="relative flex justify-center"><div class="relative w-full max-w-2xl bg-white/60 backdrop-blur-md rounded-[2rem] shadow-2xl shadow-forest-900/5 p-4 md:p-6 overflow-hidden transform transition-transform hover:scale-[1.01] duration-700 border border-white/40">
+                        
+                        <div class="flex flex-wrap items-center justify-between gap-4 mb-6 px-2">
+                            <div class="flex gap-2">
+                                <div class="w-8 h-8 rounded-full bg-forest-50 border border-forest-100 flex items-center justify-center text-forest-600">
+                                    <iconify-icon icon="lucide:wifi" width="16"></iconify-icon>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-forest-50 border border-forest-100 flex items-center justify-center text-forest-600">
+                                    <iconify-icon icon="lucide:battery-medium" width="16"></iconify-icon>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono font-bold text-forest-400 bg-forest-50 px-2 py-1 rounded font-sans">02 // SYSTEM ACTIVE</span>
+                        </div>
+                        
+                        <div class="relative w-full h-72 md:h-96 rounded-2xl overflow-hidden group">
+                            <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/936684c5-c133-46f6-b75b-466ea6d602bd_1600w.webp" alt="AR Glasses" class="transform group-hover:scale-105 transition-transform duration-700 contrast-[1.1] brightness-[0.9] w-full h-full object-cover">
+                            
+                            <div class="absolute top-1/3 right-1/4 w-8 h-8 flex items-center justify-center cursor-pointer group/dot">
+                                <div class="w-2.5 h-2.5 bg-white rounded-full shadow-lg z-10"></div>
+                                <div class="absolute inset-0 bg-white/30 rounded-full animate-ping"></div>
+                                <div class="absolute right-4 top-4 bg-white/95 backdrop-blur px-3 py-2 rounded-lg text-[10px] text-forest-900 font-medium opacity-0 group-hover/dot:opacity-100 transition-opacity whitespace-nowrap shadow-lg border border-forest-100">
+                                    <div class="flex items-center gap-2 font-sans">
+                                        <iconify-icon icon="lucide:cpu" width="12"></iconify-icon>
+                                        Micro-OLED Array
+                                    </div>
+                                </div>
+                            </div>
+
+                             <div class="absolute bottom-4 right-4 bg-black/30 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                <span class="text-[10px] font-medium text-white uppercase tracking-wider font-sans">Connected</span>
+                            </div>
+                        </div>
+                    </div></div></div>
+  <code class="ds-meta">bg-white/60 backdrop-blur-md rounded-[2rem] border-white/40 · lucide chips + mono status · photo h-72 md:h-96 rounded-2xl (group-hover:scale-105, 700ms) + hotspot + Connected pill</code>
+</div>
+
+<div class="ds-spec">
+  <h3>Hero glass cards</h3>
+  <div class="ds-stage hero"><div class="ds-ground"><div class="absolute top-0 right-0 bottom-0 left-0">
+        <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0dd9b13b-ea30-4e17-8a26-53d1f9d1c6d3_3840w.webp" alt="Background Network" class="object-bottom brightness-[0.6] saturate-[0.8] opacity-100 w-full h-full object-cover blur-xl">
+        <div class="bg-gradient-to-t from-forest-100/90 via-forest-50/50 to-forest-50/70 absolute inset-0 mix-blend-overlay"></div>
+        <div class="bg-gradient-to-b from-forest-50/90 via-transparent to-forest-950/40 absolute inset-0"></div>
+    </div></div>
+    <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-6 items-end"><div class="lg:col-span-5"><div class="bg-forest-950/80 backdrop-blur-2xl text-white rounded-[2rem] p-6 md:p-8 flex items-center justify-between shadow-2xl shadow-forest-950/20 border border-white/10 relative overflow-hidden group hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                        <div class="relative z-10 max-w-[60%]">
+                            <div class="flex items-center gap-2 mb-3 opacity-60">
+                                <span class="text-[10px] font-mono font-sans">03</span>
+                                <div class="h-px w-4 bg-white/30"></div>
+                            </div>
+                            <h3 class="text-xl md:text-2xl leading-snug mb-2 tracking-tight font-dm-sans font-light">Lorem Ipsum Dolor Sit.</h3>
+                            <p class="text-xs text-forest-300 mb-6 font-light font-sans">Consectetur adipiscing elit.</p>
+                            <div class="w-8 h-8 rounded-full border border-white/20 bg-white/5 flex items-center justify-center group-hover:bg-emerald-500/20 group-hover:border-emerald-500/50 group-hover:text-emerald-400 transition-colors">
+                                <iconify-icon icon="lucide:arrow-up-right" width="16" stroke-width="1.5"></iconify-icon>
+                            </div>
+                        </div>
+                        <div class="absolute right-[-20px] bottom-[-20px] w-40 h-40">
+                             <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/0c8f3560-bcc7-441d-9d12-6eb2fbb9aeea_320w.webp" class="grayscale-[0.2] contrast-150 opacity-60 w-full h-full object-cover border-white/5 border-4 rounded-tl-[2rem]" alt="Interface">
+                        </div>
+                    </div></div><div class="lg:col-span-7"><div class="bg-forest-950/80 backdrop-blur-2xl border border-white/10 rounded-[2rem] p-6 md:p-8 shadow-2xl shadow-forest-950/20 flex flex-col md:flex-row items-start md:items-end justify-between gap-8 h-full group hover:border-emerald-500/20 transition-colors duration-300">
+                        <div class="flex flex-col gap-3">
+                            <div class="flex -space-x-3">
+                                <img class="w-10 h-10 rounded-full border-2 border-forest-950 object-cover" src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b361f672-271a-4e77-9412-6a1094c00dd7_320w.webp" alt="User">
+                                <img class="w-10 h-10 rounded-full border-2 border-forest-950 object-cover" src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/73497bc9-224a-4cab-a551-92adf0b5a098_320w.webp" alt="User">
+                                <div class="w-10 h-10 rounded-full border-2 border-forest-950 bg-forest-800 flex items-center justify-center text-[10px] font-bold text-white font-sans">4K</div>
+                            </div>
+                            <div class="">
+                                <span class="block text-4xl text-white drop-shadow-sm tracking-tight font-dm-sans font-light">120<span class="not-italic text-2xl text-forest-400 font-dm-sans font-light">Hz</span></span>
+                                <span class="text-xs text-forest-400 font-medium tracking-wide uppercase font-sans">Refresh Rate</span>
+                            </div>
+                        </div>
+                        <div class="max-w-xs md:text-right">
+                            <p class="text-lg md:text-xl font-medium text-white leading-snug tracking-tight font-sans">
+                                LOREM IPSUM <span class="text-forest-400 font-sans">&nbsp;DOLOR SIT AMET</span>
+                            </p>
+                            <a href="#" class="inline-block mt-4 text-xs font-bold text-forest-200 border-b border-white/20 pb-0.5 hover:border-emerald-400 hover:text-emerald-400 transition-colors uppercase tracking-widest font-sans">
+                                Lorem Ipsum
+                            </a>
+                        </div>
+                    </div></div></div></div>
+  <code class="ds-meta">bg-forest-950/80 backdrop-blur-2xl rounded-[2rem] border-white/10 shadow-forest-950/20 · <b>feature</b>: index, DM Sans light title, round arrow, contrast-150 photo bleeding off the corner (hover:-translate-y-1) · <b>stat</b>: avatar stack + 4K disc, 120Hz, statement + underline link (hover border-emerald-500/20)</code>
+</div>
+
+<div class="ds-spec">
+  <h3>Process cards</h3>
+  <div class="ds-stage dark"><div class="absolute inset-0 z-0 pointer-events-none grid grid-cols-12 gap-4 px-6 md:px-12 w-full max-w-[1600px] mx-auto opacity-[0.05]">
+                <div class="border-l border-white h-full col-start-1"></div>
+                <div class="border-l border-white h-full col-start-3 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-5 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-7 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-9 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-11 hidden md:block"></div>
+                <div class="border-r border-white h-full col-end-13"></div>
+            </div><div class="relative grid grid-cols-1 md:grid-cols-3 gap-8"><div class="group p-8 bg-forest-900/20 rounded-3xl border border-white/5 hover:border-emerald-500/30 hover:bg-forest-900/40 transition-all duration-500 reveal-on-scroll delay-100">
+                        <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 group-hover:text-emerald-400 transition-colors duration-300 text-forest-200">
+                            <iconify-icon icon="lucide:scan" width="24" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl text-forest-100 mb-3 font-semibold tracking-tight font-sans">Lorem Ipsum</h3>
+                        <p class="text-sm text-forest-400 leading-relaxed mb-6 font-sans">
+                            Commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                        <div class="w-full h-px bg-white/5 mt-auto"></div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-xs font-bold uppercase tracking-widest text-forest-500 group-hover:text-emerald-400 transition-colors font-sans">Phase 01</span>
+                            <iconify-icon icon="lucide:arrow-right" class="text-forest-700 group-hover:text-emerald-500 transition-colors opacity-0 group-hover:opacity-100" width="16"></iconify-icon>
+                        </div>
+                    </div><div class="group p-8 bg-forest-900/20 rounded-3xl border border-white/5 hover:border-emerald-500/30 hover:bg-forest-900/40 transition-all duration-500 reveal-on-scroll delay-200">
+                        <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 group-hover:text-emerald-400 transition-colors duration-300 text-forest-200">
+                            <iconify-icon icon="lucide:cpu" width="24" stroke-width="1.5"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl text-forest-100 mb-3 font-semibold tracking-tight font-sans">Dolor Sitamet</h3>
+                        <p class="text-sm text-forest-400 leading-relaxed mb-6 font-sans">
+                            Ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.
+                        </p>
+                        <div class="w-full h-px bg-white/5 mt-auto"></div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-xs font-bold uppercase tracking-widest text-forest-500 group-hover:text-emerald-400 transition-colors font-sans">Phase 02</span>
+                            <iconify-icon icon="lucide:arrow-right" class="text-forest-700 group-hover:text-emerald-500 transition-colors opacity-0 group-hover:opacity-100" width="16"></iconify-icon>
+                        </div>
+                    </div><div class="group p-8 bg-forest-900/20 rounded-3xl border border-white/5 hover:border-emerald-500/30 hover:bg-forest-900/40 transition-all duration-500 reveal-on-scroll delay-300">
+                        <div class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 group-hover:text-emerald-400 transition-colors duration-300 text-forest-200">
+                            <iconify-icon icon="lucide:eye" width="24" stroke-width="1.5" class=""></iconify-icon>
+                        </div>
+                        <h3 class="text-xl text-forest-100 mb-3 font-semibold tracking-tight font-sans">Consectetur Elit</h3>
+                        <p class="text-sm text-forest-400 leading-relaxed mb-6 font-sans">
+                            Nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit.
+                        </p>
+                        <div class="w-full h-px bg-white/5 mt-auto"></div>
+                        <div class="mt-4 flex justify-between items-center">
+                            <span class="text-xs font-bold uppercase tracking-widest text-forest-500 group-hover:text-emerald-400 transition-colors font-sans">Phase 03</span>
+                            <iconify-icon icon="lucide:arrow-right" class="text-forest-700 group-hover:text-emerald-500 transition-colors opacity-0 group-hover:opacity-100" width="16"></iconify-icon>
+                        </div>
+                    </div></div></div>
+  <code class="ds-meta">div.group.p-8.bg-forest-900/20.rounded-3xl.border-white/5 → hover border-emerald-500/30 bg-forest-900/40 (500ms) · icon disc white/5 → emerald-500/20 · phase label + arrow fade in on hover</code>
+</div>
+
+<div class="ds-spec">
+  <h3>Application cards</h3>
+  <div class="ds-stage light"><div class="grid grid-cols-1 lg:grid-cols-12 h-auto gap-x-6 gap-y-6">
+                    
+                    <div class="lg:col-span-8 lg:h-full group overflow-hidden cursor-pointer reveal-on-scroll delay-100 border-forest-900/5 h-[400px] border rounded-3xl relative">
+                        <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4a5db304-521a-4815-86d8-0c7198201df9_1600w.webp" class="transition-transform duration-700 group-hover:scale-105 group-hover:saturate-100 w-full h-full object-cover saturate-0" alt="Work Context">
+                        <div class="bg-gradient-to-t from-forest-950/90 via-forest-950/20 to-transparent opacity-90 absolute top-0 right-0 bottom-0 left-0"></div>
+                        <div class="absolute bottom-0 left-0 p-8 w-full">
+                            <div class="flex justify-between items-end">
+                                <div>
+                                    <span class="text-xs font-medium text-emerald-200 uppercase tracking-widest mb-2 block font-sans">Eiusmod</span>
+                                    <h3 class="text-3xl text-white tracking-tighter font-dm-sans font-light">Lorem Ipsum</h3>
+                                </div>
+                                <div class="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 group-hover:bg-emerald-500 group-hover:border-emerald-500 transition-all text-white">
+                                    <iconify-icon icon="lucide:monitor" width="24" stroke-width="1.5"></iconify-icon>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-4 flex flex-col gap-6 h-full">
+                        
+                        <div class="flex-1 relative group rounded-3xl overflow-hidden cursor-pointer h-[300px] lg:h-auto reveal-on-scroll delay-200 border border-forest-900/5">
+                            <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b361f672-271a-4e77-9412-6a1094c00dd7_1600w.webp" class="transition-transform duration-700 group-hover:scale-105 w-full h-full object-cover" alt="Navigation">
+                            <div class="group-hover:bg-forest-950/10 transition-colors bg-forest-950/30 absolute top-0 right-0 bottom-0 left-0"></div>
+                            <div class="absolute bottom-6 left-6">
+                                <span class="text-[10px] font-medium text-white/90 uppercase tracking-widest block mb-1 font-sans">Aliqua</span>
+                                <h3 class="text-xl font-medium text-white tracking-tight font-sans">Dolor Sit Amet</h3>
+                            </div>
+                        </div>
+
+                        <div class="flex-1 relative group rounded-3xl overflow-hidden cursor-pointer h-[300px] lg:h-auto reveal-on-scroll delay-300 border border-forest-900/5">
+                            <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/a59dfabf-000e-46ac-991c-caf36fcef378_800w.webp" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Gaming">
+                            <div class="absolute inset-0 bg-forest-950/30 group-hover:bg-forest-950/10 transition-colors"></div>
+                            <div class="absolute bottom-6 left-6">
+                                <span class="text-[10px] font-medium text-white/90 uppercase tracking-widest block mb-1 font-sans">Veniam</span>
+                                <h3 class="text-xl font-medium text-white tracking-tight font-sans">Magna Aliqua</h3>
+                            </div>
+                        </div>
+
+                    </div>
+                </div></div>
+  <code class="ds-meta">rounded-3xl media cards, border-forest-900/5 · image group-hover:scale-105 (700ms) · large: fade from-forest-950/90 + DM Sans light title + round glass icon · small: forest-950/30 tint → /10 on hover</code>
+</div>
+
+<div class="ds-two">
+  <div class="ds-spec">
+    <h3>Quote card</h3>
+    <div class="ds-stage dark ds-testi"><div class="w-[400px] md:w-[500px] bg-forest-900/10 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:bg-forest-900/20 hover:border-emerald-500/20 transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="flex items-center gap-4">
+                        <img src="assets/overview/assets/i.pravatar.cc/150__qd3fddb49.jpg" alt="Avatar" class="w-12 h-12 rounded-full border border-white/10 grayscale group-hover:grayscale-0 transition-all">
+                        <div>
+                            <h4 class="text-sm font-semibold text-white uppercase tracking-wider font-sans">Lorem Ipsum</h4>
+                            <span class="text-xs text-forest-400 font-mono">Lorem Ipsum, DOLOR</span>
+                        </div>
+                    </div>
+                    <iconify-icon icon="solar:chip-linear" class="text-emerald-500/50 group-hover:text-emerald-400 transition-colors" width="32"></iconify-icon>
+                </div>
+                <p class="text-lg md:text-xl text-forest-100 font-light uppercase leading-snug tracking-tight font-sans">
+                    "Commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat."
+                </p>
+            </div></div>
+    <code class="ds-meta">w-[400px] md:w-[500px] bg-forest-900/10 backdrop-blur-md border-white/5 rounded-2xl p-8 · avatar grayscale → colour on hover · solar icon emerald-500/50 → emerald-400 · width capped to the column here</code>
+  </div>
+  <div class="ds-spec">
+    <h3>Documentation card</h3>
+    <div class="ds-stage light"><div class="group cursor-pointer">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-forest-900/10 border border-forest-900/5 aspect-[4/3] transform transition-transform duration-700 hover:scale-[1.02]">
+                        <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/73497bc9-224a-4cab-a551-92adf0b5a098_1600w.webp" alt="Documentation Preview" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 saturate-[0.8] group-hover:saturate-100" style="">
+                        <div class="bg-gradient-to-t from-forest-950/60 to-transparent absolute top-0 right-0 bottom-0 left-0"></div>
+                        
+                        <div class="absolute top-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1.5 rounded-full flex items-center gap-2">
+                            <div class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-white font-sans">V 2.4 Docs</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="text-lg font-semibold text-forest-950 mb-2 font-dm-sans">Lorem Ipsum Dolorsit</h4>
+                        <p class="text-sm text-forest-500 font-sans leading-relaxed mb-4">
+                            Ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt.
+                        </p>
+                        <a href="#" class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-emerald-600 hover:text-emerald-800 transition-colors font-sans group/link">
+                            Lorem Ipsum
+                            <iconify-icon icon="lucide:arrow-right" width="16" class="group-hover/link:translate-x-1 transition-transform"></iconify-icon>
+                        </a>
+                    </div>
+                </div></div>
+    <code class="ds-meta">aspect-[4/3] rounded-3xl photo, fade from-forest-950/60, glass version pill · hover:scale-[1.02] · title DM Sans 600 + emerald link (sticky top-32 in the page)</code>
+  </div>
+</div>
+
+<div class="ds-spec">
+  <h3>Plan cards</h3>
+  <div class="ds-stage dark" style="padding-top:64px"><div class="absolute inset-0 z-0 pointer-events-none grid grid-cols-12 gap-4 px-6 md:px-12 w-full max-w-[1600px] mx-auto opacity-[0.05]">
+                <div class="border-l border-white h-full col-start-1"></div>
+                <div class="border-l border-white h-full col-start-3 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-5 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-7 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-9 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-11 hidden md:block"></div>
+                <div class="border-r border-white h-full col-end-13"></div>
+            </div><div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-900/20 blur-[120px] rounded-full pointer-events-none z-0"></div><div class="relative"><div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-start relative">
+            
+            <div class="relative bg-forest-900/20 backdrop-blur-md border border-white/5 rounded-[2rem] p-8 md:p-10 group hover:bg-forest-900/40 transition-all duration-500 reveal-on-scroll delay-100 flex flex-col h-full">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="w-12 h-12 rounded-2xl bg-forest-800/50 border border-white/5 flex items-center justify-center text-forest-300 group-hover:text-emerald-400 group-hover:border-emerald-500/30 transition-all duration-300">
+                        <iconify-icon icon="solar:user-linear" width="24" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <span class="text-xs font-mono font-bold text-forest-500 bg-white/5 px-2 py-1 rounded font-sans border border-white/5">01</span>
+                </div>
+                
+                <div class="mb-2">
+                    <span class="text-xs font-medium text-emerald-400 uppercase tracking-widest font-sans border border-emerald-500/20 px-2 py-0.5 rounded-md bg-emerald-500/5">Lorem</span>
+                </div>
+                <h3 class="text-3xl text-white font-dm-sans tracking-tight mb-4">Lorem</h3>
+                <div class="flex items-baseline gap-1 mb-8">
+                    <span class="text-4xl lg:text-5xl font-light text-white font-dm-sans">$0</span>
+                    <span class="text-forest-400 font-sans text-sm">/ mo</span>
+                </div>
+                <p class="text-sm text-forest-300 mb-8 border-b border-white/5 pb-8 font-sans">
+                    Consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.
+                </p>
+
+                <ul class="space-y-4 mb-10 flex-1">
+                    <li class="flex items-center gap-3 text-forest-200 text-sm font-sans">
+                        <iconify-icon icon="solar:check-circle-linear" class="text-emerald-500" width="18"></iconify-icon>
+                        Lorem ipsum dolor sit
+                    </li>
+                    <li class="flex items-center gap-3 text-forest-200 text-sm font-sans">
+                        <iconify-icon icon="solar:check-circle-linear" class="text-emerald-500" width="18"></iconify-icon>
+                        Amet consectetur elit
+                    </li>
+                    <li class="flex items-center gap-3 text-forest-200 text-sm font-sans">
+                        <iconify-icon icon="solar:check-circle-linear" class="text-emerald-500" width="18"></iconify-icon>
+                        Sed do eiusmod
+                    </li>
+                    <li class="flex items-center gap-3 text-forest-200 text-sm font-sans">
+                        <iconify-icon icon="solar:check-circle-linear" class="text-emerald-500" width="18"></iconify-icon>
+                        Tempor incididunt
+                    </li>
+                </ul>
+
+                <button class="w-full py-4 rounded-xl border border-white/10 text-white font-medium hover:bg-white hover:text-forest-950 transition-all duration-300 font-sans text-sm">
+                    Lorem Ipsum
+                </button>
+            </div>
+
+            <div class="relative bg-gradient-to-b from-forest-900/80 to-forest-950/80 backdrop-blur-xl border border-emerald-500/30 rounded-[2.5rem] p-8 md:p-12 shadow-2xl shadow-emerald-900/20 z-10 transform lg:-translate-y-6 group hover:border-emerald-400/50 transition-all duration-500 reveal-on-scroll delay-200 flex flex-col h-full">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-emerald-500 text-emerald-950 text-[10px] font-bold uppercase tracking-widest py-1.5 px-4 rounded-full shadow-lg shadow-emerald-500/20 font-sans">
+                    Most Popular
+                </div>
+
+                <div class="flex justify-between items-start mb-8">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-emerald-900/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                        <iconify-icon icon="solar:crown-star-linear" width="28" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <span class="text-xs font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded font-sans border border-emerald-500/20">02</span>
+                </div>
+                
+                <div class="mb-2">
+                    <span class="text-xs font-medium text-emerald-300 uppercase tracking-widest font-sans border border-emerald-400/20 px-2 py-0.5 rounded-md bg-emerald-400/10">Ipsumdol</span>
+                </div>
+                <h3 class="text-3xl text-white font-dm-sans tracking-tight mb-4">Ipsum</h3>
+                <div class="flex items-baseline gap-1 mb-8">
+                    <span class="text-5xl lg:text-6xl font-light text-white font-dm-sans tracking-tighter">$99</span>
+                    <span class="text-forest-400 font-sans text-sm">/ mo</span>
+                </div>
+                <p class="text-sm text-forest-300 mb-8 border-b border-white/10 pb-8 font-sans leading-relaxed">
+                    Aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </p>
+
+                <ul class="space-y-5 mb-10 flex-1">
+                    <li class="flex items-center gap-3 text-white text-sm font-sans">
+                        <div class="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center text-forest-950 text-xs">
+                            <iconify-icon icon="solar:check-read-linear" stroke-width="2.5"></iconify-icon>
+                        </div>
+                        Labore et dolore magna
+                    </li>
+                    <li class="flex items-center gap-3 text-white text-sm font-sans">
+                        <div class="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center text-forest-950 text-xs">
+                            <iconify-icon icon="solar:check-read-linear" stroke-width="2.5"></iconify-icon>
+                        </div>
+                        Aliqua ut enim ad minim
+                    </li>
+                    <li class="flex items-center gap-3 text-white text-sm font-sans">
+                        <div class="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center text-forest-950 text-xs">
+                            <iconify-icon icon="solar:check-read-linear" stroke-width="2.5"></iconify-icon>
+                        </div>
+                        Veniam quis nostrud
+                    </li>
+                    <li class="flex items-center gap-3 text-white text-sm font-sans">
+                        <div class="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center text-forest-950 text-xs">
+                            <iconify-icon icon="solar:check-read-linear" stroke-width="2.5"></iconify-icon>
+                        </div>
+                        Exercitation ullamco labor
+                    </li>
+                    
+                </ul>
+
+                <button class="w-full py-4 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-medium hover:shadow-lg hover:shadow-emerald-500/25 hover:scale-[1.02] transition-all duration-300 font-sans text-sm relative overflow-hidden">
+                    <span class="relative z-10 flex items-center justify-center gap-2">
+                        Lorem Ipsum
+                        <iconify-icon icon="solar:arrow-right-linear" width="18"></iconify-icon>
+                    </span>
+                </button>
+            </div>
+
+            <div class="relative bg-forest-900/20 backdrop-blur-md border border-white/5 rounded-[2rem] p-8 md:p-10 group hover:bg-forest-900/40 transition-all duration-500 reveal-on-scroll delay-300 flex flex-col h-full">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="w-12 h-12 rounded-2xl bg-forest-800/50 border border-white/5 flex items-center justify-center text-forest-300 group-hover:text-emerald-400 group-hover:border-emerald-500/30 transition-all duration-300">
+                        <iconify-icon icon="solar:buildings-2-linear" width="24" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <span class="text-xs font-mono font-bold text-forest-500 bg-white/5 px-2 py-1 rounded font-sans border border-white/5">03</span>
+                </div>
+                
+                <div class="mb-2">
+                    <span class="text-xs font-medium text-emerald-400 uppercase tracking-widest font-sans border border-emerald-500/20 px-2 py-0.5 rounded-md bg-emerald-500/5">Dolor</span>
+                </div>
+                <h3 class="text-3xl text-white font-dm-sans tracking-tight mb-4">Dolorsit</h3>
+                <div class="flex items-baseline gap-1 mb-8">
+                    <span class="text-4xl lg:text-5xl font-light text-white font-dm-sans">Custom</span>
+                </div>
+                <p class="text-sm text-forest-300 mb-8 border-b border-white/5 pb-8 font-sans">
+                    Ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.
+                </p>
+
+                <ul class="space-y-4 mb-10 flex-1">
+                    <li class="flex items-center gap-3 text-forest-200 text-sm font-sans">
+                        <iconify-icon icon="solar:check-circle-linear" class="text-emerald-500" width="18"></iconify-icon>
+                        Nisi ut aliquip ex ea
+                    </li>
+                    <li class="flex items-center gap-3 text-forest-200 text-sm font-sans">
+                        <iconify-icon icon="solar:check-circle-linear" class="text-emerald-500" width="18"></iconify-icon>
+                        Commodo consequat duis aute
+                    </li>
+                    <li class="flex items-center gap-3 text-forest-200 text-sm font-sans">
+                        <iconify-icon icon="solar:check-circle-linear" class="text-emerald-500" width="18"></iconify-icon>
+                        Irure dolor in reprehen
+                    </li>
+                    <li class="flex items-center gap-3 text-forest-200 text-sm font-sans">
+                        <iconify-icon icon="solar:check-circle-linear" class="text-emerald-500" width="18"></iconify-icon>
+                        Voluptate velit esse cillum
+                    </li>
+                </ul>
+
+                <button class="w-full py-4 rounded-xl border border-white/10 text-white font-medium hover:bg-white hover:text-forest-950 transition-all duration-300 font-sans text-sm">
+                    Dolor Sitam
+                </button>
+            </div>
+
+        </div></div></div>
+  <code class="ds-meta"><b>standard</b> bg-forest-900/20 backdrop-blur-md border-white/5 rounded-[2rem] · <b>featured</b> bg-gradient-to-b from-forest-900/80 to-forest-950/80 backdrop-blur-xl border-emerald-500/30 rounded-[2.5rem] lg:-translate-y-6, Most Popular tag on its top edge, check discs bg-emerald-500 · price DM Sans light</code>
+</div>
+
+<div class="ds-spec">
+  <h3>Feature items</h3>
+  <div class="ds-stage white"><div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 mb-12">
+                    <div class="">
+                        <div class="flex items-center gap-3 mb-3">
+                            <iconify-icon icon="solar:map-point-linear" class="text-emerald-600" width="24"></iconify-icon>
+                            <h3 class="text-xl font-semibold text-forest-950 tracking-tight font-dm-sans">Lorem Ipsum</h3>
+                        </div>
+                        <p class="text-base text-forest-500 font-sans leading-relaxed">
+                            Ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit.
+                        </p>
+                    </div>
+
+                    <div class="">
+                        <div class="flex items-center gap-3 mb-3">
+                            <iconify-icon icon="solar:magic-stick-3-linear" class="text-emerald-600" width="24"></iconify-icon>
+                            <h3 class="text-xl font-semibold text-forest-950 tracking-tight font-dm-sans">Dolor Sit</h3>
+                        </div>
+                        <p class="text-base text-forest-500 font-sans leading-relaxed">
+                            Tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud.
+                        </p>
+                    </div>
+
+                    <div class="">
+                        <div class="flex items-center gap-3 mb-3">
+                            <iconify-icon icon="solar:graph-new-linear" class="text-emerald-600" width="24"></iconify-icon>
+                            <h3 class="text-xl font-semibold text-forest-950 tracking-tight font-dm-sans">Amet Elit</h3>
+                        </div>
+                        <p class="text-base text-forest-500 font-sans leading-relaxed">
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.
+                        </p>
+                    </div>
+
+                    <div class="">
+                        <div class="flex items-center gap-3 mb-3">
+                            <iconify-icon icon="solar:layers-linear" class="text-emerald-600" width="24"></iconify-icon>
+                            <h3 class="text-xl font-semibold text-forest-950 tracking-tight font-dm-sans">Tempor Magna</h3>
+                        </div>
+                        <p class="text-base text-forest-500 font-sans leading-relaxed">
+                            Incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis.
+                        </p>
+                    </div>
+                </div></div>
+  <code class="ds-meta">solar linear icon 24px emerald-600 + h3 text-xl font-semibold DM Sans · text-base text-forest-500 leading-relaxed · grid md:grid-cols-2 gap-x-8 gap-y-12</code>
+</div>
+</section>
+
+<section class="ds-group" id="components-data">
+<div class="ds-head">
+  <div class="ds-kicker"><span class="n">11</span><i></i><span>Components</span></div>
+  <h2>Data display</h2>
+</div>
+
+<div class="ds-spec">
+  <h3>Spatial overlay · D3</h3>
+  <div class="ds-stage white"><div class="ds-fit"><div class="relative w-full h-[500px] md:h-[600px] rounded-3xl overflow-hidden group shadow-2xl shadow-forest-900/10">
+                <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/ec163a08-5822-4721-9052-374f7d0e2a91_1600w.webp" alt="Spatial Designer" class="transition-transform duration-1000 group-hover:scale-105 saturate-[0.8] group-hover:saturate-100 w-full h-full object-cover">
+                
+                <div class="transition-opacity duration-500 overflow-hidden absolute top-0 right-0 bottom-0 left-0">
+    <div class="absolute inset-0 bg-forest-950/20 mix-blend-multiply pointer-events-none"></div>
+
+    <div id="d3-spatial-overlay" class="absolute inset-0 pointer-events-none opacity-90"></div>
+
+    <script src="assets/overview/assets/spectra.aura.build/d3-overlay.js"></script>
+</div>
+
+                <div class="absolute top-12 left-8 flex flex-col gap-3 z-10">
+                    <div class="bg-forest-950/90 backdrop-blur-md border border-white/10 px-4 py-2.5 rounded-lg text-xs font-medium text-white flex items-center justify-between gap-6 w-44 shadow-lg transform transition-all duration-500 hover:scale-105 cursor-default group/pill">
+                        <span class="text-emerald-200/80 font-sans">Polygons</span>
+                        <span class="font-mono tracking-wider group-hover/pill:text-emerald-400 transition-colors">12.4M</span>
+                    </div>
+                    <div class="bg-forest-950/90 backdrop-blur-md border border-white/10 px-4 py-2.5 rounded-lg text-xs font-medium text-white flex items-center justify-between gap-6 w-44 shadow-lg transform transition-all duration-500 hover:scale-105 cursor-default ml-4 group/pill">
+                        <span class="text-emerald-200/80 font-sans">Latency</span>
+                        <span class="font-mono tracking-wider group-hover/pill:text-emerald-400 transition-colors">&lt; 2ms</span>
+                    </div>
+                    <div class="bg-forest-950/90 backdrop-blur-md border border-white/10 px-4 py-2.5 rounded-lg text-xs font-medium text-white flex items-center justify-between gap-6 w-44 shadow-lg transform transition-all duration-500 hover:scale-105 cursor-default ml-2 group/pill">
+                        <span class="text-emerald-200/80 font-sans">Occlusion</span>
+                        <span class="font-mono tracking-wider group-hover/pill:text-emerald-400 transition-colors">99.9%</span>
+                    </div>
+                    <div class="bg-forest-950/90 backdrop-blur-md border border-white/10 px-4 py-2.5 rounded-lg text-xs font-medium text-white flex items-center justify-between gap-6 w-44 shadow-lg transform transition-all duration-500 hover:scale-105 cursor-default group/pill">
+                        <span class="text-emerald-200/80 font-sans">FPS</span>
+                        <span class="font-mono tracking-wider group-hover/pill:text-emerald-400 transition-colors">120</span>
+                    </div>
+                </div>
+
+                <div class="absolute bottom-8 right-8 bg-white/10 backdrop-blur-xl border border-white/30 p-6 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.2)] w-64 z-10 overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-b before:from-white/10 before:to-transparent before:pointer-events-none">
+                    <div class="flex justify-between items-center mb-4 relative z-10">
+                        <h4 class="text-white font-medium font-sans tracking-wide text-sm">Render Score</h4>
+                        <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+                    </div>
+                    
+                    
+                    
+                    <div class="mt-2 flex items-center justify-between text-[10px] uppercase tracking-widest font-semibold relative z-10">
+                        <span class="text-forest-100/70">Quality</span>
+                        <span class="text-emerald-300 bg-emerald-900/40 px-2 py-0.5 rounded border border-emerald-500/30">Optimal</span>
+                    </div>
+                </div>
+            </div></div></div>
+  <code class="ds-meta">#d3-spatial-overlay (the page's own d3-overlay.js, d3 v7): 30 random emerald nodes, links under 150px with opacity by distance · HUD rect rgba(6,78,59,.7) rx 12, catmull-rom area + line #34d399 with drop-shadow · stat pills bg-forest-950/90 rounded-lg w-44 (hover:scale-105, value → emerald-400) · glass gauge bg-white/10 backdrop-blur-xl border-white/30 · photo forest-950/20 multiply</code>
+  <p class="ds-note">The mesh is random on every load, exactly like the page.</p>
+</div>
+
+<div class="ds-two">
+  <div class="ds-spec">
+    <h3>Stat pills</h3>
+    <div class="ds-stage dark"><div class="flex flex-col gap-3 z-10">
+                    <div class="bg-forest-950/90 backdrop-blur-md border border-white/10 px-4 py-2.5 rounded-lg text-xs font-medium text-white flex items-center justify-between gap-6 w-44 shadow-lg transform transition-all duration-500 hover:scale-105 cursor-default group/pill">
+                        <span class="text-emerald-200/80 font-sans">Polygons</span>
+                        <span class="font-mono tracking-wider group-hover/pill:text-emerald-400 transition-colors">12.4M</span>
+                    </div>
+                    <div class="bg-forest-950/90 backdrop-blur-md border border-white/10 px-4 py-2.5 rounded-lg text-xs font-medium text-white flex items-center justify-between gap-6 w-44 shadow-lg transform transition-all duration-500 hover:scale-105 cursor-default ml-4 group/pill">
+                        <span class="text-emerald-200/80 font-sans">Latency</span>
+                        <span class="font-mono tracking-wider group-hover/pill:text-emerald-400 transition-colors">&lt; 2ms</span>
+                    </div>
+                    <div class="bg-forest-950/90 backdrop-blur-md border border-white/10 px-4 py-2.5 rounded-lg text-xs font-medium text-white flex items-center justify-between gap-6 w-44 shadow-lg transform transition-all duration-500 hover:scale-105 cursor-default ml-2 group/pill">
+                        <span class="text-emerald-200/80 font-sans">Occlusion</span>
+                        <span class="font-mono tracking-wider group-hover/pill:text-emerald-400 transition-colors">99.9%</span>
+                    </div>
+                    <div class="bg-forest-950/90 backdrop-blur-md border border-white/10 px-4 py-2.5 rounded-lg text-xs font-medium text-white flex items-center justify-between gap-6 w-44 shadow-lg transform transition-all duration-500 hover:scale-105 cursor-default group/pill">
+                        <span class="text-emerald-200/80 font-sans">FPS</span>
+                        <span class="font-mono tracking-wider group-hover/pill:text-emerald-400 transition-colors">120</span>
+                    </div>
+                </div></div>
+    <code class="ds-meta">label text-emerald-200/80 · value font-mono tracking-wider → hover emerald-400</code>
+  </div>
+  <div class="ds-spec">
+    <h3>Avatar stack</h3>
+    <div class="ds-stage dark"><div class="flex -space-x-3">
+                                <img class="w-10 h-10 rounded-full border-2 border-forest-950 object-cover" src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b361f672-271a-4e77-9412-6a1094c00dd7_320w.webp" alt="User">
+                                <img class="w-10 h-10 rounded-full border-2 border-forest-950 object-cover" src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/73497bc9-224a-4cab-a551-92adf0b5a098_320w.webp" alt="User">
+                                <div class="w-10 h-10 rounded-full border-2 border-forest-950 bg-forest-800 flex items-center justify-center text-[10px] font-bold text-white font-sans">4K</div>
+                            </div></div>
+    <code class="ds-meta">flex -space-x-3 · w-10 h-10 rounded-full border-2 border-forest-950 · count disc bg-forest-800 text-[10px] font-bold</code>
+  </div>
+</div>
+</section>
+
+<section class="ds-group" id="components-motion">
+<div class="ds-head">
+  <div class="ds-kicker"><span class="n">12</span><i></i><span>Components</span></div>
+  <h2>Motion</h2>
+</div>
+
+<div class="ds-spec">
+  <h3>Quote marquee</h3>
+  <div class="ds-stage dark flush" style="padding:40px 0"><div class="absolute inset-0 z-0 pointer-events-none grid grid-cols-12 gap-4 px-6 md:px-12 w-full max-w-[1600px] mx-auto opacity-[0.05]">
+                <div class="border-l border-white h-full col-start-1"></div>
+                <div class="border-l border-white h-full col-start-3 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-5 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-7 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-9 hidden md:block"></div>
+                <div class="border-l border-white h-full col-start-11 hidden md:block"></div>
+                <div class="border-r border-white h-full col-end-13"></div>
+            </div><style>
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @keyframes scroll-right {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+        .animate-scroll-left {
+            animation: scroll-left 40s linear infinite;
+        }
+        .animate-scroll-right {
+            animation: scroll-right 45s linear infinite;
+        }
+        .mask-gradient-x {
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+        }
+        .pause-on-hover:hover {
+            animation-play-state: paused;
+        }
+    </style><div class="flex flex-col gap-8 w-full mask-gradient-x relative z-10">
+        
+        <div class="flex gap-6 w-max animate-scroll-left pause-on-hover">
+            <div class="w-[400px] md:w-[500px] bg-forest-900/10 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:bg-forest-900/20 hover:border-emerald-500/20 transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="flex items-center gap-4">
+                        <img src="assets/overview/assets/i.pravatar.cc/150__qd3fddb49.jpg" alt="Avatar" class="w-12 h-12 rounded-full border border-white/10 grayscale group-hover:grayscale-0 transition-all">
+                        <div>
+                            <h4 class="text-sm font-semibold text-white uppercase tracking-wider font-sans">Lorem Ipsum</h4>
+                            <span class="text-xs text-forest-400 font-mono">Lorem Ipsum, DOLOR</span>
+                        </div>
+                    </div>
+                    <iconify-icon icon="solar:chip-linear" class="text-emerald-500/50 group-hover:text-emerald-400 transition-colors" width="32"></iconify-icon>
+                </div>
+                <p class="text-lg md:text-xl text-forest-100 font-light uppercase leading-snug tracking-tight font-sans">
+                    "Commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat."
+                </p>
+            </div>
+
+            <div class="w-[400px] md:w-[500px] bg-forest-900/10 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:bg-forest-900/20 hover:border-emerald-500/20 transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="flex items-center gap-4">
+                        <img src="assets/overview/assets/i.pravatar.cc/150__qbac0d70d.jpg" alt="Avatar" class="w-12 h-12 rounded-full border border-white/10 grayscale group-hover:grayscale-0 transition-all">
+                        <div>
+                            <h4 class="text-sm font-semibold text-white uppercase tracking-wider font-sans">Dolor Sitam</h4>
+                            <span class="text-xs text-forest-400 font-mono">Sit Amet, CONSEC</span>
+                        </div>
+                    </div>
+                    <iconify-icon icon="solar:palette-linear" class="text-emerald-500/50 group-hover:text-emerald-400 transition-colors" width="32"></iconify-icon>
+                </div>
+                <p class="text-lg md:text-xl text-forest-100 font-light uppercase leading-snug tracking-tight font-sans">
+                    "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate."
+                </p>
+            </div>
+
+            <div class="w-[400px] md:w-[500px] bg-forest-900/10 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:bg-forest-900/20 hover:border-emerald-500/20 transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="flex items-center gap-4">
+                        <img src="assets/overview/assets/i.pravatar.cc/150__q6ae4e202.jpg" alt="Avatar" class="w-12 h-12 rounded-full border border-white/10 grayscale group-hover:grayscale-0 transition-all">
+                        <div>
+                            <h4 class="text-sm font-semibold text-white uppercase tracking-wider font-sans">Amet Conse</h4>
+                            <span class="text-xs text-forest-400 font-mono">Adipiscing, ELIT SED</span>
+                        </div>
+                    </div>
+                    <iconify-icon icon="solar:planet-linear" class="text-emerald-500/50 group-hover:text-emerald-400 transition-colors" width="32"></iconify-icon>
+                </div>
+                <p class="text-lg md:text-xl text-forest-100 font-light uppercase leading-snug tracking-tight font-sans">
+                    "Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit."
+                </p>
+            </div>
+
+            <div class="w-[400px] md:w-[500px] bg-forest-900/10 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:bg-forest-900/20 hover:border-emerald-500/20 transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="flex items-center gap-4">
+                        <img src="assets/overview/assets/i.pravatar.cc/150__q8e786135.jpg" alt="Avatar" class="w-12 h-12 rounded-full border border-white/10 grayscale group-hover:grayscale-0 transition-all">
+                        <div>
+                            <h4 class="text-sm font-semibold text-white uppercase tracking-wider font-sans">Tempor Elit</h4>
+                            <span class="text-xs text-forest-400 font-mono">Tempor, INCIDIDUNT UT</span>
+                        </div>
+                    </div>
+                    <iconify-icon icon="solar:buildings-2-linear" class="text-emerald-500/50 group-hover:text-emerald-400 transition-colors" width="32"></iconify-icon>
+                </div>
+                <p class="text-lg md:text-xl text-forest-100 font-light uppercase leading-snug tracking-tight font-sans">
+                    "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut."
+                </p>
+            </div>
+
+             <div class="w-[400px] md:w-[500px] bg-forest-900/10 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:bg-forest-900/20 hover:border-emerald-500/20 transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="flex items-center gap-4">
+                        <img src="assets/overview/assets/i.pravatar.cc/150__qd3fddb49.jpg" alt="Avatar" class="w-12 h-12 rounded-full border border-white/10 grayscale group-hover:grayscale-0 transition-all">
+                        <div>
+                            <h4 class="text-sm font-semibold text-white uppercase tracking-wider font-sans">Lorem Ipsum</h4>
+                            <span class="text-xs text-forest-400 font-mono">Lorem Ipsum, DOLOR</span>
+                        </div>
+                    </div>
+                    <iconify-icon icon="solar:chip-linear" class="text-emerald-500/50 group-hover:text-emerald-400 transition-colors" width="32"></iconify-icon>
+                </div>
+                <p class="text-lg md:text-xl text-forest-100 font-light uppercase leading-snug tracking-tight font-sans">
+                    "Commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat."
+                </p>
+            </div>
+            <div class="w-[400px] md:w-[500px] bg-forest-900/10 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:bg-forest-900/20 hover:border-emerald-500/20 transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="flex items-center gap-4">
+                        <img src="assets/overview/assets/i.pravatar.cc/150__qbac0d70d.jpg" alt="Avatar" class="w-12 h-12 rounded-full border border-white/10 grayscale group-hover:grayscale-0 transition-all">
+                        <div>
+                            <h4 class="text-sm font-semibold text-white uppercase tracking-wider font-sans">Dolor Sitam</h4>
+                            <span class="text-xs text-forest-400 font-mono">Sit Amet, CONSEC</span>
+                        </div>
+                    </div>
+                    <iconify-icon icon="solar:palette-linear" class="text-emerald-500/50 group-hover:text-emerald-400 transition-colors" width="32"></iconify-icon>
+                </div>
+                <p class="text-lg md:text-xl text-forest-100 font-light uppercase leading-snug tracking-tight font-sans">
+                    "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate."
+                </p>
+            </div>
+            <div class="w-[400px] md:w-[500px] bg-forest-900/10 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:bg-forest-900/20 hover:border-emerald-500/20 transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="flex items-center gap-4">
+                        <img src="assets/overview/assets/i.pravatar.cc/150__q6ae4e202.jpg" alt="Avatar" class="w-12 h-12 rounded-full border border-white/10 grayscale group-hover:grayscale-0 transition-all">
+                        <div>
+                            <h4 class="text-sm font-semibold text-white uppercase tracking-wider font-sans">Amet Conse</h4>
+                            <span class="text-xs text-forest-400 font-mono">Adipiscing, ELIT SED</span>
+                        </div>
+                    </div>
+                    <iconify-icon icon="solar:planet-linear" class="text-emerald-500/50 group-hover:text-emerald-400 transition-colors" width="32"></iconify-icon>
+                </div>
+                <p class="text-lg md:text-xl text-forest-100 font-light uppercase leading-snug tracking-tight font-sans">
+                    "Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit."
+                </p>
+            </div>
+            <div class="w-[400px] md:w-[500px] bg-forest-900/10 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:bg-forest-900/20 hover:border-emerald-500/20 transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="flex items-center gap-4">
+                        <img src="assets/overview/assets/i.pravatar.cc/150__q8e786135.jpg" alt="Avatar" class="w-12 h-12 rounded-full border border-white/10 grayscale group-hover:grayscale-0 transition-all">
+                        <div>
+                            <h4 class="text-sm font-semibold text-white uppercase tracking-wider font-sans">Tempor Elit</h4>
+                            <span class="text-xs text-forest-400 font-mono">Tempor, INCIDIDUNT UT</span>
+                        </div>
+                    </div>
+                    <iconify-icon icon="solar:buildings-2-linear" class="text-emerald-500/50 group-hover:text-emerald-400 transition-colors" width="32"></iconify-icon>
+                </div>
+                <p class="text-lg md:text-xl text-forest-100 font-light uppercase leading-snug tracking-tight font-sans">
+                    "Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut."
+                </p>
+            </div>
+        </div>
+
+        <div class="flex gap-6 w-max animate-scroll-right pause-on-hover">
+            <div class="w-[400px] md:w-[500px] bg-forest-900/10 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:bg-forest-900/20 hover:border-emerald-500/20 transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="flex items-center gap-4">
+                        <img src="assets/overview/assets/i.pravatar.cc/150__q83e768f8.jpg" alt="Avatar" class="w-12 h-12 rounded-full border border-white/10 grayscale group-hover:grayscale-0 transition-all" style="">
+                        <div>
+                            <h4 class="text-sm font-semibold text-white uppercase tracking-wider font-sans">Magna Aliq</h4>
+                            <span class="text-xs text-forest-400 font-mono">Labore, ET DOLORE</span>
+                        </div>
+                    </div>
+                    <iconify-icon icon="solar:heart-pulse-linear" class="text-emerald-500/50 group-hover:text-emerald-400 transition-colors" width="32"></iconify-icon>
+                </div>
+                <p class="text-lg md:text-xl text-forest-100 font-light uppercase leading-snug tracking-tight font-sans">
+                    "Minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit."
+                </p>
+            </div>
+
+            <div class="w-[400px] md:w-[500px] bg-forest-900/10 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:bg-forest-900/20 hover:border-emerald-500/20 transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="flex items-center gap-4">
+                        <img src="assets/overview/assets/i.pravatar.cc/150__q860c76f7.jpg" alt="Avatar" class="w-12 h-12 rounded-full border border-white/10 grayscale group-hover:grayscale-0 transition-all" style="">
+                        <div class="">
+                            <h4 class="text-sm font-semibold text-white uppercase tracking-wider font-sans">Enim Ad</h4>
+                            <span class="text-xs text-forest-400 font-mono">Magna, ALIQUA</span>
+                        </div>
+                    </div>
+                    <iconify-icon icon="solar:gamepad-linear" class="text-emerald-500/50 group-hover:text-emerald-400 transition-colors" width="32"></iconify-icon>
+                </div>
+                <p class="text-lg md:text-xl text-forest-100 font-light uppercase leading-snug tracking-tight font-sans">
+                    "Aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure."
+                </p>
+            </div>
+
+            <div class="w-[400px] md:w-[500px] bg-forest-900/10 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:bg-forest-900/20 hover:border-emerald-500/20 transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="flex items-center gap-4">
+                        <img src="assets/overview/assets/i.pravatar.cc/150__q0cb5a8ff.jpg" alt="Avatar" class="w-12 h-12 rounded-full border border-white/10 grayscale group-hover:grayscale-0 transition-all" style="transition: outline 0.1s ease-in-out;">
+                        <div>
+                            <h4 class="text-sm font-semibold text-white uppercase tracking-wider font-sans">Minim Veni</h4>
+                            <span class="text-xs text-forest-400 font-mono">Veniam Quis, NOSTRUD</span>
+                        </div>
+                    </div>
+                    <iconify-icon icon="solar:wheel-angle-linear" class="text-emerald-500/50 group-hover:text-emerald-400 transition-colors" width="32"></iconify-icon>
+                </div>
+                <p class="md:text-xl uppercase leading-snug text-lg font-light text-forest-100 tracking-tight">
+                    "Aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat."
+                </p>
+            </div>
+
+            <div class="w-[400px] md:w-[500px] bg-forest-900/10 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:bg-forest-900/20 hover:border-emerald-500/20 transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="flex items-center gap-4">
+                        <img src="assets/overview/assets/i.pravatar.cc/150__q76de0f6d.jpg" alt="Avatar" class="w-12 h-12 rounded-full border border-white/10 grayscale group-hover:grayscale-0 transition-all" style="outline: rgb(245, 158, 11) solid 2px; outline-offset: 2px; transition: outline 0.1s ease-in-out;">
+                        <div>
+                            <h4 class="text-sm font-semibold text-white uppercase tracking-wider font-sans">Nisi Ut</h4>
+                            <span class="text-xs text-forest-400 font-mono">Ullamco, LABORIS</span>
+                        </div>
+                    </div>
+                    <iconify-icon icon="solar:music-note-linear" class="text-emerald-500/50 group-hover:text-emerald-400 transition-colors" width="32"></iconify-icon>
+                </div>
+                <p class="text-lg md:text-xl text-forest-100 font-light uppercase leading-snug tracking-tight font-sans">
+                    "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco."
+                </p>
+            </div>
+
+            <div class="w-[400px] md:w-[500px] bg-forest-900/10 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:bg-forest-900/20 hover:border-emerald-500/20 transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="flex items-center gap-4">
+                        <img src="assets/overview/assets/i.pravatar.cc/150__q83e768f8.jpg" alt="Avatar" class="w-12 h-12 rounded-full border border-white/10 grayscale group-hover:grayscale-0 transition-all" style="">
+                        <div>
+                            <h4 class="text-sm font-semibold text-white uppercase tracking-wider font-sans">Magna Aliq</h4>
+                            <span class="text-xs text-forest-400 font-mono">Labore, ET DOLORE</span>
+                        </div>
+                    </div>
+                    <iconify-icon icon="solar:heart-pulse-linear" class="text-emerald-500/50 group-hover:text-emerald-400 transition-colors" width="32"></iconify-icon>
+                </div>
+                <p class="text-lg md:text-xl text-forest-100 font-light uppercase leading-snug tracking-tight font-sans">
+                    "Minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit."
+                </p>
+            </div>
+            <div class="w-[400px] md:w-[500px] bg-forest-900/10 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:bg-forest-900/20 hover:border-emerald-500/20 transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="flex items-center gap-4">
+                        <img src="assets/overview/assets/i.pravatar.cc/150__q860c76f7.jpg" alt="Avatar" class="w-12 h-12 rounded-full border border-white/10 grayscale group-hover:grayscale-0 transition-all" style="">
+                        <div>
+                            <h4 class="text-sm font-semibold text-white uppercase tracking-wider font-sans">Enim Ad</h4>
+                            <span class="text-xs text-forest-400 font-mono">Magna, ALIQUA</span>
+                        </div>
+                    </div>
+                    <iconify-icon icon="solar:gamepad-linear" class="text-emerald-500/50 group-hover:text-emerald-400 transition-colors" width="32"></iconify-icon>
+                </div>
+                <p class="text-lg md:text-xl text-forest-100 font-light uppercase leading-snug tracking-tight font-sans">
+                    "Aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure."
+                </p>
+            </div>
+            <div class="w-[400px] md:w-[500px] bg-forest-900/10 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:bg-forest-900/20 hover:border-emerald-500/20 transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="flex items-center gap-4">
+                        <img src="assets/overview/assets/i.pravatar.cc/150__q0cb5a8ff.jpg" alt="Avatar" class="w-12 h-12 rounded-full border border-white/10 grayscale group-hover:grayscale-0 transition-all" style="transition: outline 0.1s ease-in-out;">
+                        <div>
+                            <h4 class="text-sm font-semibold text-white uppercase tracking-wider font-sans">Minim Veni</h4>
+                            <span class="text-xs text-forest-400 font-mono">Veniam Quis, NOSTRUD</span>
+                        </div>
+                    </div>
+                    <iconify-icon icon="solar:wheel-angle-linear" class="text-emerald-500/50 group-hover:text-emerald-400 transition-colors" width="32"></iconify-icon>
+                </div>
+                <p class="text-lg md:text-xl text-forest-100 font-light uppercase leading-snug tracking-tight font-sans">
+                    "Aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat."
+                </p>
+            </div>
+            <div class="w-[400px] md:w-[500px] bg-forest-900/10 backdrop-blur-md border border-white/5 rounded-2xl p-8 hover:bg-forest-900/20 hover:border-emerald-500/20 transition-all duration-300 group">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="flex items-center gap-4">
+                        <img src="assets/overview/assets/i.pravatar.cc/150__q76de0f6d.jpg" alt="Avatar" class="w-12 h-12 rounded-full border border-white/10 grayscale group-hover:grayscale-0 transition-all" style="outline: rgb(245, 158, 11) solid 2px; outline-offset: 2px; transition: outline 0.1s ease-in-out;">
+                        <div>
+                            <h4 class="text-sm font-semibold text-white uppercase tracking-wider font-sans">Nisi Ut</h4>
+                            <span class="text-xs text-forest-400 font-mono">Ullamco, LABORIS</span>
+                        </div>
+                    </div>
+                    <iconify-icon icon="solar:music-note-linear" class="text-emerald-500/50 group-hover:text-emerald-400 transition-colors" width="32"></iconify-icon>
+                </div>
+                <p class="text-lg md:text-xl text-forest-100 font-light uppercase leading-snug tracking-tight font-sans">
+                    "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco."
+                </p>
+            </div>
+        </div>
+    </div></div>
+  <code class="ds-meta">@keyframes scroll-left 0 → -50% (40s linear infinite) · scroll-right -50% → 0 (45s) · each row w-max with its cards duplicated for the seamless loop · .pause-on-hover · .mask-gradient-x fades both edges (transparent → black 15% … 85% → transparent)</code>
+</div>
+
+<div class="ds-spec">
+  <h3>Reveal on scroll</h3>
+  <p class="ds-note" style="margin-top:0">Every block below the hero enters with the page's own observer (spectra.css + the page script, threshold 0.1, once): <code>.reveal-on-scroll</code> opacity 0 / translateY(30px) → <code>.is-visible</code>, 1s cubic-bezier(0.2, 0.8, 0.2, 1), staggered with Tailwind <code>delay-100…500</code>. The specimens in this view use the same classes and the same observer, so they rise in as you scroll. Smaller loops: <code>animate-pulse</code> live dots, <code>animate-ping</code> hotspot halo, hover zooms <code>group-hover:scale-105</code> over 700–1000ms.</p>
+</div>
+</section>
+
+<section class="ds-group" id="components-content">
+<div class="ds-head">
+  <div class="ds-kicker"><span class="n">13</span><i></i><span>Components</span></div>
+  <h2>Content groups</h2>
+</div>
+
+<div class="ds-spec">
+  <h3>Section head · split, on dark</h3>
+  <div class="ds-stage dark"><div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 reveal-on-scroll is-visible">
+                    <div class="">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-xs font-mono font-bold tracking-widest text-emerald-400 bg-emerald-900/30 px-2 py-0.5 rounded font-sans">02</span>
+                            <div class="h-px w-8 bg-forest-600"></div>
+                            <span class="text-xs font-medium uppercase tracking-widest text-forest-400 font-sans">Ipsum</span>
+                        </div>
+                        <h2 class="text-4xl md:text-5xl text-forest-50 leading-tight tracking-tighter font-dm-sans font-light">
+                            Labore <span class="text-emerald-500 font-dm-sans font-light">Dolorem</span>
+                        </h2>
+                    </div>
+                    <p class="max-w-md text-forest-300 text-sm md:text-base leading-relaxed font-sans">
+                        Laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    </p>
+                </div></div>
+  <code class="ds-meta">index + DM Sans light h2 with an emerald span (left) · intro text-forest-300 max-w-md (right) · md:flex-row items-end</code>
+</div>
+<div class="ds-spec">
+  <h3>Section head · inline, on light</h3>
+  <div class="ds-stage light ds-casehead"><div class="flex flex-wrap items-center justify-between gap-6 mb-12 reveal-on-scroll">
+                     <div class="flex items-center gap-3 mb-4 absolute -top-12 left-6 md:static md:mb-0">
+                        <span class="text-xs font-mono font-bold tracking-widest text-emerald-700 bg-emerald-100/50 px-2 py-0.5 rounded font-sans">03</span>
+                        <div class="h-px w-8 bg-forest-900/30"></div>
+                        <span class="text-xs font-medium uppercase tracking-widest text-forest-900 font-sans">Dolor</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl text-forest-950 tracking-tighter font-dm-sans font-light">
+                        Tempor <span class="text-forest-500 font-dm-sans font-light">Incididunt</span>
+                    </h2>
+                    <a href="#" class="group flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-forest-950 hover:text-emerald-600 transition-colors font-sans">
+                        Lorem Ipsum
+                        <iconify-icon icon="lucide:arrow-right" class="group-hover:translate-x-1 transition-transform" stroke-width="2"></iconify-icon>
+                    </a>
+                </div></div>
+  <code class="ds-meta">index / title / arrow link on one flex-wrap row (below md the index sits absolute above the title)</code>
+</div>
+<div class="ds-spec">
+  <h3>Section head · centred, on dark</h3>
+  <div class="ds-stage dark"><div class="max-w-[1600px] mx-auto px-6 md:px-12 relative z-10 mb-20 text-center reveal-on-scroll">
+        <div class="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
+            <div class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
+            <span class="text-[10px] font-medium text-emerald-200 uppercase tracking-widest font-sans">Lorem Ipsum</span>
+        </div>
+        <h2 class="text-4xl md:text-6xl text-white tracking-tighter font-dm-sans font-light mb-6">
+            Ipsum dolor <span class="text-forest-400 font-dm-sans font-light">Sitametcon</span>
+        </h2>
+        <p class="text-forest-300 max-w-lg mx-auto text-sm md:text-base font-sans leading-relaxed">
+            Ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco laboris.
+        </p>
+    </div></div>
+  <code class="ds-meta">glass pill + text-4xl md:text-6xl DM Sans light h2 + text-forest-300 intro</code>
+</div>
+<div class="ds-spec">
+  <h3>Section head · editorial, on light</h3>
+  <div class="ds-stage light"><div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 mb-20 items-end reveal-on-scroll">
+            <div class="lg:col-span-5 flex flex-col justify-between h-full">
+                <div class="">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="text-xs font-mono font-bold tracking-widest text-emerald-700 bg-emerald-100/50 px-2 py-0.5 rounded font-sans">04</span>
+                        <div class="h-px w-8 bg-forest-900/10"></div>
+                        <span class="text-xs font-medium uppercase tracking-widest text-forest-500 font-sans">Amet</span>
+                    </div>
+                    <p class="text-forest-600 text-base md:text-lg leading-relaxed font-sans max-w-md">
+                        Consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-7">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl text-forest-950 tracking-tighter font-dm-sans font-light leading-[0.95]">
+                    Lorem ipsum dolor <span class="text-emerald-600 font-dm-sans font-normal">Sit Ametelit</span>
+                </h2>
+            </div>
+        </div></div>
+  <code class="ds-meta">lg:grid-cols-12 · index + support copy (col-span-5) · h2 leading-[0.95] with emerald-600 span (col-span-7)</code>
+</div>
+<div class="ds-spec">
+  <h3>Closing band</h3>
+  <div class="ds-stage dark flush"><section class="relative bg-forest-950 py-32 overflow-hidden border-t border-white/5">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center reveal-on-scroll">
+        <h2 class="text-5xl md:text-6xl lg:text-7xl font-dm-sans font-light text-white tracking-tighter mb-8 leading-[0.9]">
+            Lorem ipsum dolor 
+            <span class="text-emerald-400 font-normal">sit amet?</span>
+        </h2>
+        <p class="text-lg md:text-xl text-forest-300 font-sans max-w-2xl mx-auto mb-10 leading-relaxed">
+            Enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.
+        </p>
+        <button class="px-8 py-4 bg-white text-forest-950 rounded-full font-medium font-sans text-sm hover:scale-105 transition-transform duration-300 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_-10px_rgba(16,185,129,0.4)]">
+            Lorem Ipsum Dolor
+        </button>
+    </div>
+</section></div>
+  <code class="ds-meta">section.bg-forest-950.py-32 + top glow · h2 text-5xl→7xl DM Sans light leading-[0.9] · white pill CTA</code>
+</div>
+</section>
+
+</main>
+</div>
+
+<!-- the page's own scripts, reused for the specimens: accordion + scroll reveal -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggles = document.querySelectorAll('.faq-toggle');
+            
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const content = toggle.nextElementSibling;
+                    const plusIcon = toggle.querySelector('.icon-plus');
+                    const minusIcon = toggle.querySelector('.icon-minus');
+                    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+                    
+                    // Close all others (Accordion behavior)
+                    document.querySelectorAll('.faq-toggle').forEach(otherToggle => {
+                        if (otherToggle !== toggle) {
+                            otherToggle.setAttribute('aria-expanded', 'false');
+                            otherToggle.nextElementSibling.style.gridTemplateRows = '0fr';
+                            otherToggle.querySelector('.icon-plus').style.opacity = '1';
+                            otherToggle.querySelector('.icon-plus').style.transform = 'rotate(0deg)';
+                            otherToggle.querySelector('.icon-minus').style.opacity = '0';
+                            otherToggle.querySelector('.icon-minus').style.transform = 'rotate(90deg)';
+                            otherToggle.classList.remove('text-emerald-700');
+                        }
+                    });
+
+                    // Toggle current
+                    toggle.setAttribute('aria-expanded', !isExpanded);
+                    content.style.gridTemplateRows = isExpanded ? '0fr' : '1fr';
+                    
+                    // Icon Animation
+                    if (!isExpanded) {
+                        plusIcon.style.opacity = '0';
+                        plusIcon.style.transform = 'rotate(90deg)';
+                        minusIcon.style.opacity = '1';
+                        minusIcon.style.transform = 'rotate(0deg)';
+                        toggle.classList.add('text-emerald-700');
+                    } else {
+                        plusIcon.style.opacity = '1';
+                        plusIcon.style.transform = 'rotate(0deg)';
+                        minusIcon.style.opacity = '0';
+                        minusIcon.style.transform = 'rotate(90deg)';
+                        toggle.classList.remove('text-emerald-700');
+                    }
+                });
+            });
+        });
+    </script>
+<script>
+        // Scroll Animation Observer
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            }, observerOptions);
+
+            const elements = document.querySelectorAll('.reveal-on-scroll');
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+<script src="assets/catalog/catalog.js"></script>
+</body>
+</html>

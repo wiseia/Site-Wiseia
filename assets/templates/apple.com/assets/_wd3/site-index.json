@@ -1,0 +1,2215 @@
+{
+ "version": 1,
+ "tool": "wd3 0.1.0",
+ "captureId": "apple.com-721cb57f",
+ "capturedAt": "2026-10-28T20:58:34+00:00",
+ "entry": {
+  "url": "https://www.apple.com/",
+  "path": "/",
+  "search": "",
+  "file": "assets/www.apple.com/index.html",
+  "contentType": "text/html; charset=utf-8"
+ },
+ "blocked": [
+  "^https?://([^/?#]+\\.)?(google\\-analytics\\.com|analytics\\.google\\.com|googletagmanager\\.com|googleadservices\\.com|doubleclick\\.net|googlesyndication\\.com|googleoptimize\\.com|connect\\.facebook\\.net|bat\\.bing\\.com|snap\\.licdn\\.com|px\\.ads\\.linkedin\\.com|analytics\\.tiktok\\.com|ct\\.pinterest\\.com|static\\.ads\\-twitter\\.com|analytics\\.twitter\\.com|tr\\.snapchat\\.com|sc\\-static\\.net|mc\\.yandex\\.ru|hotjar\\.com|hotjar\\.io|clarity\\.ms|cdn\\.segment\\.com|api\\.segment\\.io|cdn\\.mxpnl\\.com|api\\-js\\.mixpanel\\.com|api\\.mixpanel\\.com|api\\.amplitude\\.com|api2\\.amplitude\\.com|api\\-secure\\.amplitude\\.com|api\\-sr\\.amplitude\\.com|sr\\-client\\-cfg\\.amplitude\\.com|plausible\\.io|cloud\\.umami\\.is|analytics\\.umami\\.is|static\\.cloudflareinsights\\.com|cloudflareinsights\\.com|vitals\\.vercel\\-insights\\.com|browser\\-intake\\-datadoghq\\.com|browser\\-intake\\-datadoghq\\.eu|js\\-agent\\.newrelic\\.com|bam\\.nr\\-data\\.net|bam\\-cell\\.nr\\-data\\.net|fullstory\\.com|script\\.crazyegg\\.com|mouseflow\\.com|smartlook\\.com|heapanalytics\\.com|i\\.posthog\\.com|stats\\.wp\\.com|pixel\\.wp\\.com|promotekit\\.com|ingest\\.sentry\\.io|ingest\\.us\\.sentry\\.io|ingest\\.de\\.sentry\\.io|widget\\.intercom\\.io|js\\.intercomcdn\\.com|api\\-iam\\.intercom\\.io|js\\.hs\\-scripts\\.com|js\\.hs\\-analytics\\.net|js\\.hs\\-banner\\.com|js\\.hscollectedforms\\.net|js\\.usemessages\\.com|track\\.hubspot\\.com|client\\.crisp\\.chat|embed\\.tawk\\.to|js\\.driftt\\.com|static\\.zdassets\\.com|ekr\\.zdassets\\.com|cdn\\.cookielaw\\.org|geolocation\\.onetrust\\.com|consent\\.cookiebot\\.com|consentcdn\\.cookiebot\\.com|app\\.usercentrics\\.eu|api\\.usercentrics\\.eu|cdn\\.iubenda\\.com|cmp\\.osano\\.com|cdn\\.termly\\.io)(:\\d+)?([/?#]|$)",
+  "/rpc/increment_shared_code_views",
+  "^https?://(umami|analytics|stats|plausible)\\.[^/]+/(api/send|api/collect|api/event|script\\.js)",
+  "/g/c(ollect)?\\?v=2&",
+  "sentry\\.io/api/\\d+/(envelope|store)",
+  "/api/meta-capi",
+  "^https?://(leadtracker|tracking|track|events?|collect)\\.[^/]+/",
+  "^https?://a\\.vturb\\.com/",
+  "facebook\\.com/tr[/?]",
+  "/_vercel/(speed-)?insights/",
+  "/cdn-cgi/rum",
+  "/cdn-cgi/challenge-platform/",
+  "google\\.com/(pagead|ads)/"
+ ],
+ "volatileParams": [
+  "v",
+  "_rsc",
+  "dpl",
+  "_",
+  "t",
+  "ts",
+  "timestamp",
+  "cb",
+  "cachebust",
+  "cacheBust",
+  "nocache",
+  "rnd",
+  "rand",
+  "random",
+  "_t"
+ ],
+ "entries": [
+  {
+   "url": "https://www.apple.com/",
+   "method": "GET",
+   "status": 200,
+   "contentType": "text/html; charset=utf-8",
+   "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "document",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/index.html",
+   "size": 257826,
+   "modes": [
+    "navigate"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/a/styles/tile-macbook-proled.built.css",
+   "method": "GET",
+   "status": 200,
+   "contentType": "text/css",
+   "headers": {
+    "content-type": "text/css",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "stylesheet",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/a/styles/tile-macbook-proled.built.css",
+   "size": 3272,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/a/styles/homepage.built.css",
+   "method": "GET",
+   "status": 200,
+   "contentType": "text/css",
+   "headers": {
+    "content-type": "text/css",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "stylesheet",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/a/styles/homepage.built.css",
+   "size": 32817,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/ac/globalfooter/8/en_US/styles/ac-globalfooter.built.css",
+   "method": "GET",
+   "status": 200,
+   "contentType": "text/css",
+   "headers": {
+    "content-type": "text/css",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "stylesheet",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/ac/globalfooter/8/en_US/styles/ac-globalfooter.built.css",
+   "size": 56408,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/wss/fonts?families=SF+Pro,v3|SF+Pro+Icons,v3",
+   "method": "GET",
+   "status": 200,
+   "contentType": "text/css;charset=UTF-8",
+   "headers": {
+    "content-type": "text/css;charset=UTF-8",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "stylesheet",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/wss/fonts__q4910ef4c.css",
+   "size": 17016,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/a/styles/main.built.css",
+   "method": "GET",
+   "status": 200,
+   "contentType": "text/css",
+   "headers": {
+    "content-type": "text/css",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "x-serial": "65850"
+   },
+   "resourceType": "stylesheet",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/a/styles/main.built.css",
+   "size": 127847,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/a/styles/inline-media.built.css",
+   "method": "GET",
+   "status": 200,
+   "contentType": "text/css",
+   "headers": {
+    "content-type": "text/css",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "stylesheet",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/a/styles/inline-media.built.css",
+   "size": 12609,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/images/macbook-pro-proled-xdr/a/hero_macbook_pro_proled_xdr_animated_preorder_startframe__dnrzzn9ywj2a_largetall_2x.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "content-type": "image/jpeg",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/images/macbook-pro-proled-xdr/a/hero_macbook_pro_proled_xdr_animated_preorder_startframe__dnrzzn9ywj2a_largetall_2x.jpg",
+   "size": 264060,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/ac/localnav/9/styles/ac-localnav.built.css",
+   "method": "GET",
+   "status": 200,
+   "contentType": "text/css",
+   "headers": {
+    "content-type": "text/css",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "x-serial": "65847"
+   },
+   "resourceType": "stylesheet",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/ac/localnav/9/styles/ac-localnav.built.css",
+   "size": 81358,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/images/macbook-pro-proled-xdr/a/hero_macbook_pro_proled_xdr_animated_preorder__c7dgzbk10sqe_largetall_2x.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "content-type": "image/jpeg",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/images/macbook-pro-proled-xdr/a/hero_macbook_pro_proled_xdr_animated_preorder__c7dgzbk10sqe_largetall_2x.jpg",
+   "size": 280823,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/a/scripts/head.built.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/x-javascript",
+   "headers": {
+    "content-type": "application/x-javascript",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/a/scripts/head.built.js",
+   "size": 6740,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/a/scripts/macbook-proled.built.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/x-javascript",
+   "headers": {
+    "content-type": "application/x-javascript",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/a/scripts/macbook-proled.built.js",
+   "size": 4231,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/a/scripts/iphone-duo.built.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/x-javascript",
+   "headers": {
+    "content-type": "application/x-javascript",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "x-serial": "65849"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/a/scripts/iphone-duo.built.js",
+   "size": 2596,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/a/scripts/homepage.built.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/x-javascript",
+   "headers": {
+    "content-type": "application/x-javascript",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "x-serial": "65849"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/a/scripts/homepage.built.js",
+   "size": 2280,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/a/scripts/main.built.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/x-javascript",
+   "headers": {
+    "content-type": "application/x-javascript",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/a/scripts/main.built.js",
+   "size": 90784,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/api-www/global-elements/global-header/v1/assets/globalheader.css",
+   "method": "GET",
+   "status": 200,
+   "contentType": "text/css; charset=UTF-8",
+   "headers": {
+    "access-control-allow-credentials": "true",
+    "content-type": "text/css; charset=UTF-8",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "x-a3enabled": "1"
+   },
+   "resourceType": "stylesheet",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/api-www/global-elements/global-header/v1/assets/globalheader.css",
+   "size": 170263,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/autopush/us/fam-gallery/styles/home-gallery.built.css",
+   "method": "GET",
+   "status": 200,
+   "contentType": "text/css",
+   "headers": {
+    "content-type": "text/css",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "x-serial": "65846"
+   },
+   "resourceType": "stylesheet",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/autopush/us/fam-gallery/styles/home-gallery.built.css",
+   "size": 175999,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/homepage/styles/index_410layle.built.css",
+   "method": "GET",
+   "status": 200,
+   "contentType": "text/css",
+   "headers": {
+    "content-type": "text/css",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "stylesheet",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/homepage/styles/index_410layle.built.css",
+   "size": 5175,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/a/scripts/inline-media.built.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/x-javascript",
+   "headers": {
+    "content-type": "application/x-javascript",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/a/scripts/inline-media.built.js",
+   "size": 7493,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/api-www/global-elements/global-header/v1/assets/globalheader.umd.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/javascript; charset=UTF-8",
+   "headers": {
+    "access-control-allow-credentials": "true",
+    "content-type": "application/javascript; charset=UTF-8",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "x-a3enabled": "1"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/api-www/global-elements/global-header/v1/assets/globalheader.umd.js",
+   "size": 166301,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/metrics/ac-analytics/2.30.0/scripts/auto-init.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/x-javascript",
+   "headers": {
+    "content-type": "application/x-javascript",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "x-serial": "65849"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/metrics/ac-analytics/2.30.0/scripts/auto-init.js",
+   "size": 111,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/metrics/ac-analytics/2.30.0/scripts/ac-analytics.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/x-javascript",
+   "headers": {
+    "content-type": "application/x-javascript",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "x-serial": "65848"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/metrics/ac-analytics/2.30.0/scripts/ac-analytics.js",
+   "size": 466023,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/ac/globalfooter/8/en_US/scripts/ac-globalfooter.built.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/x-javascript",
+   "headers": {
+    "content-type": "application/x-javascript",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "x-serial": "65849"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/ac/globalfooter/8/en_US/scripts/ac-globalfooter.built.js",
+   "size": 9686,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/wss/fonts/SF-Pro-Text/v3/sf-pro-text_semibold.woff2",
+   "method": "GET",
+   "status": 200,
+   "contentType": "font/woff2",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "font/woff2",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "font",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/wss/fonts/SF-Pro-Text/v3/sf-pro-text_semibold.woff2",
+   "size": 234260,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/wss/fonts/SF-Pro-Display/v3/sf-pro-display_semibold.woff2",
+   "method": "GET",
+   "status": 200,
+   "contentType": "font/woff2",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "font/woff2",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "font",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/wss/fonts/SF-Pro-Display/v3/sf-pro-display_semibold.woff2",
+   "size": 129484,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/wss/fonts/SF-Pro-Text/v3/sf-pro-text_regular.woff2",
+   "method": "GET",
+   "status": 200,
+   "contentType": "font/woff2",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "font/woff2",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "font",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/wss/fonts/SF-Pro-Text/v3/sf-pro-text_regular.woff2",
+   "size": 220536,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/metrics/data-relay/1.2.0/scripts/auto-relay.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/x-javascript",
+   "headers": {
+    "content-type": "application/x-javascript",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/metrics/data-relay/1.2.0/scripts/auto-relay.js",
+   "size": 197,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/metrics/data-relay/1.2.0/scripts/data-relay.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/x-javascript",
+   "headers": {
+    "content-type": "application/x-javascript",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "x-serial": "65849"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/metrics/data-relay/1.2.0/scripts/data-relay.js",
+   "size": 17176,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/ac/localeswitcher/4/en_US/scripts/localeswitcher.built.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/x-javascript",
+   "headers": {
+    "content-type": "application/x-javascript",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "x-serial": "65848"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/ac/localeswitcher/4/en_US/scripts/localeswitcher.built.js",
+   "size": 191420,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://securemetrics.apple.com/b/ss/applestoreww/1/JS-2.23.0/s86607359098616?AQB=1&ndh=1&pf=1&t=28%2F9%2F2026%2020%3A58%3A35%203%200&fid=5E6AAA45C177554F-31F199230A0A893F&ce=UTF-8&cdp=2&cl=1800&pageName=apple%20-%20index%2Ftab%20%28us%29&g=https%3A%2F%2Fwww.apple.com%2F&cc=USD&ch=www.us.homepage&server=ac-2.30.0&h1=www.us.homepage&v3=aos%3A%20us&l3=D%3Das_tex&c4=D%3Dg&v4=D%3DpageName&v14=en-us&c20=aos%3A%20us&v54=D%3Dg&v57=3544-hp-long-short-no-video-us%3Aa&v97=s.t-p&s=1440x900&c=24&j=1.6&v=N&k=Y&bw=1440&bh=900&AQE=1",
+   "method": "GET",
+   "status": 302,
+   "contentType": "text/plain;charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "text/plain;charset=utf-8",
+    "location": "https://securemetrics.apple.com/b/ss/applestoreww/1/JS-2.23.0/s86607359098616?AQB=1&pccr=true&vidn=357130FD83C0469F-6000008700FD51EF&ndh=1&pf=1&t=28%2F9%2F2026%2020%3A58%3A35%203%200&fid=5E6AAA45C177554F-31F199230A0A893F&ce=UTF-8&cdp=2&cl=1800&pageName=apple%20-%20index%2Ftab%20%28us%29&g=https%3A%2F%2Fwww.apple.com%2F&cc=USD&ch=www.us.homepage&server=ac-2.30.0&h1=www.us.homepage&v3=aos%3A%20us&l3=D%3Das_tex&c4=D%3Dg&v4=D%3DpageName&v14=en-us&c20=aos%3A%20us&v54=D%3Dg&v57=3544-hp-long-short-no-video-us%3Aa&v97=s.t-p&s=1440x900&c=24&j=1.6&v=N&k=Y&bw=1440&bh=900&AQE=1",
+    "p3p": "CP=\"This is not a P3P policy\""
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "size": 0,
+   "redirect": "https://securemetrics.apple.com/b/ss/applestoreww/1/JS-2.23.0/s86607359098616?AQB=1&pccr=true&vidn=357130FD83C0469F-6000008700FD51EF&ndh=1&pf=1&t=28%2F9%2F2026%2020%3A58%3A35%203%200&fid=5E6AAA45C177554F-31F199230A0A893F&ce=UTF-8&cdp=2&cl=1800&pageName=apple%20-%20index%2Ftab%20%28us%29&g=https%3A%2F%2Fwww.apple.com%2F&cc=USD&ch=www.us.homepage&server=ac-2.30.0&h1=www.us.homepage&v3=aos%3A%20us&l3=D%3Das_tex&c4=D%3Dg&v4=D%3DpageName&v14=en-us&c20=aos%3A%20us&v54=D%3Dg&v57=3544-hp-long-short-no-video-us%3Aa&v97=s.t-p&s=1440x900&c=24&j=1.6&v=N&k=Y&bw=1440&bh=900&AQE=1",
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/us/shop/bag/status?apikey=SFX9YPYY9PPXCU9KH",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/json",
+   "headers": {
+    "access-control-allow-origin": "https://www.apple.com",
+    "content-language": "en-US",
+    "content-type": "application/json",
+    "x-nxid": "79949706e9efe738e38e50d95929a237",
+    "x-shred": "da23851b5248bd56a0caf22ca5ceda0b"
+   },
+   "resourceType": "xhr",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/us/shop/bag/status__q5dcddc8b.json",
+   "size": 137,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/search-services/suggestions/defaultlinks/?src=globalnav&locale=en_US",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/json",
+   "headers": {
+    "content-type": "application/json",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "x-routed-by": "w3sh-dl"
+   },
+   "resourceType": "fetch",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/search-services/suggestions/defaultlinks/index__q67848a8f.json",
+   "size": 500,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/api-www/global-elements/global-header/v1/flyouts?locale=en_US",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/json; charset=utf-8",
+   "headers": {
+    "access-control-allow-credentials": "true",
+    "content-type": "application/json; charset=utf-8",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "x-a3enabled": "1",
+    "x-routed-by": "w3sh-apifly"
+   },
+   "resourceType": "fetch",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/api-www/global-elements/global-header/v1/flyouts__q3642c185.json",
+   "size": 45560,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/ac/localeswitcher/4/en_US/content/localeswitcher.json",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/json",
+   "headers": {
+    "content-type": "application/json",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "xhr",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/ac/localeswitcher/4/en_US/content/localeswitcher.json",
+   "size": 1670,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/autopush/us/fam-gallery/scripts/endless-entertainment-gallery.built.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/x-javascript",
+   "headers": {
+    "content-type": "application/x-javascript",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/autopush/us/fam-gallery/scripts/endless-entertainment-gallery.built.js",
+   "size": 157299,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://securemetrics.apple.com/b/ss/applestoreww/1/JS-2.23.0/s86607359098616?AQB=1&pccr=true&vidn=357130FD83C0469F-6000008700FD51EF&ndh=1&pf=1&t=28%2F9%2F2026%2020%3A58%3A35%203%200&fid=5E6AAA45C177554F-31F199230A0A893F&ce=UTF-8&cdp=2&cl=1800&pageName=apple%20-%20index%2Ftab%20%28us%29&g=https%3A%2F%2Fwww.apple.com%2F&cc=USD&ch=www.us.homepage&server=ac-2.30.0&h1=www.us.homepage&v3=aos%3A%20us&l3=D%3Das_tex&c4=D%3Dg&v4=D%3DpageName&v14=en-us&c20=aos%3A%20us&v54=D%3Dg&v57=3544-hp-long-short-no-video-us%3Aa&v97=s.t-p&s=1440x900&c=24&j=1.6&v=N&k=Y&bw=1440&bh=900&AQE=1",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/gif;charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/gif;charset=utf-8",
+    "p3p": "CP=\"This is not a P3P policy\""
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/securemetrics.apple.com/b/ss/applestoreww/1/JS-2.23.0/s86607359098616__qaeb8594e.gif",
+   "size": 43,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/wss/fonts/SF-Pro-Display/v3/sf-pro-display_bold.woff2",
+   "method": "GET",
+   "status": 200,
+   "contentType": "font/woff2",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "font/woff2",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "font",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/wss/fonts/SF-Pro-Display/v3/sf-pro-display_bold.woff2",
+   "size": 127944,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/wss/fonts/SF-Pro-Display/v3/sf-pro-display_regular.woff2",
+   "method": "GET",
+   "status": 200,
+   "contentType": "font/woff2",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "font/woff2",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "font",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/wss/fonts/SF-Pro-Display/v3/sf-pro-display_regular.woff2",
+   "size": 117056,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/a/scripts/ComponentMap-thvKzGgL.built.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/x-javascript",
+   "headers": {
+    "content-type": "application/x-javascript",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "x-serial": "65849"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/a/scripts/ComponentMap-thvKzGgL.built.js",
+   "size": 4359,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/a/scripts/videoWatch-Dp-HXwn9.built.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/x-javascript",
+   "headers": {
+    "content-type": "application/x-javascript",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "x-serial": "65850"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/a/scripts/videoWatch-Dp-HXwn9.built.js",
+   "size": 1515,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/a/scripts/_commonjsHelpers-JypJ4tLA.built.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/x-javascript",
+   "headers": {
+    "content-type": "application/x-javascript",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/a/scripts/_commonjsHelpers-JypJ4tLA.built.js",
+   "size": 635,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/a/scripts/AnimSystemModel-CyyfEbM8.built.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/x-javascript",
+   "headers": {
+    "content-type": "application/x-javascript",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "x-serial": "65846"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/a/scripts/AnimSystemModel-CyyfEbM8.built.js",
+   "size": 1921,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/a/scripts/index-DSp7vY0t.built.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/x-javascript",
+   "headers": {
+    "content-type": "application/x-javascript",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/a/scripts/index-DSp7vY0t.built.js",
+   "size": 258,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/a/scripts/inlineMediaSource-CPCc_KTS.built.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/x-javascript",
+   "headers": {
+    "content-type": "application/x-javascript",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/a/scripts/inlineMediaSource-CPCc_KTS.built.js",
+   "size": 823,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/a/scripts/HpViewport-DHyTaS-L.built.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/x-javascript",
+   "headers": {
+    "content-type": "application/x-javascript",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "x-serial": "65850"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/a/scripts/HpViewport-DHyTaS-L.built.js",
+   "size": 983,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/images/macbook-pro-m6/a/hero_macbook_pro_m6_preorder__djr4reqm3ziq_largetall_2x.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "content-type": "image/jpeg",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/images/macbook-pro-m6/a/hero_macbook_pro_m6_preorder__djr4reqm3ziq_largetall_2x.jpg",
+   "size": 158640,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/images/iphone-duo/a/hero_iphone_duo_animated_startframe__blm9gj3ulmc2_largetall_2x.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "content-type": "image/jpeg",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/images/iphone-duo/a/hero_iphone_duo_animated_startframe__blm9gj3ulmc2_largetall_2x.jpg",
+   "size": 145171,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/images/iphone-duo/a/hero_iphone_duo_animated__ggqp9olf1ii6_largetall_2x.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "content-type": "image/jpeg",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/images/iphone-duo/a/hero_iphone_duo_animated__ggqp9olf1ii6_largetall_2x.jpg",
+   "size": 318636,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://securemetrics.apple.com/b/ss/applestoreww/1/JS-2.23.0/s87099888337510?AQB=1&ndh=1&pf=1&t=28%2F9%2F2026%2020%3A58%3A43%203%200&fid=5E6AAA45C177554F-31F199230A0A893F&ce=UTF-8&cdp=2&cl=1800&pageName=apple%20-%20index%2Ftab%20%28us%29&g=https%3A%2F%2Fwww.apple.com%2F&cc=USD&events=event243%3D7.95%2Cevent244&h1=www.us.homepage&l3=D%3Das_tex&v4=D%3DpageName&v14=en-us&c34=hero-macbook-pro-proled-xdr&c35=7.95&c36=1&v54=D%3Dg&v97=s.tl-o&pe=lnk_o&pev2=section%20engagement&s=1440x900&c=24&j=1.6&v=N&k=Y&bw=1440&bh=900&lrt=99&AQE=1",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/gif;charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/gif;charset=utf-8",
+    "p3p": "CP=\"This is not a P3P policy\""
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/securemetrics.apple.com/b/ss/applestoreww/1/JS-2.23.0/s87099888337510__q8c523fe7.gif",
+   "size": 43,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/images/imac-m6/a/promo_imac_m6_preorder__cm3cvx6oewya_large_2x.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "content-type": "image/jpeg",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/images/imac-m6/a/promo_imac_m6_preorder__cm3cvx6oewya_large_2x.jpg",
+   "size": 84154,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/images/iphone-18-pro/a/promo_iphone_18_pro__9nn5m4mt2bmy_large_2x.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "content-type": "image/jpeg",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/images/iphone-18-pro/a/promo_iphone_18_pro__9nn5m4mt2bmy_large_2x.jpg",
+   "size": 65112,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/images/logos/ipad-mini/a/promo_logo_ipad_mini_a20__dcndmemvplea_large_2x.png",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/png",
+   "headers": {
+    "content-type": "image/png",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/images/logos/ipad-mini/a/promo_logo_ipad_mini_a20__dcndmemvplea_large_2x.png",
+   "size": 7571,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/images/ipad-mini/a/promo_ipad_mini_a20_preorder__b8cxb35z3e9y_large_2x.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "content-type": "image/jpeg",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/images/ipad-mini/a/promo_ipad_mini_a20_preorder__b8cxb35z3e9y_large_2x.jpg",
+   "size": 225780,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/images/logos/apple-watch-series-12/a/promo_logo_apple_watch_series_12__eck6698frlqq_large_2x.png",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/png",
+   "headers": {
+    "content-type": "image/png",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/images/logos/apple-watch-series-12/a/promo_logo_apple_watch_series_12__eck6698frlqq_large_2x.png",
+   "size": 5276,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/images/apple-watch-series-12/a/promo_apple_watch_series_12__gnlprtt8526a_large_2x.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "content-type": "image/jpeg",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/images/apple-watch-series-12/a/promo_apple_watch_series_12__gnlprtt8526a_large_2x.jpg",
+   "size": 64262,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/home/cj/images/tv-gallery/logo_hero_light__d7t8cya4x26a_small.png",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/png",
+   "headers": {
+    "content-type": "image/png",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/home/cj/images/tv-gallery/logo_hero_light__d7t8cya4x26a_small.png",
+   "size": 424,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/images/logos/apple-upgrade/a/promo_logo_apple_upgrade__lwuohffdzjem_large_2x.png",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/png",
+   "headers": {
+    "content-type": "image/png",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/images/logos/apple-upgrade/a/promo_logo_apple_upgrade__lwuohffdzjem_large_2x.png",
+   "size": 6568,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/images/logos/apple-card/a/promo_logo_apple_card__28vxrcexz0ia_large_2x.png",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/png",
+   "headers": {
+    "content-type": "image/png",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/images/logos/apple-card/a/promo_logo_apple_card__28vxrcexz0ia_large_2x.png",
+   "size": 4268,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/images/apple-upgrade/a/promo_apple_upgrade_startframe__e9bf3nb054ae_large_2x.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "content-type": "image/jpeg",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/images/apple-upgrade/a/promo_apple_upgrade_startframe__e9bf3nb054ae_large_2x.jpg",
+   "size": 33867,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/images/apple-upgrade/a/promo_apple_upgrade__jvn6udm4tx2e_large_2x.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "content-type": "image/jpeg",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/images/apple-upgrade/a/promo_apple_upgrade__jvn6udm4tx2e_large_2x.jpg",
+   "size": 66467,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/v/homepage/images/apple-card/a/promo_apple_card__d8xz4kd4evwy_large_2x.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "content-type": "image/jpeg",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/v/homepage/images/apple-card/a/promo_apple_card__d8xz4kd4evwy_large_2x.jpg",
+   "size": 125634,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/C0fOxZGfTfntifSO9gPZ7w/220x54.png",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/png",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "378 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730042842",
+    "content-type": "image/png",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "JW5AQWIJJBLKWIVHNSZ5RNVSRE",
+    "x-b3-traceid": "2139db0d67868a13",
+    "x-correlation-key": "JW5AQWIJJBLKWIVHNSZ5RNVSRE",
+    "x-daiquiri-debug-worker-pid": "16634, 39546",
+    "x-daiquiri-instance": "daiquiri:43624001:st44p00it-hyhk16124101:7987:26HOTFIX47:daiquiri-amp-processing-shared-int-001-st, daiquiri:41338003:st47p00it-qujn13041901:7987:26HOTFIX48:daiquiri-amp-all-l7shared-int-001-st"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/C0fOxZGfTfntifSO9gPZ7w/220x54.png",
+   "size": 3510,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/EJSCPD6sWV9Ib13RNrmy2g/220x54.png",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/png",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "371 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730042848",
+    "content-type": "image/png",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "MR24KPJXWN6NCHTGP6AY3MLGWU",
+    "x-b3-traceid": "977d4eb7855dfd88",
+    "x-correlation-key": "MR24KPJXWN6NCHTGP6AY3MLGWU",
+    "x-daiquiri-debug-worker-pid": "5236, 19729",
+    "x-daiquiri-instance": "daiquiri:33624002:pv50p00it-hyhk12033901:7987:26HOTFIX47:daiquiri-amp-processing-shared-int-001-pv, daiquiri:31338001:pv52p00it-qujn08063302:7987:26HOTFIX48:daiquiri-amp-all-l7shared-int-001-pv"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/EJSCPD6sWV9Ib13RNrmy2g/220x54.png",
+   "size": 11581,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/Features221/v4/f0/ac/1e/f0ac1e58-0027-49d0-378e-68470edfb0ec/3b7d6fac-0061-401c-9716-742245053fd0.png/220x54.png",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/png",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "455 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730042849",
+    "content-type": "image/png",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "JLULNAWG4N37HR6XPBVHWH5PKM",
+    "x-b3-traceid": "480ae0710e7d382b",
+    "x-correlation-key": "JLULNAWG4N37HR6XPBVHWH5PKM",
+    "x-daiquiri-debug-worker-pid": "53249, 93762",
+    "x-daiquiri-instance": "daiquiri:13624002:mr85p00it-hyhk03094901:7987:26HOTFIX47:daiquiri-amp-processing-shared-int-001-mr, daiquiri:11338002:mr47p00it-qujn02122102:7987:26HOTFIX47:daiquiri-amp-all-l7shared-int-001-mr"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/Features221/v4/f0/ac/1e/f0ac1e58-0027-49d0-378e-68470edfb0ec/3b7d6fac-0061-401c-9716-742245053fd0.png/220x54.png",
+   "size": 3556,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/CO4lIyj7dXy2D79e7FjgDA/1960x1044sr.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "712 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730042847",
+    "content-type": "image/jpeg",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "XKB2X2PRRN4KYBJ3Z7ODT4UTBE",
+    "x-b3-traceid": "882919c41d633290",
+    "x-correlation-key": "XKB2X2PRRN4KYBJ3Z7ODT4UTBE",
+    "x-daiquiri-debug-worker-pid": "23230, 122132",
+    "x-daiquiri-instance": "daiquiri:43624001:st44p00it-hyhk16124101:7987:26HOTFIX41:daiquiri-amp-processing-shared-int-001-st, daiquiri:41338002:st47p00it-qujn13041702:7987:26HOTFIX41:daiquiri-amp-all-l7shared-int-001-st"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/CO4lIyj7dXy2D79e7FjgDA/1960x1044sr.jpg",
+   "size": 360731,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://securemetrics.apple.com/b/ss/applestoreww/1/JS-2.23.0/s83615930847503?AQB=1&ndh=1&pf=1&t=28%2F9%2F2026%2020%3A58%3A44%203%200&fid=5E6AAA45C177554F-31F199230A0A893F&ce=UTF-8&cdp=2&cl=1800&pageName=apple%20-%20index%2Ftab%20%28us%29&g=https%3A%2F%2Fwww.apple.com%2F&cc=USD&events=event243%3D1.28%2Cevent244&h1=www.us.homepage&l3=D%3Das_tex&v4=D%3DpageName&v14=en-us&c34=hero-iphone-duo&c35=1.28&c36=3&v54=D%3Dg&v97=s.tl-o&pe=lnk_o&pev2=section%20engagement&s=1440x900&c=24&j=1.6&v=N&k=Y&bw=1440&bh=900&lrt=28&AQE=1",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/gif;charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/gif;charset=utf-8",
+    "p3p": "CP=\"This is not a P3P policy\""
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/securemetrics.apple.com/b/ss/applestoreww/1/JS-2.23.0/s83615930847503__q7226cfbf.gif",
+   "size": 43,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/Features/v4/f2/63/a7/f263a72a-6efb-66af-cc28-ac5b036acd62/2fa2d9f2-4bcc-4ca5-a248-ae8ed8e5cdd5.png/1960x1044sr.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "1559 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043023",
+    "content-type": "image/jpeg",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "O3PICP6HK2ZPEPMVLWM4HJWNZY",
+    "x-b3-traceid": "ff926428c2fa16d6",
+    "x-correlation-key": "O3PICP6HK2ZPEPMVLWM4HJWNZY",
+    "x-daiquiri-debug-worker-pid": "53993, 74428",
+    "x-daiquiri-instance": "daiquiri:33624002:pv50p00it-hyhk12033901:7987:26HOTFIX47:daiquiri-amp-processing-shared-int-001-pv, daiquiri:31338003:pv52p00it-qujn10223301:7987:26HOTFIX48:daiquiri-amp-all-l7shared-int-001-pv"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/Features/v4/f2/63/a7/f263a72a-6efb-66af-cc28-ac5b036acd62/2fa2d9f2-4bcc-4ca5-a248-ae8ed8e5cdd5.png/1960x1044sr.jpg",
+   "size": 572778,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/Cc6MMzxFzD1gVqnd6IslKA/220x54.png",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/png",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "180 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043221",
+    "content-type": "image/png",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "N6FI43Z4W2QFKH3GHEGNRGF2OU",
+    "x-b3-traceid": "adfe917946f76918",
+    "x-correlation-key": "N6FI43Z4W2QFKH3GHEGNRGF2OU",
+    "x-daiquiri-debug-worker-pid": "5231, 97558",
+    "x-daiquiri-instance": "daiquiri:33624002:pv50p00it-hyhk12033901:7987:26HOTFIX47:daiquiri-amp-processing-shared-int-001-pv, daiquiri:31338002:pv52p00it-qujn10213502:7987:26HOTFIX48:daiquiri-amp-all-l7shared-int-001-pv"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/Cc6MMzxFzD1gVqnd6IslKA/220x54.png",
+   "size": 4883,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/Kc1Xx3Z1QBOuXe1EHDu4TA/220x54.png",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/png",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "340 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043247",
+    "content-type": "image/png",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "7W4BZKDDZLRWPHRUU7EIKLCSNM",
+    "x-b3-traceid": "8c3ece420bb339af",
+    "x-correlation-key": "7W4BZKDDZLRWPHRUU7EIKLCSNM",
+    "x-daiquiri-debug-worker-pid": "53251, 93263",
+    "x-daiquiri-instance": "daiquiri:13624002:mr85p00it-hyhk03094901:7987:26HOTFIX47:daiquiri-amp-processing-shared-int-001-mr, daiquiri:11338002:mr47p00it-qujn02122102:7987:26HOTFIX47:daiquiri-amp-all-l7shared-int-001-mr"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/Kc1Xx3Z1QBOuXe1EHDu4TA/220x54.png",
+   "size": 2949,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/w6iOdqXGZLugnUgKmWZp0g/220x54.png",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/png",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "200 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043296",
+    "content-type": "image/png",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "5QM2IM7Y32G3NUMGRLOTGLPUWU",
+    "x-b3-traceid": "423751b34a72f82e",
+    "x-correlation-key": "5QM2IM7Y32G3NUMGRLOTGLPUWU",
+    "x-daiquiri-debug-worker-pid": "53261, 93226",
+    "x-daiquiri-instance": "daiquiri:13624002:mr85p00it-hyhk03094901:7987:26HOTFIX47:daiquiri-amp-processing-shared-int-001-mr, daiquiri:11338002:mr47p00it-qujn02122102:7987:26HOTFIX47:daiquiri-amp-all-l7shared-int-001-mr"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/w6iOdqXGZLugnUgKmWZp0g/220x54.png",
+   "size": 3403,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/x5JjmiSD75wN12-HmmZRcg/1960x1044sr.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "686 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730042878",
+    "content-type": "image/jpeg",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "7VR26LQRLRYC7X624SSCOC5AR4",
+    "x-b3-traceid": "d1acd9986c702287",
+    "x-correlation-key": "7VR26LQRLRYC7X624SSCOC5AR4",
+    "x-daiquiri-debug-worker-pid": "7859, 102167",
+    "x-daiquiri-instance": "daiquiri:13624002:mr85p00it-hyhk03094901:7987:26RELEASE153:daiquiri-amp-processing-shared-int-001-mr, daiquiri:11338002:mr47p00it-qujn02122102:7987:26RELEASE153:daiquiri-amp-all-l7shared-int-001-mr"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/x5JjmiSD75wN12-HmmZRcg/1960x1044sr.jpg",
+   "size": 576674,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/Features/v4/78/57/f6/7857f6ec-a4ed-87dc-dea9-a6ed02888722/ebd59c17-8e95-49b1-aec0-44aec57388ee.png/1960x1044sr.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "2163 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043246",
+    "content-type": "image/jpeg",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "JN436DNENCZHDFQMNRZIWZU74Q",
+    "x-b3-traceid": "5f611d762f349ab9",
+    "x-correlation-key": "JN436DNENCZHDFQMNRZIWZU74Q",
+    "x-daiquiri-debug-worker-pid": "13548, 107400",
+    "x-daiquiri-instance": "daiquiri:33624001:pv50p00it-hyhk10063801:7987:26RELEASE107:daiquiri-amp-processing-shared-int-001-pv, daiquiri:31338003:pv52p00it-qujn10223301:7987:26RELEASE107:daiquiri-amp-all-l7shared-int-001-pv",
+    "x-robots-tag": "noindex"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/Features/v4/78/57/f6/7857f6ec-a4ed-87dc-dea9-a6ed02888722/ebd59c17-8e95-49b1-aec0-44aec57388ee.png/1960x1044sr.jpg",
+   "size": 663461,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/Features211/v4/5b/b3/4a/5bb34a60-695c-a96f-75ec-8a957fc2a20b/45899847-e52c-44a1-9ce5-09aedebb7a78.png/834x468.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043302",
+    "content-type": "image/jpeg",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "N7353HZNZ6ISIFZBNHRULGFH6A",
+    "x-b3-traceid": "e9140ab358cef7c9",
+    "x-correlation-key": "N7353HZNZ6ISIFZBNHRULGFH6A",
+    "x-daiquiri-debug-worker-pid": "12925, 105237",
+    "x-daiquiri-instance": "daiquiri:13624002:mr85p00it-hyhk03094901:7987:26HOTFIX24:daiquiri-amp-processing-shared-int-001-mr, daiquiri:11338001:mr47p00it-qujn04120302:7987:26HOTFIX24:daiquiri-amp-all-l7shared-int-001-mr",
+    "x-robots-tag": "noindex"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/Features211/v4/5b/b3/4a/5bb34a60-695c-a96f-75ec-8a957fc2a20b/45899847-e52c-44a1-9ce5-09aedebb7a78.png/834x468.jpg",
+   "size": 87059,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/Features211/v4/e9/7b/bd/e97bbd89-c9ae-c79f-b533-bb9a806e5bf0/f81d102b-27cf-4041-814e-89a13fa320e3.png/392x392sr.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "415 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043297",
+    "content-type": "image/jpeg",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "P5R7MTZ4S2HN2MXZPLLPB7S4HU",
+    "x-b3-traceid": "d06eda28078f8f74",
+    "x-correlation-key": "P5R7MTZ4S2HN2MXZPLLPB7S4HU",
+    "x-daiquiri-debug-worker-pid": "7864, 33824",
+    "x-daiquiri-instance": "daiquiri:13624002:mr85p00it-hyhk03094901:7987:26RELEASE153:daiquiri-amp-processing-shared-int-001-mr, daiquiri:11338003:mr47p00it-qujn05120301:7987:26RELEASE153:daiquiri-amp-all-l7shared-int-001-mr"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/Features211/v4/e9/7b/bd/e97bbd89-c9ae-c79f-b533-bb9a806e5bf0/f81d102b-27cf-4041-814e-89a13fa320e3.png/392x392sr.jpg",
+   "size": 42038,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/Features/v4/79/8e/f0/798ef0c7-5cdb-4eb0-6e23-4b68d5525832/3036bfa7-3cc0-419b-9c57-47e7101906ad.png/834x468.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "1282 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043298",
+    "content-type": "image/jpeg",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "UFJ6KWOE57HWXL24N5YSKJYUP4",
+    "x-b3-traceid": "ebe06f0e44c53921",
+    "x-correlation-key": "UFJ6KWOE57HWXL24N5YSKJYUP4",
+    "x-daiquiri-debug-worker-pid": "22697, 75964",
+    "x-daiquiri-instance": "daiquiri:43624001:st44p00it-hyhk16124101:7987:26RELEASE153:daiquiri-amp-processing-shared-int-001-st, daiquiri:41338001:st47p00it-qujn13151502:7987:26RELEASE153:daiquiri-amp-all-l7shared-int-001-st"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/Features/v4/79/8e/f0/798ef0c7-5cdb-4eb0-6e23-4b68d5525832/3036bfa7-3cc0-419b-9c57-47e7101906ad.png/834x468.jpg",
+   "size": 75694,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/Features/v4/ff/1f/6a/ff1f6a26-4ad9-e922-cd91-c6c7d6ee8504/455170ad-ea7a-43fd-8f3a-0d8846798712.png/392x392SC.DN01.jpg?l=en-US",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "431 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043300",
+    "content-type": "image/jpeg",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "LDKKDTELVZSR42H2KV5RREGDXM",
+    "x-b3-traceid": "9842bff07b5fa67d",
+    "x-correlation-key": "LDKKDTELVZSR42H2KV5RREGDXM",
+    "x-daiquiri-debug-worker-pid": "61153, 111421",
+    "x-daiquiri-instance": "daiquiri:43624001:st44p00it-hyhk16124101:7987:26HOTFIX41:daiquiri-amp-processing-shared-int-001-st, daiquiri:41338002:st47p00it-qujn13041702:7987:26HOTFIX41:daiquiri-amp-all-l7shared-int-001-st"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/Features/v4/ff/1f/6a/ff1f6a26-4ad9-e922-cd91-c6c7d6ee8504/455170ad-ea7a-43fd-8f3a-0d8846798712.png/392x392SC.DN01__q74cd96ea.jpg",
+   "size": 32880,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/Video221/v4/ea/5a/58/ea5a58f1-1eec-f488-ba04-eab9f25ed2e3/ME_CH_0345_artwork_en_ID360705_0.png/834x468.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "953 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043303",
+    "content-type": "image/jpeg",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "652IWQCYVJH2A7Y6LG5PNJ76ZA",
+    "x-b3-traceid": "fd20415d62169992",
+    "x-correlation-key": "652IWQCYVJH2A7Y6LG5PNJ76ZA",
+    "x-daiquiri-debug-worker-pid": "54583, 105202",
+    "x-daiquiri-instance": "daiquiri:13624002:mr85p00it-hyhk03094901:7987:26HOTFIX39:daiquiri-amp-processing-shared-int-001-mr, daiquiri:11338003:mr47p00it-qujn05120301:7987:26HOTFIX39:daiquiri-amp-all-l7shared-int-001-mr"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/Video221/v4/ea/5a/58/ea5a58f1-1eec-f488-ba04-eab9f25ed2e3/ME_CH_0345_artwork_en_ID360705_0.png/834x468.jpg",
+   "size": 61877,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/Features221/v4/b1/bd/81/b1bd81c6-f678-a6d1-25d2-9d3bd20e1299/f1d34c41-e9e3-428d-80b7-fff65822f3f6.png/834x468.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "525 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043304",
+    "content-type": "image/jpeg",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "47FO47FADPAQQ6NHIXMRIDGBO4",
+    "x-b3-traceid": "caef3dd09c32a037",
+    "x-correlation-key": "47FO47FADPAQQ6NHIXMRIDGBO4",
+    "x-daiquiri-debug-worker-pid": "19544, 77438",
+    "x-daiquiri-instance": "daiquiri:33624002:pv50p00it-hyhk12033901:7987:26RELEASE153:daiquiri-amp-processing-shared-int-001-pv, daiquiri:31338003:pv52p00it-qujn10223301:7987:26RELEASE153:daiquiri-amp-all-l7shared-int-001-pv"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/Features221/v4/b1/bd/81/b1bd81c6-f678-a6d1-25d2-9d3bd20e1299/f1d34c41-e9e3-428d-80b7-fff65822f3f6.png/834x468.jpg",
+   "size": 56872,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/vXNv4MQ8aLXIkWQTZxw-BQ/220x54.png",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/png",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "167 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043275",
+    "content-type": "image/png",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "2AGFX5TK43CDFZU2CG2YZ5N5UA",
+    "x-b3-traceid": "0a0759396a00c52d",
+    "x-correlation-key": "2AGFX5TK43CDFZU2CG2YZ5N5UA",
+    "x-daiquiri-debug-worker-pid": "53276, 63544",
+    "x-daiquiri-instance": "daiquiri:13624002:mr85p00it-hyhk03094901:7987:26HOTFIX47:daiquiri-amp-processing-shared-int-001-mr, daiquiri:11338001:mr47p00it-qujn04120302:7987:26HOTFIX47:daiquiri-amp-all-l7shared-int-001-mr"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/vXNv4MQ8aLXIkWQTZxw-BQ/220x54.png",
+   "size": 4713,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/Zx5Sg1u1k0piIUXxTOWIYw/220x54.png",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/png",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "185 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043269",
+    "content-type": "image/png",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "XORR7RENCBATVPLWMJJ6TUEB3Q",
+    "x-b3-traceid": "486e4813913aa428",
+    "x-correlation-key": "XORR7RENCBATVPLWMJJ6TUEB3Q",
+    "x-daiquiri-debug-worker-pid": "53982, 130773",
+    "x-daiquiri-instance": "daiquiri:33624002:pv50p00it-hyhk12033901:7987:26HOTFIX47:daiquiri-amp-processing-shared-int-001-pv, daiquiri:31338002:pv52p00it-qujn10213502:7987:26HOTFIX48:daiquiri-amp-all-l7shared-int-001-pv"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/Zx5Sg1u1k0piIUXxTOWIYw/220x54.png",
+   "size": 4536,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/2O76_V3dS7VrJAjsyXvY2Q/220x54.png",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/png",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "263 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043272",
+    "content-type": "image/png",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "IULECHDJTM2LBKFWQIVHC4LHOU",
+    "x-b3-traceid": "8492b50e2cd78c78",
+    "x-correlation-key": "IULECHDJTM2LBKFWQIVHC4LHOU",
+    "x-daiquiri-debug-worker-pid": "53268, 93241",
+    "x-daiquiri-instance": "daiquiri:13624002:mr85p00it-hyhk03094901:7987:26HOTFIX47:daiquiri-amp-processing-shared-int-001-mr, daiquiri:11338002:mr47p00it-qujn02122102:7987:26HOTFIX47:daiquiri-amp-all-l7shared-int-001-mr"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/2O76_V3dS7VrJAjsyXvY2Q/220x54.png",
+   "size": 4871,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/eD8DZGJ170t3MyFhlWOkdw/1960x1044sr.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "618 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043414",
+    "content-type": "image/jpeg",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "XY3TGU5O5DKCDKGKWALTOSTZ6Q",
+    "x-b3-traceid": "7bbfd3eefd7f2c5c",
+    "x-correlation-key": "XY3TGU5O5DKCDKGKWALTOSTZ6Q",
+    "x-daiquiri-debug-worker-pid": "13091, 82713",
+    "x-daiquiri-instance": "daiquiri:43624001:st44p00it-hyhk16124101:7987:26HOTFIX26:daiquiri-amp-processing-shared-int-001-st, daiquiri:41338001:st47p00it-qujn13151502:7987:26HOTFIX26:daiquiri-amp-all-l7shared-int-001-st",
+    "x-robots-tag": "noindex"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/eD8DZGJ170t3MyFhlWOkdw/1960x1044sr.jpg",
+   "size": 625764,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/L6BJs1M_LHbp_DDigxy-eQ/1960x1044sr.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "661 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043271",
+    "content-type": "image/jpeg",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "LHZBW3UJZOGUSYC762CQ3UK7LU",
+    "x-b3-traceid": "b74eb40bbfe74964",
+    "x-correlation-key": "LHZBW3UJZOGUSYC762CQ3UK7LU",
+    "x-daiquiri-debug-worker-pid": "43705, 26251",
+    "x-daiquiri-instance": "daiquiri:33624002:pv50p00it-hyhk12033901:7987:26HOTFIX41:daiquiri-amp-processing-shared-int-001-pv, daiquiri:31338003:pv52p00it-qujn10223301:7987:26HOTFIX41:daiquiri-amp-all-l7shared-int-001-pv"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/L6BJs1M_LHbp_DDigxy-eQ/1960x1044sr.jpg",
+   "size": 543625,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/oglUrIV-GAOPYCYKh5AlBQ/1960x1044sr.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "697 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043277",
+    "content-type": "image/jpeg",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "MAMC7JEJLZ3NN4ZAGGVEMAIJSI",
+    "x-b3-traceid": "cd64eac6cc32c91e",
+    "x-correlation-key": "MAMC7JEJLZ3NN4ZAGGVEMAIJSI",
+    "x-daiquiri-debug-worker-pid": "58841, 8851",
+    "x-daiquiri-instance": "daiquiri:13624002:mr85p00it-hyhk03094901:7987:26RELEASE153:daiquiri-amp-processing-shared-int-001-mr, daiquiri:11338001:mr47p00it-qujn04120302:7987:26RELEASE153:daiquiri-amp-all-l7shared-int-001-mr"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/oglUrIV-GAOPYCYKh5AlBQ/1960x1044sr.jpg",
+   "size": 517125,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/b-b9eb0IET479YbfP-t1cA/1960x1044sr.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "548 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043270",
+    "content-type": "image/jpeg",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "M3Z7J2HNPSERV32SDVBHQTPEAM",
+    "x-b3-traceid": "7f29ddfa31bf47ca",
+    "x-correlation-key": "M3Z7J2HNPSERV32SDVBHQTPEAM",
+    "x-daiquiri-debug-worker-pid": "27005, 72753",
+    "x-daiquiri-instance": "daiquiri:43624001:st44p00it-hyhk16124101:7987:26RELEASE139:daiquiri-amp-processing-shared-int-001-st, daiquiri:41338001:st47p00it-qujn13151502:7987:26RELEASE139:daiquiri-amp-all-l7shared-int-001-st",
+    "x-robots-tag": "noindex"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/b-b9eb0IET479YbfP-t1cA/1960x1044sr.jpg",
+   "size": 470252,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/hRaOrIKahRFcNlKt6UV4Ow/1960x1044sr.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "566 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043274",
+    "content-type": "image/jpeg",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "IZ4ISL55275UNJD2PREWGY5CFY",
+    "x-b3-traceid": "969d16e9cd8f835d",
+    "x-correlation-key": "IZ4ISL55275UNJD2PREWGY5CFY",
+    "x-daiquiri-debug-worker-pid": "676, 97826",
+    "x-daiquiri-instance": "daiquiri:33624002:pv50p00it-hyhk12033901:7987:26RELEASE153:daiquiri-amp-processing-shared-int-001-pv, daiquiri:31338003:pv52p00it-qujn10223301:7987:26RELEASE153:daiquiri-amp-all-l7shared-int-001-pv"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/hRaOrIKahRFcNlKt6UV4Ow/1960x1044sr.jpg",
+   "size": 416617,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/Features211/v4/53/55/d7/5355d758-e5b7-b406-f004-bb98d03ecb38/9388d284-2a0b-43e8-86e0-5852e8559d18.png/834x468.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "1657 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043301",
+    "content-type": "image/jpeg",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "CF3FJ5UIZW2GSPGEJFXGN3GQNI",
+    "x-b3-traceid": "7efc0f3d019198b0",
+    "x-correlation-key": "CF3FJ5UIZW2GSPGEJFXGN3GQNI",
+    "x-daiquiri-debug-worker-pid": "16756, 90253",
+    "x-daiquiri-instance": "daiquiri:33624002:pv50p00it-hyhk12033901:7987:26HOTFIX39:daiquiri-amp-processing-shared-int-001-pv, daiquiri:31338001:pv52p00it-qujn08063302:7987:26RELEASE153:daiquiri-amp-all-l7shared-int-001-pv"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/Features211/v4/53/55/d7/5355d758-e5b7-b406-f004-bb98d03ecb38/9388d284-2a0b-43e8-86e0-5852e8559d18.png/834x468.jpg",
+   "size": 128670,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/Features/v4/38/8c/80/388c802c-6280-aeae-a416-dfdbb52c35b8/ccb00e27-00ee-4027-9dc9-1fe208a94ac2.png/392x392SC.DN01.jpg?l=en-US",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "443 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043322",
+    "content-type": "image/jpeg",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "FWLFZQHHOS55DKJU2L336RDVCY",
+    "x-b3-traceid": "2457d98ad842cf49",
+    "x-correlation-key": "FWLFZQHHOS55DKJU2L336RDVCY",
+    "x-daiquiri-debug-worker-pid": "65043, 103879",
+    "x-daiquiri-instance": "daiquiri:13624002:mr85p00it-hyhk03094901:7987:26HOTFIX41:daiquiri-amp-processing-shared-int-001-mr, daiquiri:11338003:mr47p00it-qujn05120301:7987:26HOTFIX41:daiquiri-amp-all-l7shared-int-001-mr"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/Features/v4/38/8c/80/388c802c-6280-aeae-a416-dfdbb52c35b8/ccb00e27-00ee-4027-9dc9-1fe208a94ac2.png/392x392SC.DN01__q74cd96ea.jpg",
+   "size": 43669,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://is1-ssl.mzstatic.com/image/thumb/Features211/v4/2a/75/df/2a75df27-703b-4712-6d95-9c9e29ca1dc6/fa77ffdb-61aa-47e7-920a-7da1876f3929.png/834x468.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Length,Content-Type,ETag,Cache-Control,Expires,Last-Modified",
+    "apple-timing-app": "650 ms",
+    "cdnuuid": "7f6052d7-ce69-49d8-85ae-3e9f40615254-1730043323",
+    "content-type": "image/jpeg",
+    "proxy-status": "received-status=200",
+    "timing-allow-origin": "*",
+    "x-apple-jingle-correlation-key": "MWGEZW44MAX5VUFDX7G5ACBSSU",
+    "x-b3-traceid": "a8a20d6636987409",
+    "x-correlation-key": "MWGEZW44MAX5VUFDX7G5ACBSSU",
+    "x-daiquiri-debug-worker-pid": "63688, 5242",
+    "x-daiquiri-instance": "daiquiri:13624002:mr85p00it-hyhk03094901:7987:26RELEASE107:daiquiri-amp-processing-shared-int-001-mr, daiquiri:11338003:mr47p00it-qujn05120301:7987:26RELEASE107:daiquiri-amp-all-l7shared-int-001-mr",
+    "x-robots-tag": "noindex"
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/is1-ssl.mzstatic.com/image/thumb/Features211/v4/2a/75/df/2a75df27-703b-4712-6d95-9c9e29ca1dc6/fa77ffdb-61aa-47e7-920a-7da1876f3929.png/834x468.jpg",
+   "size": 113958,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://securemetrics.apple.com/b/ss/applestoreww/1/JS-2.23.0/s8756507486464?AQB=1&ndh=1&pf=1&t=28%2F9%2F2026%2020%3A58%3A46%203%200&fid=5E6AAA45C177554F-31F199230A0A893F&ce=UTF-8&cdp=2&cl=1800&pageName=apple%20-%20index%2Ftab%20%28us%29&g=https%3A%2F%2Fwww.apple.com%2F&cc=USD&events=event243%3D1.27%2Cevent244&h1=www.us.homepage&l3=D%3Das_tex&v4=D%3DpageName&v14=en-us&c34=promo-apple-upgrade&c35=1.27&c36=8&v54=D%3Dg&v97=s.tl-o&pe=lnk_o&pev2=section%20engagement&s=1440x900&c=24&j=1.6&v=N&k=Y&bw=1440&bh=900&lrt=44&AQE=1",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/gif;charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/gif;charset=utf-8",
+    "p3p": "CP=\"This is not a P3P policy\""
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/securemetrics.apple.com/b/ss/applestoreww/1/JS-2.23.0/s8756507486464__q0af77277.gif",
+   "size": 43,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://securemetrics.apple.com/b/ss/applestoreww/1/JS-2.23.0/s85417380234176?AQB=1&ndh=1&pf=1&t=28%2F9%2F2026%2020%3A58%3A46%203%200&fid=5E6AAA45C177554F-31F199230A0A893F&ce=UTF-8&cdp=2&cl=1800&pageName=apple%20-%20index%2Ftab%20%28us%29&g=https%3A%2F%2Fwww.apple.com%2F&cc=USD&events=event243%3D1.27%2Cevent244&h1=www.us.homepage&l3=D%3Das_tex&v4=D%3DpageName&v14=en-us&c34=promo-apple-card&c35=1.27&c36=9&v54=D%3Dg&v97=s.tl-o&pe=lnk_o&pev2=section%20engagement&s=1440x900&c=24&j=1.6&v=N&k=Y&bw=1440&bh=900&AQE=1",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/gif;charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/gif;charset=utf-8",
+    "p3p": "CP=\"This is not a P3P policy\""
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/securemetrics.apple.com/b/ss/applestoreww/1/JS-2.23.0/s85417380234176__q332aba9e.gif",
+   "size": 43,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://securemetrics.apple.com/b/ss/applestoreww/1/JS-2.23.0/s83835786105144?AQB=1&ndh=1&pf=1&t=28%2F9%2F2026%2020%3A58%3A46%203%200&fid=5E6AAA45C177554F-31F199230A0A893F&ce=UTF-8&cdp=2&cl=1800&pageName=apple%20-%20index%2Ftab%20%28us%29&g=https%3A%2F%2Fwww.apple.com%2F&cc=USD&events=event406&h1=www.us.homepage&l3=D%3Das_tex&v4=D%3DpageName&v14=en-us&v54=D%3Dg&v97=s.tl-o&pe=lnk_o&pev2=end%20of%20page&s=1440x900&c=24&j=1.6&v=N&k=Y&bw=1440&bh=900&AQE=1",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/gif;charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/gif;charset=utf-8",
+    "p3p": "CP=\"This is not a P3P policy\""
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/securemetrics.apple.com/b/ss/applestoreww/1/JS-2.23.0/s83835786105144__q1249f5ad.gif",
+   "size": 43,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://securemetrics.apple.com/b/ss/applestoreww/1/JS-2.23.0/s82617695216932?AQB=1&ndh=1&pf=1&t=28%2F9%2F2026%2020%3A58%3A47%203%200&fid=5E6AAA45C177554F-31F199230A0A893F&ce=UTF-8&cdp=2&cl=1800&pageName=apple%20-%20index%2Ftab%20%28us%29&g=https%3A%2F%2Fwww.apple.com%2F&cc=USD&events=event243%3D1.50%2Cevent244&h1=www.us.homepage&l3=D%3Das_tex&v4=D%3DpageName&v14=en-us&c34=fam-gallery&c35=1.50&c36=12&v54=D%3Dg&v97=s.tl-o&pe=lnk_o&pev2=section%20engagement&s=1440x900&c=24&j=1.6&v=N&k=Y&bw=1440&bh=900&lrt=23&AQE=1",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/gif;charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/gif;charset=utf-8",
+    "p3p": "CP=\"This is not a P3P policy\""
+   },
+   "resourceType": "image",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/securemetrics.apple.com/b/ss/applestoreww/1/JS-2.23.0/s82617695216932__q3c1982c4.gif",
+   "size": 43,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/105/media/us/homepage/2026/5c1fef9a-1b4d-485b-b786-69f4eaafa798/anim/hero/largetall_2x.mp4",
+   "method": "GET",
+   "status": 200,
+   "contentType": "video/mp4",
+   "headers": {
+    "content-type": "video/mp4",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Range, Content-Length, Accept-Ranges",
+    "access-control-allow-headers": "Range",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "media",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/105/media/us/homepage/2026/5c1fef9a-1b4d-485b-b786-69f4eaafa798/anim/hero/largetall_2x.mp4",
+   "size": 1974144,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/favicon.ico",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/x-icon",
+   "headers": {
+    "mpulse_cdn_cache": "HIT",
+    "mpulse_origin_time": "0",
+    "referrer-policy": "no-referrer-when-downgrade",
+    "content-type": "image/x-icon"
+   },
+   "resourceType": "other",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/favicon.ico",
+   "size": 22382
+  },
+  {
+   "url": "https://www.apple.com/105/media/us/homepage/2026/dfe63e15-1d50-4ed5-bffc-c121fa0b8626/anim/hero/largetall_2x.mp4",
+   "method": "GET",
+   "status": 200,
+   "contentType": "video/mp4",
+   "headers": {
+    "content-type": "video/mp4",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Range, Content-Length, Accept-Ranges",
+    "access-control-allow-headers": "Range",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "media",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/105/media/us/homepage/2026/dfe63e15-1d50-4ed5-bffc-c121fa0b8626/anim/hero/largetall_2x.mp4",
+   "size": 1111767,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://www.apple.com/105/media/us/homepage/2026/abb2ec52-6e62-4771-84e4-d1e689324d6d/anim/promo/large_2x.mp4",
+   "method": "GET",
+   "status": 200,
+   "contentType": "video/mp4",
+   "headers": {
+    "content-type": "video/mp4",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Range, Content-Length, Accept-Ranges",
+    "access-control-allow-headers": "Range",
+    "referrer-policy": "no-referrer-when-downgrade"
+   },
+   "resourceType": "media",
+   "passes": [
+    "desktop"
+   ],
+   "file": "assets/www.apple.com/105/media/us/homepage/2026/abb2ec52-6e62-4771-84e4-d1e689324d6d/anim/promo/large_2x.mp4",
+   "size": 595839,
+   "modes": [
+    "no-cors"
+   ]
+  }
+ ],
+ "videos": {
+  "posters": {},
+  "onlineHosts": []
+ }
+}
