@@ -146,6 +146,95 @@ body{max-width:1600px;margin-inline:auto;border-inline:1px solid var(--line);bac
 @media(max-width:360px){.wrap{width:calc(100% - 32px)}.hero-title{font-size:37px}.product-nav{gap:13px}.btn-beam-content{font-size:9px;padding-inline:9px}.product-path small{font-size:8px}}
 @media(prefers-reduced-motion:reduce){.hero-pin:before,.btn-beam:before{animation:none!important}.product-card,.static-card{transition:none}}
 </style>
+<style id="wiseia-work-styles">
+/* All additions are scoped to the final content section and its compact footer.
+   Header, hero selectors, layout and original animation controller are untouched. */
+.wiseia-work{position:relative;padding:88px 0 0;border-top:1px solid var(--line);background:var(--white);color:var(--ink);isolation:isolate}
+.wiseia-work .ww-heading{display:grid;grid-template-columns:1.15fr 1fr;gap:65px;align-items:end;margin-bottom:54px}
+.wiseia-work h2{font:500 clamp(36px,4.3vw,64px)/1.06 var(--sans);letter-spacing:-.065em}
+.wiseia-work .ww-heading>p{font:400 15px/1.75 var(--sans);color:var(--muted);max-width:490px}
+.wiseia-work .ww-columns{display:grid;grid-template-columns:1.2fr 1fr;gap:58px;align-items:center}
+.wiseia-work .ww-illustration{margin:0;min-width:0}
+.wiseia-work .ww-photo-composition{position:relative;isolation:isolate;aspect-ratio:1.47;overflow:hidden;border:1px solid var(--line);background:var(--paper);box-shadow:0 12px 30px #1c1c1c08}
+.wiseia-work .ww-photo{position:absolute;top:0;display:block;width:52%;height:100%;object-fit:cover}
+.wiseia-work .ww-photo-engineer{left:0;object-position:40% 0%}
+/* Only the hospital background fades into the industrial background. The narrow
+   overlap remains clear of both faces; neither image is mirrored or filtered. */
+.wiseia-work .ww-photo-doctor{right:0;top:-4%;height:132%;object-position:52% 0%;-webkit-mask-image:linear-gradient(to right,transparent,#000 6%);mask-image:linear-gradient(to right,transparent,#000 6%)}
+@media(max-width:600px){.wiseia-work .ww-photo-composition{aspect-ratio:1.16}}
+.wiseia-work .ww-steps{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.wiseia-work .ww-steps li{display:grid;grid-template-columns:36px 1fr;gap:18px;padding:28px 0;border-bottom:1px solid var(--line)}
+.wiseia-work .ww-steps li:first-child{border-top:1px solid var(--line)}
+.wiseia-work .ww-number{font:400 11px/1.65 var(--mono);color:var(--muted);padding-top:5px}
+.wiseia-work .ww-steps h3{font:500 22px/1.3 var(--sans);letter-spacing:-.035em;margin-bottom:11px}
+.wiseia-work .ww-steps p{font:400 14px/1.75 var(--sans);color:var(--muted);max-width:365px}
+.wiseia-work .ww-vog{display:grid;grid-template-columns:40px 1fr 1.25fr;gap:23px;align-items:center;border-block:1px solid var(--line);background:var(--paper);padding:28px 30px;margin-top:44px}
+.wiseia-work .ww-vog-icon{display:grid;place-items:center;width:38px;height:38px;background:var(--acid);border:1px solid #1c1c1c20}
+.wiseia-work .ww-vog-icon svg{width:21px;height:21px}
+.wiseia-work .ww-vog h3{font:500 18px/1.4 var(--sans);letter-spacing:-.025em}
+.wiseia-work .ww-vog p{font-size:13px;line-height:1.75;color:var(--muted)}
+.wiseia-work .ww-closing{padding:75px 0 45px}
+.wiseia-work .ww-closing h2{font-size:clamp(30px,3.3vw,48px);line-height:1.12;max-width:920px;margin-bottom:35px}
+.wiseia-work .ww-products{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.wiseia-work .ww-product{padding:31px 35px 34px 0;display:flex;flex-direction:column;align-items:flex-start}
+.wiseia-work .ww-product+.ww-product{border-left:1px solid var(--line);padding-left:35px;padding-right:0}
+.wiseia-work .ww-product h3{font:500 25px/1.25 var(--sans);letter-spacing:-.035em;margin-bottom:12px}
+.wiseia-work .ww-product>p{font-size:14px;line-height:1.75;color:var(--muted);max-width:380px;margin-bottom:25px;flex:1}
+.wiseia-work .ww-product .btn-beam{margin-top:auto}
+.wiseia-work .ww-contact{font-size:12px;line-height:1.8;color:var(--muted);margin-top:28px;max-width:710px}
+.ww-footer{border-top:1px solid var(--line);background:var(--paper);padding:22px 0;font:400 10px/1.65 var(--mono);color:var(--muted)}
+.ww-footer>.wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.ww-footer>.wrap>span:first-child{color:var(--ink);letter-spacing:.08em}
+.wiseia-work .ww-contact a,.ww-footer a{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.ww-footer .ww-company{min-width:0;max-width:770px}
+.ww-footer .ww-company strong{display:block;color:var(--ink);font:500 15px/1.5 var(--sans);letter-spacing:-.025em;margin-bottom:9px}
+.ww-footer .ww-company p,.ww-footer .ww-company address{font:400 11px/1.8 var(--sans);overflow-wrap:anywhere}
+.ww-footer .ww-company address{margin-top:4px}
+.ww-footer .ww-phone{display:inline-flex;align-items:center;min-height:44px;white-space:nowrap;font:400 12px/1.6 var(--sans);color:var(--ink)}
+@media(max-width:600px){.ww-footer>.wrap{flex-direction:column;gap:12px}.ww-footer .ww-company{max-width:100%}}
+@media(max-width:1100px){.wiseia-work{padding-top:70px}.wiseia-work .ww-heading{gap:32px;grid-template-columns:1fr 1fr}.wiseia-work .ww-columns{gap:32px;grid-template-columns:1.12fr 1fr}.wiseia-work .ww-steps li{gap:12px}.wiseia-work .ww-steps h3{font-size:20px}.wiseia-work .ww-vog{grid-template-columns:38px 1fr;gap:15px 20px}.wiseia-work .ww-vog p{grid-column:2}}
+@media(max-width:850px){.wiseia-work .ww-heading{grid-template-columns:1fr;gap:25px;margin-bottom:35px}.wiseia-work .ww-heading>p{max-width:620px}.wiseia-work .ww-columns{grid-template-columns:1fr;gap:32px}.wiseia-work .ww-steps p{max-width:100%}.wiseia-work .ww-closing{padding-top:60px}}
+@media(max-width:600px){.wiseia-work{padding-top:55px}.wiseia-work h2{font-size:clamp(32px,8.6vw,43px);letter-spacing:-.06em}.wiseia-work .ww-heading>p{font-size:14px;line-height:1.8}.wiseia-work .ww-steps li{grid-template-columns:27px 1fr;padding-block:25px;gap:12px}.wiseia-work .ww-steps h3{font-size:20px}.wiseia-work .ww-steps p{font-size:13px}.wiseia-work .ww-vog{padding:23px 20px;grid-template-columns:1fr;gap:15px;margin-top:32px}.wiseia-work .ww-vog p{grid-column:auto}.wiseia-work .ww-vog h3{font-size:18px}.wiseia-work .ww-closing{padding-block:48px 35px}.wiseia-work .ww-closing h2{font-size:31px;margin-bottom:28px}.wiseia-work .ww-products{grid-template-columns:1fr}.wiseia-work .ww-product,.wiseia-work .ww-product+.ww-product{padding:26px 0;border-left:0}.wiseia-work .ww-product+.ww-product{border-top:1px solid var(--line)}.wiseia-work .ww-product>p{font-size:13px}.wiseia-work .ww-product .btn-beam{width:auto;min-width:175px}.wiseia-work .ww-product .btn-beam-content{min-width:175px;padding:14px 18px;font-size:11px}.wiseia-work .ww-contact{font-size:12px}.ww-footer>.wrap{align-items:flex-start;font-size:9px}.ww-footer>.wrap>span:last-child{max-width:200px;text-align:right}}
+
+</style>
+<style id="wiseia-finishing">
+/* Lightweight visual finish: tiled paper grain, local interaction light and
+   once-only reveals. No image transforms, libraries or scroll interception. */
+:root{--paper-grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23000' filter='url(%23grain)' d='M0 0h160v160H0z'/%3E%3C/svg%3E")}
+.hero-pin:after,.wiseia-work:before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:var(--paper-grain);background-size:160px 160px;opacity:.038}
+.wiseia-work{background:radial-gradient(ellipse at 2% 18%,#d5f45b12,transparent 45%),linear-gradient(180deg,#fff 0%,#fff 67%,#fafaf7 100%)}
+.site-header:after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;background:linear-gradient(90deg,var(--success),var(--acid));transform:scaleX(var(--page-progress,0));transform-origin:left;pointer-events:none}
+.wiseia-work .ww-heading h2{position:relative}
+.wiseia-work .ww-heading h2:before{content:'';display:block;width:42px;height:3px;background:var(--acid);margin-bottom:20px;transform-origin:left;transition:transform .9s var(--ease)}
+.wiseia-work .ww-steps li{position:relative;isolation:isolate}
+.wiseia-work .ww-steps li:before{content:'';position:absolute;inset:0 -12px;z-index:-1;background:linear-gradient(100deg,#d5f45b15,transparent 80%);opacity:0;transition:opacity .4s;pointer-events:none}
+.wiseia-work .ww-steps li:hover:before{opacity:1}
+.wiseia-work .ww-number{display:grid;place-items:center;width:32px;height:32px;padding-top:0;border:1px solid var(--line);font-size:10px;transition:background .35s,border-color .35s,color .35s,transform .5s var(--ease)}
+.wiseia-work .ww-steps li:hover .ww-number{background:var(--acid);border-color:var(--acid);color:var(--ink);transform:translateY(-2px)}
+.wiseia-work .ww-steps h3{transition:transform .45s var(--ease)}
+.wiseia-work .ww-steps li:hover h3{transform:translateX(3px)}
+.wiseia-work .ww-photo-composition{transition:border-color .5s,box-shadow .5s}
+.wiseia-work .ww-photo-composition:hover{border-color:#a4b56b;box-shadow:0 18px 45px #1c1c1c10}
+.wiseia-work .ww-vog{position:relative;isolation:isolate;background:linear-gradient(110deg,var(--paper),#fafbf5);overflow:hidden}
+.wiseia-work .ww-vog:before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--acid)}
+.wiseia-work .ww-vog-icon{transition:transform .55s var(--ease),box-shadow .4s}
+.wiseia-work .ww-vog:hover .ww-vog-icon{transform:rotate(-5deg);box-shadow:0 4px 14px #1c1c1c0a}
+.wiseia-work .ww-product{position:relative;isolation:isolate}
+.wiseia-work .ww-product:before{content:'';position:absolute;inset:0;z-index:-1;background:radial-gradient(330px circle at var(--light-x,50%) var(--light-y,50%),#d5f45b27,transparent 75%);opacity:0;transition:opacity .5s;pointer-events:none}
+.wiseia-work .ww-product:hover:before,.wiseia-work .ww-product:focus-within:before{opacity:1}
+.wiseia-work .ww-product h3{transition:transform .45s var(--ease)}
+.wiseia-work .ww-product:hover h3{transform:translateX(4px)}
+.wiseia-work .ww-contact a,.ww-footer a{transition:color .25s,text-decoration-color .25s;text-decoration-color:#62625b66}
+.wiseia-work .ww-contact a:hover,.ww-footer a:hover{color:var(--success);text-decoration-color:var(--success)}
+.ww-footer{background-image:var(--paper-grain);background-size:160px 160px;background-blend-mode:soft-light}
+.polish-ready .polish-reveal{transition:opacity .85s var(--ease),transform .85s var(--ease);transition-delay:var(--reveal-delay,0ms)}
+.polish-ready .polish-reveal:not(.is-visible){opacity:0;transform:translateY(20px)}
+.polish-ready .polish-reveal.is-visible,.polish-ready .polish-reveal:focus-within{opacity:1;transform:translateY(0)}
+.polish-ready .ww-heading h2.polish-reveal:not(.is-visible):before{transform:scaleX(0)}
+.wiseia-work .ww-steps li:nth-child(2){--reveal-delay:70ms}.wiseia-work .ww-steps li:nth-child(3){--reveal-delay:140ms}
+@media(max-width:600px){.wiseia-work .ww-number{width:26px;height:26px;font-size:9px}.wiseia-work .ww-heading h2:before{width:32px;margin-bottom:17px}.wiseia-work .ww-steps li:before{inset-inline:-5px}.hero-pin:after,.wiseia-work:before{opacity:.028}}
+@media(prefers-reduced-motion:reduce){.polish-ready .polish-reveal:not(.is-visible){opacity:1;transform:none}.polish-ready .ww-heading h2.polish-reveal:not(.is-visible):before{transform:none}.site-header:after{display:none}.wiseia-work .ww-steps li:hover h3,.wiseia-work .ww-product:hover h3,.wiseia-work .ww-steps li:hover .ww-number,.wiseia-work .ww-vog:hover .ww-vog-icon{transform:none}}
+</style>
 </head>
 <body>
   <template id="font-licenses"><pre>INTER ? https://raw.githubusercontent.com/google/fonts/main/ofl/inter/OFL.txt
@@ -494,7 +583,39 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
         <div class="wrap hero-foot"><div class="scroll-hint"><svg aria-hidden="true"><use href="#down"/></svg><span id="scroll-caption">Role para explorar</span></div><span class="foot-note static-foot"><svg aria-hidden="true"><use href="#layers"/></svg> Duas soluções. Uma forma mais simples de fazer.</span><span class="foot-right eyebrow">A decisão é sua.<br>A execução ganha companhia.</span></div>
       </div>
     </section>
+    <section class="wiseia-work" id="como-funciona" aria-labelledby="work-title">
+      <div class="wrap">
+        <header class="ww-heading">
+          <h2 id="work-title">Você fala.<br>O sistema entra em ação.</h2>
+          <p>Desenvolvemos sistemas com agentes de IA para empresas, profissionais liberais e autônomos. Eles entendem suas solicitações e ajudam a transformar conversas em registros, consultas e ações no sistema, reduzindo o preenchimento manual.</p>
+        </header>
+        <div class="ww-columns">
+          <figure class="ww-illustration ww-photo-composition">
+            <img class="ww-photo ww-photo-engineer" src="Engenheiro.jpg" alt="Engenheiro com capacete amarelo e colete de segurança em uma instalação industrial." width="5824" height="3264" loading="lazy" decoding="async">
+            <img class="ww-photo ww-photo-doctor" src="Médica.png" alt="Médica com uniforme azul e estetoscópio em um ambiente hospitalar." width="3750" height="3750" loading="lazy" decoding="async">
+          </figure>
+          <ol class="ww-steps">
+            <li><span class="ww-number" aria-hidden="true">01</span><div><h3>Entende o que você precisa</h3><p>Solicite uma tarefa em linguagem natural, durante sua rotina de trabalho.</p></div></li>
+            <li><span class="ww-number" aria-hidden="true">02</span><div><h3>Interage com o sistema</h3><p>O agente consulta informações, organiza dados e prepara a ação conforme suas permissões.</p></div></li>
+            <li><span class="ww-number" aria-hidden="true">03</span><div><h3>Dá continuidade ao trabalho</h3><p>Com as confirmações necessárias, registra a demanda para que ela possa ser acompanhada.</p></div></li>
+          </ol>
+        </div>
+        <aside class="ww-vog" aria-labelledby="vog-title"><span class="ww-vog-icon"><svg aria-hidden="true"><use href="#ww-field"/></svg></span><h3 id="vog-title">VOG — Visita Operacional Guiada</h3><p>Durante a visita, o agente orienta a coleta de informações em campo e ajuda a organizar os registros necessários para dar continuidade ao trabalho.</p></aside>
+        <div class="ww-closing">
+          <h2>Você conduz o trabalho.<br>O agente ajuda a operar o sistema.</h2>
+          <div class="ww-products">
+            <article class="ww-product"><h3>WISEIA Ciclo</h3><p>Comercial, operação e financeiro conectados para empresas prestadoras de serviços.</p><a class="btn-beam" href="/ciclo/"><span class="btn-beam-content">Explorar o Ciclo <svg aria-hidden="true"><use href="#arrow"/></svg></span></a></article>
+            <article class="ww-product"><h3>WISEIA Med</h3><p>Organização da rotina médica, dos plantões e atendimentos à gestão profissional.</p><a class="btn-beam" href="/med/"><span class="btn-beam-content">Explorar o Med <svg aria-hidden="true"><use href="#arrow"/></svg></span></a></article>
+          </div>
+          <p class="ww-contact">Seu trabalho tem outros desafios? <a href="mailto:contato@wiseia.com.br">Converse com a WISEIA</a> sobre as necessidades do seu negócio.</p>
+        </div>
+      </div>
+      <svg width="0" height="0" class="visuallyhidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+        <symbol id="ww-field" viewBox="0 0 24 24"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2V5ZM9 3v16M15 5v16"/></symbol>
+      </defs></svg>
+    </section>
   </main>
+  <footer class="ww-footer"><div class="wrap"><div class="ww-company"><strong>WISEIA</strong><p>Inteligência artificial aplicada ao seu negócio.</p><address>Rua Funchal, 418 · CV 3501 C21VGS · Vila Olímpia · São Paulo/SP · CEP 04551-060</address></div><a class="ww-phone" href="mailto:contato@wiseia.com.br">contato@wiseia.com.br</a></div></footer>
   <script>
     'use strict';
     // No GSAP/CDN dependency: sticky positioning + requestAnimationFrame preserve
@@ -557,5 +678,31 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
       // An exception or unsupported API before configure leaves the static layout.
     })();
   </script>
+
+<script>
+(()=>{
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+  const targets=[...document.querySelectorAll('.ww-heading h2,.ww-heading>p,.ww-photo-composition,.ww-steps li,.ww-vog,.ww-closing>h2,.ww-product,.ww-contact')];
+  let observer;
+  function revealAll(){targets.forEach(el=>el.classList.add('is-visible'));observer?.disconnect()}
+  if(!reduced.matches&&'IntersectionObserver'in window){
+    observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}}),{threshold:.08,rootMargin:'0px 0px -12px 0px'});
+    targets.forEach(el=>{el.classList.add('polish-reveal');observer.observe(el)});
+    document.documentElement.classList.add('polish-ready');
+  }
+  reduced.addEventListener('change',e=>{if(e.matches)revealAll()});
+  const header=document.querySelector('.site-header');let frame=0,pageHeight=1;
+  function measure(){pageHeight=Math.max(1,document.documentElement.scrollHeight-innerHeight)}
+  function drawProgress(){frame=0;header.style.setProperty('--page-progress',Math.min(1,Math.max(0,scrollY/pageHeight)).toFixed(4))}
+  function schedule(){if(!frame)frame=requestAnimationFrame(drawProgress)}
+  measure();drawProgress();addEventListener('scroll',schedule,{passive:true});
+  addEventListener('resize',()=>{measure();schedule()},{passive:true});
+  addEventListener('load',()=>{measure();schedule()},{once:true});
+  if(document.fonts)document.fonts.ready.then(()=>{measure();schedule()});
+  if(matchMedia('(hover: hover) and (pointer: fine)').matches){
+    document.querySelectorAll('.ww-product').forEach(card=>card.addEventListener('pointermove',e=>{if(reduced.matches)return;const r=card.getBoundingClientRect();card.style.setProperty('--light-x',`${e.clientX-r.left}px`);card.style.setProperty('--light-y',`${e.clientY-r.top}px`)}));
+  }
+})();
+</script>
 </body>
 </html>
