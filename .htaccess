@@ -1,0 +1,4 @@
+# WISEIA: endereço oficial sem www
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.wiseia\.com\.br$ [NC]
+RewriteRule ^(.*)$ https://wiseia.com.br/$1 [R=301,L]

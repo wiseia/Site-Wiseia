@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f6fafe">
+  <meta name="description" content="WISEIA Med: plantões, atendimentos e valores a receber organizados em um só lugar, com apoio de um agente de IA. Em breve.">
+  <title>WISEIA Med — Em breve</title>
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="../assets/logos/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="WISEIA">
+  <meta property="og:url" content="https://wiseia.com.br/med/">
+  <meta property="og:title" content="WISEIA Med — Em breve">
+  <meta property="og:description" content="Plantões, atendimentos e valores a receber organizados em um só lugar, com apoio de um agente de IA.">
+  <meta property="og:image" content="https://wiseia.com.br/med/assets/medica-1600.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="image" href="assets/medica-1600.jpg">
+  <style>
+    /* WISEIA Med — Hero. Estilos isolados (prefixo .med-), base estética: Clarix (Sarabun, #f6fafe, preto, vidro e contorno fino). */
+    @font-face{font-family:'Sarabun';font-style:normal;font-weight:200;font-display:swap;src:url(assets/fonts/sarabun-200-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+    @font-face{font-family:'Sarabun';font-style:normal;font-weight:200;font-display:swap;src:url(assets/fonts/sarabun-200-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face{font-family:'Sarabun';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/sarabun-400-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+    @font-face{font-family:'Sarabun';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/sarabun-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+    :root{--med-field:#f6fafe;--med-ink:#000;--med-body:rgba(0,0,0,.72);--med-muted:rgba(0,0,0,.62);--med-hair:rgba(0,0,0,.1);--med-sky:#cfe3f6;--med-sans:'Sarabun',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;--med-ease:cubic-bezier(.2,.8,.2,1);--med-gutter:clamp(20px,5vw,50px)}
+    *,*::before,*::after{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+    body.med{margin:0;min-height:100vh;min-height:100svh;overflow-x:hidden;background:var(--med-field);color:var(--med-ink);font-family:var(--med-sans);font-weight:400;line-height:1.5;-webkit-font-smoothing:antialiased}
+    .med-visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+    /* Fundo: lavados suaves de azul, sem efeitos tecnológicos */
+    .med-page{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;isolation:isolate;overflow:hidden}
+    .med-page::before,.med-page::after{content:'';position:absolute;z-index:-1;border-radius:50%;pointer-events:none}
+    .med-page::before{width:min(90vw,1100px);aspect-ratio:1;right:-14vw;top:-8vw;background:radial-gradient(circle,#dcecfa 0,#e8f2fb 42%,transparent 68%)}
+    .med-page::after{width:min(60vw,700px);aspect-ratio:1;left:-18vw;bottom:-22vw;background:radial-gradient(circle,#ffffff 0,#f1f7fd 45%,transparent 70%)}
+
+    /* Cabeçalho */
+    .med-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:clamp(18px,3vw,36px) var(--med-gutter)}
+    .med-logo{display:block;line-height:0;border-radius:6px}
+    .med-logo img{display:block;width:clamp(116px,34vw,164px);height:auto}
+    .med-back{display:inline-flex;align-items:center;gap:.6rem;min-height:44px;padding:.55rem 1.2rem;border:1px solid var(--med-ink);border-radius:2.5rem;background:rgba(255,255,255,.55);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:var(--med-ink);font-size:.8125rem;font-weight:400;letter-spacing:1px;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:transform .35s var(--med-ease),background-color .35s var(--med-ease),box-shadow .35s var(--med-ease)}
+    .med-back svg{width:1rem;height:1rem;flex:none;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .35s var(--med-ease)}
+    .med-back:hover{background:#fff;transform:translateY(-1px);box-shadow:0 8px 24px rgba(40,90,140,.12)}
+    .med-back:hover svg{transform:translateX(-4px)}
+    .med-back:active{transform:translateY(0)}
+    .med-back:focus-visible{outline:2px solid #1b6fb8;outline-offset:3px}
+
+    /* Hero */
+    .med-hero{flex:1;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);align-items:center;gap:clamp(24px,4vw,64px);width:100%;max-width:1360px;margin:0 auto;padding:clamp(8px,2vw,24px) var(--med-gutter) clamp(32px,5vw,64px)}
+    .med-copy{min-width:0;padding-block:clamp(8px,2vw,24px)}
+    .med-badge{display:inline-flex;align-items:center;gap:.6rem;margin:0 0 clamp(20px,3vw,32px);padding:.35rem .9rem .35rem .75rem;border-radius:2rem;background:rgba(255,255,255,.7);box-shadow:inset 0 0 0 1px var(--med-hair);font-size:.8125rem;letter-spacing:1px;text-transform:uppercase;cursor:default;user-select:none}
+    .med-badge::before{content:'';width:.5rem;height:.5rem;border-radius:50%;background:#1b8f55;box-shadow:0 0 0 4px rgba(27,143,85,.14)}
+    .med-title{margin:0;font-weight:200;font-size:clamp(2.2rem,4.1vw,3.65rem);line-height:1.1;letter-spacing:-.01em;text-wrap:balance}
+    .med-title span{display:block}
+    .med-title .med-title-2{margin-top:.28em;font-weight:200;color:var(--med-muted)}
+    .med-lead{max-width:34rem;margin:clamp(22px,3vw,34px) 0 0;color:var(--med-body);font-size:clamp(1.0625rem,1.5vw,1.25rem);line-height:1.6}
+    .med-note{display:flex;align-items:center;gap:1rem;max-width:34rem;margin:clamp(28px,4vw,48px) 0 0;color:var(--med-muted);font-size:.875rem}
+    .med-note::before{content:'';flex:none;width:2.5rem;height:1px;background:rgba(0,0,0,.35)}
+
+    /* Fotografia integrada: sem moldura, bordas dissolvidas no campo claro */
+    .med-visual{position:relative;min-width:0;justify-self:center;width:100%;max-width:640px}
+    .med-visual::before{content:'';position:absolute;inset:6% 4% 2% 10%;border-radius:50%;background:radial-gradient(circle at 40% 35%,#ffffffd9,#cfe3f680 55%,transparent 72%);filter:blur(2px);transform:translate3d(calc(var(--px,0) * -14px),calc(var(--py,0) * -10px),0);transition:transform .8s var(--med-ease)}
+    .med-photo{position:relative;aspect-ratio:1;overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 16%,#000 88%,transparent),linear-gradient(to bottom,transparent,#000 8%,#000 68%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 16%,#000 88%,transparent),linear-gradient(to bottom,transparent,#000 8%,#000 68%,transparent);mask-composite:intersect;transform:translate3d(calc(var(--px,0) * 8px),calc(var(--py,0) * 6px),0);transition:transform .8s var(--med-ease)}
+    .med-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 20%;transform:scale(1.04)}
+
+    /* Entrada suave, uma única vez */
+    @keyframes med-rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+    @keyframes med-fade{from{opacity:0}to{opacity:1}}
+    .med-in{animation:med-rise 1s var(--med-ease) both}
+    .med-in-1{animation-delay:.08s}.med-in-2{animation-delay:.18s}.med-in-3{animation-delay:.3s}.med-in-4{animation-delay:.42s}
+    .med-visual{animation:med-fade 1.4s var(--med-ease) .2s both}
+
+    /* Celular e tablet: texto primeiro, foto abaixo */
+    @media (max-width:900px){
+      .med-hero{grid-template-columns:1fr;gap:8px;padding-top:4px}
+      .med-visual{max-width:460px;margin-top:-4px}
+    }
+    @media (max-width:420px){
+      .med-back{padding:.5rem .95rem;font-size:.75rem;letter-spacing:.5px}
+      .med-title{font-size:clamp(2.1rem,10.2vw,2.5rem)}
+    }
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .med-in,.med-visual{animation:none}
+      .med-back,.med-back svg,.med-photo,.med-visual::before{transition:none}
+      .med-photo,.med-visual::before{transform:none!important}
+    }
+  </style>
+</head>
+<body class="med">
+  <div class="med-page">
+    <header class="med-header">
+      <div class="med-logo med-in"><img src="../assets/logos/wiseia-med-logo.png" alt="WISEIA Med" width="1435" height="399"></div>
+      <a class="med-back med-in med-in-1" href="../index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg>Voltar à Wiseia</a>
+    </header>
+
+    <main id="principal" class="med-hero">
+      <section class="med-copy" aria-labelledby="med-title">
+        <p class="med-badge med-in med-in-1">Em breve</p>
+        <h1 id="med-title" class="med-title med-in med-in-2"><span>Cuide do que realmente importa.</span><span class="med-title-2">Cuidamos da sua rotina e organização.</span></h1>
+        <p class="med-lead med-in med-in-3">Seus plantões, atendimentos e valores a receber organizados em um só lugar, com apoio de um agente de IA.</p>
+        <p class="med-note med-in med-in-4">Em fase final de desenvolvimento.</p>
+      </section>
+
+      <div class="med-visual" id="med-visual">
+        <div class="med-photo"><img src="assets/medica-1600.jpg" width="1600" height="1600" alt="Médica sorrindo, de uniforme azul e estetoscópio, em um corredor de hospital." fetchpriority="high" decoding="async"></div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    /* Paralaxe sutil da fotografia com o ponteiro. Só em dispositivos com mouse e sem prefers-reduced-motion. */
+    (function(){
+      var mq=window.matchMedia('(prefers-reduced-motion: reduce)'),fine=window.matchMedia('(hover: hover) and (pointer: fine)');
+      var el=document.getElementById('med-visual'),page=document.querySelector('.med-page');
+      if(!el||!page)return;
+      function move(e){
+        if(mq.matches||!fine.matches)return;
+        var x=(e.clientX/window.innerWidth-.5)*2,y=(e.clientY/window.innerHeight-.5)*2;
+        el.style.setProperty('--px',x.toFixed(3));el.style.setProperty('--py',y.toFixed(3));
+      }
+      function reset(){el.style.setProperty('--px',0);el.style.setProperty('--py',0)}
+      window.addEventListener('pointermove',move,{passive:true});
+      document.addEventListener('mouseleave',reset);
+      mq.addEventListener&&mq.addEventListener('change',reset);
+    })();
+  </script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6eb1d3464fc44dba87d9fbd7f056f14d"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
