@@ -21,7 +21,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="WISEIA Ciclo: chega de ativos perdidos e serviços sem cobrança.">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="ciclo.css?v=6">
+  <link rel="stylesheet" href="ciclo.css?v=7">
 </head>
 <body>
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
@@ -274,6 +274,11 @@
           <p class="eyebrow"><span aria-hidden="true"></span>O CICLO COMPLETO</p>
           <h2 id="cycle-title">Da proposta ao faturamento, <span>sem perder nada no caminho.</span></h2>
           <p class="cycle-description">Cada etapa nasce da anterior. A proposta aprovada vira ordem de serviço, a ordem de serviço vira viagem a campo, e a execução registrada vira informação para faturar.</p>
+          <dl class="cycle-notes">
+            <div><dt><span>01</span>Comercial</dt><dd>Propostas com equipe, equipamentos, BDI e ISS de cada município, várias unidades e PDF pronto. O Agente monta e altera por voz.</dd></div>
+            <div><dt><span>06</span>MTR</dt><dd>MTR e certificado de destinação acompanhados até o fim.</dd></div>
+          </dl>
+          <a class="cycle-shot" href="assets/proposta-comercial.png" data-open-screen aria-haspopup="dialog" aria-controls="proposal-dialog" aria-label="Ampliar tela de proposta comercial"><img src="assets/proposta-comercial.png" alt="Proposta do Cliente Alfa com três unidades, equipe, equipamentos, BDI e ISS de cada município, botão Gerar PDF e uma alteração feita pelo Agente por áudio." width="1800" height="885" loading="lazy" decoding="async"><span>Proposta · Ambiente de demonstração <b>Ampliar ↗</b></span></a>
         </div>
         <div class="cycle-visual" data-cycle data-cx-reveal>
           <svg class="cycle-ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40"/></svg>
@@ -321,7 +326,7 @@
           </figure>
           <div class="operation-details">
             <ol class="operation-blocks">
-              <li data-operation-reveal><span class="operation-number" aria-hidden="true">01</span><div><h3>Ativos com localização e histórico</h3><p>Consulte quais equipamentos estão na base ou nos clientes, a qual filial pertencem e sua situação conforme o último movimento registrado.</p></div></li>
+              <li data-operation-reveal><span class="operation-number" aria-hidden="true">01</span><div><h3>Ativos com localização e histórico</h3><p>QR code em cada caçamba. Consulte quais equipamentos estão na base ou nos clientes, a qual filial pertencem e sua situação conforme o último movimento registrado, com os indicadores do mês no painel.</p></div></li>
               <li data-operation-reveal><span class="operation-number" aria-hidden="true">02</span><div><h3>Serviço vinculado à proposta</h3><p>Cada ordem de serviço nasce da proposta aprovada e reúne o escopo e os itens da operação. Na programação, as OS são organizadas em viagens, com veículo e motorista.</p></div></li>
               <li data-operation-reveal><span class="operation-number" aria-hidden="true">03</span><div><h3>Execução com evidências para faturar</h3><p>O app de campo registra as etapas da execução, fotos e ocorrências. O peso real registrado na recepção encerra a viagem e a OS, reunindo quantidades, documentos e valores para apoiar a medição e o faturamento.</p></div></li>
             </ol>
@@ -345,12 +350,13 @@
             <li>Roteiro passo a passo, da saída até a volta para a base.</li>
             <li>Check-in no cliente, chegada e confirmação de entrega.</li>
             <li>O motorista digita o km e pode anexar a foto do hodômetro.</li>
+            <li>Quantidade diferente da OS? Só avança com o motivo e a foto da diferença.</li>
             <li>Registro de problemas direto do campo.</li>
             <li>Resumo e prova de cada serviço concluído.</li>
           </ul>
         </div>
         <div class="app-phones" data-cx-reveal>
-          <figure class="phone phone-left"><div class="phone-screen"><img src="assets/app-descarga.webp" alt="App do motorista: roteiro em 7 de 9 etapas e botão Confirmar descarga do lote de INOX 304." width="610" height="1222" loading="lazy" decoding="async"></div><figcaption>Roteiro e descarga</figcaption></figure>
+          <figure class="phone phone-left"><div class="phone-screen"><img src="assets/app-quantidade-diferente.png" alt="App do motorista: a OS previa 10 tambores e saíram 12; o motorista escreve o motivo, anexa a foto da diferença e só então pode coletar o lote." width="610" height="1222" loading="lazy" decoding="async"></div><figcaption>Quantidade diferente</figcaption></figure>
           <figure class="phone phone-center"><div class="phone-screen"><img src="assets/app-viagem-concluida.webp" alt="App do motorista: viagem concluída com três serviços confirmados, resumo de quilometragem e prova da troca." width="610" height="1222" loading="lazy" decoding="async"></div><figcaption>Viagem concluída</figcaption></figure>
           <figure class="phone phone-right"><div class="phone-screen"><img src="assets/app-encerrar-viagem.webp" alt="App do motorista: encerrar viagem na base com km final do hodômetro, foto do hodômetro e escolha do pátio." width="610" height="1222" loading="lazy" decoding="async"></div><figcaption>Encerrar na base</figcaption></figure>
         </div>
@@ -388,6 +394,7 @@
             <details><summary><span class="agent-capability-title">Operação</span><span class="agent-expand" aria-hidden="true">+</span></summary><p>Abertura e edição de OS, organização de viagens, verificação de conflitos, apontamentos e consultas de ativos, estoques e pendências de MTR e CDF. Preparação e acompanhamento de MTR, com CDF vinculado à OS.</p><p class="agent-note">A emissão oficial do MTR é concluída pelo usuário no SIGOR/SINIR.</p></details>
             <details><summary><span class="agent-capability-title">Gestão</span><span class="agent-expand" aria-hidden="true">+</span></summary><p>Resumo da manhã nos dias úteis e consulta de valores e pendências que apoiam o trabalho do financeiro.</p></details>
           </div>
+          <a class="agent-brief" href="assets/agente-resumo-manha.png" data-open-screen aria-haspopup="dialog" aria-controls="brief-dialog" aria-label="Ampliar resumo das 7h no Telegram"><img src="assets/agente-resumo-manha.png" alt="" width="956" height="964" loading="lazy" decoding="async"><span><strong>Todo dia às 7h</strong>, o resumo do que precisa de atenção: viagens abertas, MTR divergente, certificado pendente, lançamento sem preço. <b>Ver exemplo ↗</b></span></a>
           <p class="agent-audience">Para diretoria, gestores, escritório e coordenadores.<br>Motoristas e terceiros usam o app de campo.</p>
         </div>
         <figure class="agent-demo" aria-labelledby="agent-demo-title">
@@ -430,6 +437,14 @@
           <p class="vog-note">Disponível para visitas comerciais. O acompanhamento operacional está em desenvolvimento.</p>
         </div>
       </div>
+    </section>
+    <section class="trust-band" aria-label="Infraestrutura e implantação">
+      <ul class="wrap trust-list">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="6" rx="1"/><rect x="4" y="14" width="16" height="6" rx="1"/><path d="M8 7h.01M8 17h.01"/></svg>Servidores no Brasil</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v4h-4"/><path d="M12 8v4l3 2"/></svg>Backup diário</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>Acesso por perfil e LGPD</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c.5-3.5 3-5.5 6-5.5s5.5 2 6 5.5"/><path d="M16 11l2 2 3.5-3.5"/></svg>Implantação assistida</li>
+      </ul>
     </section>
     <section class="closing" aria-labelledby="closing-title">
       <div class="wrap closing-layout">
@@ -491,6 +506,24 @@
       <img src="../assets/raw_files/wiseia-ciclo-vog-telegram.png?v=2" alt="Captura completa da visita guiada no Telegram, com resumo dos registros da área de armazenamento, autorização para avançar, próxima etapa sobre resíduos e uma foto enviada durante a visita." width="478" height="1067">
     </div>
   </dialog>
+  <dialog id="proposal-dialog" aria-labelledby="proposal-dialog-title">
+    <div class="dialog-header">
+      <h2 id="proposal-dialog-title">Proposta comercial · Ambiente de demonstração</h2>
+      <button type="button" class="dialog-close" autofocus>Fechar <span aria-hidden="true">×</span></button>
+    </div>
+    <div class="panel-scroll" tabindex="0" role="region" aria-label="Tela completa de proposta comercial. Role para explorar a imagem.">
+      <img src="assets/proposta-comercial.png" alt="Proposta do Cliente Alfa com três unidades, equipe, equipamentos, BDI e ISS de cada município." width="1800" height="885" loading="lazy">
+    </div>
+  </dialog>
+  <dialog id="brief-dialog" aria-labelledby="brief-dialog-title">
+    <div class="dialog-header">
+      <h2 id="brief-dialog-title">Resumo das 7h no Telegram · Exemplo ilustrativo</h2>
+      <button type="button" class="dialog-close" autofocus>Fechar <span aria-hidden="true">×</span></button>
+    </div>
+    <div class="vog-full-scroll" tabindex="0" role="region" aria-label="Resumo da manhã enviado pelo Agente. Role para ler todo o conteúdo.">
+      <img src="assets/agente-resumo-manha.png" alt="Mensagem do Agente às 7h com viagens abertas, MTR divergente, certificados de destinação pendentes e lançamentos sem preço dos clientes Alfa, Beta e Omega." width="956" height="964">
+    </div>
+  </dialog>
   <dialog id="receiving-dialog" aria-labelledby="receiving-dialog-title">
     <div class="dialog-header">
       <h2 id="receiving-dialog-title">Recebimento na base · Ambiente de demonstração</h2>
@@ -509,8 +542,8 @@
       <img src="assets/wiseia-ciclo-apoio-financeiro.png?v=2" alt="Tela completa de contas a pagar e a receber com totais e lançamentos." width="1766" height="938" loading="lazy">
     </div>
   </dialog>
-  <script src="ciclo.js?v=6" defer></script>
-  <script src="ciclo-extra.js?v=6" defer></script>
+  <script src="ciclo.js?v=7" defer></script>
+  <script src="ciclo-extra.js?v=7" defer></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6eb1d3464fc44dba87d9fbd7f056f14d"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

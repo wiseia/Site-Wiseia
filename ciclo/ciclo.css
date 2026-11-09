@@ -335,3 +335,28 @@ dialog{width:min(1500px,96vw);max-height:92dvh;padding:0;border:1px solid var(--
 .closing-layout{align-items:start}
 @media(max-width:900px){.cx-form{justify-self:stretch}}
 @media(max-width:480px){.cx-form{padding:20px 16px}.cx-form-row{grid-template-columns:1fr}.cx-form-foot .button{width:100%}}
+
+/* Rodada 3: notas do ciclo, captura da proposta, resumo das 7h e faixa de confiança */
+.cycle-notes{margin:26px 0 0;max-width:470px;border-top:1px solid var(--line)}
+.cycle-notes>div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
+.cycle-notes dt{display:flex;gap:8px;align-items:baseline;font-size:13px;font-weight:600;letter-spacing:-.01em}
+.cycle-notes dt span{font:9px/1 'Courier New',monospace;color:var(--muted);font-weight:400}
+.cycle-notes dd{margin:0;font-size:13px;line-height:1.65;color:var(--muted)}
+.cycle-shot{display:block;margin-top:20px;max-width:470px;background:#fff;border:1px solid var(--line);box-shadow:0 3px 8px #1c1c1c05,0 18px 36px -16px #1c1c1c26;transition:translate .4s var(--ease),border-color .35s}
+.cycle-shot img{display:block;width:100%;height:auto;aspect-ratio:1800/560;object-fit:cover;object-position:top left}
+.cycle-shot span{display:flex;justify-content:space-between;gap:12px;padding:9px 12px;border-top:1px solid var(--line);font:10px/1.5 'Courier New',monospace;color:var(--muted)}
+.cycle-shot b{font-weight:400;color:var(--ink);white-space:nowrap}
+.agent-brief{display:grid;grid-template-columns:92px minmax(0,1fr);gap:16px;align-items:center;margin-top:12px;padding:12px;border:1px solid #ffffff1f;background:#ffffff0a;color:#b9c6bd;font-size:13px;line-height:1.6;transition:translate .4s var(--ease),border-color .35s,background-color .35s}
+.agent-brief img{display:block;width:92px;height:92px;object-fit:cover;object-position:top left;border:1px solid #ffffff1f}
+.agent-brief strong{color:#fff;font-weight:600}
+.agent-brief b{display:inline-block;margin-left:4px;font-weight:500;color:var(--acid);white-space:nowrap}
+@media(hover:hover) and (pointer:fine){.cycle-shot:hover{translate:0 -3px;border-color:#a4b56b}.agent-brief:hover{translate:0 -3px;border-color:#d5f45b66;background:#ffffff12}}
+#brief-dialog{width:min(570px,96vw)}
+#proposal-dialog .panel-scroll img{min-width:1000px}
+.trust-band{border-top:1px solid var(--line);background:#fff;padding:22px 0}
+.trust-list{max-width:1240px;list-style:none;margin-block:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 24px}
+.trust-list li{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:500;letter-spacing:-.01em}
+.trust-list svg{flex-shrink:0;width:34px;height:34px;padding:7px;border:1px solid var(--line);background:var(--paper);fill:none;stroke:var(--green);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:900px){.trust-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.cycle-notes>div{grid-template-columns:1fr;gap:4px}.agent-brief{grid-template-columns:72px minmax(0,1fr);gap:12px}.agent-brief img{width:72px;height:72px}.trust-list{gap:14px 12px}.trust-list li{font-size:12px;gap:9px}.trust-list svg{width:30px;height:30px;padding:6px}}
+@media(prefers-reduced-motion:reduce){.cycle-shot:hover,.agent-brief:hover{translate:none}}

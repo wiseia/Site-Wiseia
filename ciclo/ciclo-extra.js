@@ -5,7 +5,7 @@
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 
   /* Fechar as ampliações novas (a abertura já é feita pelo ciclo.js via data-open-screen). */
-  ['receiving-dialog', 'finance-dialog'].forEach((id) => {
+  ['receiving-dialog', 'finance-dialog', 'proposal-dialog', 'brief-dialog'].forEach((id) => {
     const dialog = document.getElementById(id);
     if (!dialog) return;
     dialog.querySelector('.dialog-close')?.addEventListener('click', () => dialog.close());
