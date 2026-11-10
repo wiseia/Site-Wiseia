@@ -67,6 +67,13 @@
         });
       });
 
+      // Selo "Teste grátis": rola até o formulário e foca o Nome.
+      document.querySelectorAll('[data-focus-nome]').forEach((a) => {
+        a.addEventListener('click', () => {
+          setTimeout(() => this.form.elements.nome.focus({ preventScroll: true }), reducedMotion ? 0 : 600);
+        });
+      });
+
       this.form.addEventListener('submit', (e) => {
         e.preventDefault();
         if (this.validate()) this.submit();
