@@ -270,3 +270,5 @@ h1>span{color:rgba(0,0,0,.66);margin-top:.28em}
 @media(max-width:480px){.band-card{left:14px;right:14px;bottom:14px;max-width:none;padding:18px}}
 
 .doc-text a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}.doc-text a:hover{text-decoration-thickness:2px}
+
+.trial{margin-top:18px;display:inline-block;padding:8px 16px;border:1px solid var(--ink);border-radius:2rem;background:var(--sky);font-size:15px;line-height:1.4;color:var(--ink)}.trial strong{font-weight:600}.trial-lg{font-size:17px;margin-top:20px}.contact-copy>p.trial{color:var(--ink)}
