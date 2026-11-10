@@ -1,4 +1,17 @@
-# WISEIA: endereço oficial sem www
+# WISEIA: endereço oficial único = https://wiseia.com.br (sem www)
 RewriteEngine On
+
+# 1) www (http ou https) -> https sem www, em um único redirecionamento 301
 RewriteCond %{HTTP_HOST} ^www\.wiseia\.com\.br$ [NC]
-RewriteRule ^(.*)$ https://wiseia.com.br/$1 [R=301,L]
+RewriteRule ^ https://wiseia.com.br%{REQUEST_URI} [R=301,L]
+
+# 2) http no domínio sem www -> https (também respeita proxy/CDN que informa o protocolo)
+RewriteCond %{HTTP_HOST} ^wiseia\.com\.br$ [NC]
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^ https://wiseia.com.br%{REQUEST_URI} [R=301,L]
+
+# 3) .../index.html -> pasta (/, /ciclo/, /med/...): evita página duplicada
+RewriteCond %{HTTP_HOST} ^wiseia\.com\.br$ [NC]
+RewriteCond %{THE_REQUEST} \s/(.*/)?index\.html[\s?] [NC]
+RewriteRule ^ https://wiseia.com.br/%1 [R=301,L,NE]
