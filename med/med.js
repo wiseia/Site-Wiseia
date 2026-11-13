@@ -156,6 +156,81 @@
     },
   };
 
+  /* Lista de espera dos planos ("Em breve"): Web3Forms, mesma chave do formulário principal. */
+  const Waitlist = {
+    init() {
+      this.box = document.querySelector('[data-waitlist]');
+      if (!this.box) return;
+      this.form = this.box.querySelector('form');
+      this.status = this.form.querySelector('[data-form-status]');
+      this.form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (this.validate()) this.submit();
+      });
+      this.form.addEventListener('input', (e) => e.target.removeAttribute('aria-invalid'));
+      this.form.addEventListener('change', (e) => e.target.removeAttribute('aria-invalid'));
+    },
+    validate() {
+      const f = this.form.elements;
+      const checks = [
+        [f.nome, f.nome.value.trim().length >= 3],
+        [f.email, f.email.value.trim() !== '' && f.email.checkValidity()],
+        [f.celular, f.celular.value.replace(/\D/g, '').length >= 10],
+        [f.especialidade, f.especialidade.value.trim().length >= 3],
+        [f.aceite, f.aceite.checked],
+      ];
+      let first = null;
+      checks.forEach(([el, ok]) => {
+        el.setAttribute('aria-invalid', String(!ok));
+        if (!ok && !first) first = el;
+      });
+      if (!first) return true;
+      this.say(first === f.aceite ? 'Para continuar, aceite a Política de Privacidade.' : 'Confira os campos destacados.', true);
+      first.focus();
+      return false;
+    },
+    async submit() {
+      const data = new FormData(this.form);
+      if (data.get('botcheck')) return;
+      const get = (k) => String(data.get(k) || '').trim();
+      const button = this.form.querySelector('button[type="submit"]');
+      const payload = {
+        access_key: this.form.dataset.key,
+        subject: `WISEIA Med — Lista de espera — ${get('nome')}`,
+        from_name: 'Site WISEIA Med',
+        replyto: get('email'),
+        Nome: get('nome'),
+        'E-mail': get('email'),
+        Celular: get('celular'),
+        Especialidade: get('especialidade'),
+        'Aceite da Política de Privacidade': `sim, ${new Date().toLocaleString('pt-BR')}`,
+        Origem: location.href,
+      };
+      button.disabled = true;
+      this.say('Enviando…');
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const out = await res.json().catch(() => ({}));
+        if (!res.ok || out.success === false) throw new Error(out.message || res.status);
+        this.form.reset();
+        this.box.classList.add('is-sent');
+        this.box.querySelector('.form-done').focus();
+      } catch (err) {
+        this.say('Não foi possível enviar agora. Tente de novo em instantes ou escreva para contato@wiseia.com.br.', true);
+      } finally {
+        button.disabled = false;
+      }
+    },
+    say(text, error = false) {
+      this.status.textContent = text;
+      this.status.classList.toggle('is-error', error);
+    },
+  };
+
   const Year = {
     init() {
       const y = String(new Date().getFullYear());
@@ -167,6 +242,7 @@
     Reveal.init();
     OpenDetails.init();
     LeadForm.init();
+    Waitlist.init();
     Year.init();
   };
 

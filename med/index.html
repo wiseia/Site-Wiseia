@@ -267,27 +267,58 @@
           <h2 class="bar-title" id="planos-title">Escolha o plano do seu ritmo de plantão.</h2>
           <a class="trial trial-lg" href="#entrar" data-focus-nome><strong>Teste grátis de 7 dias</strong>, sem cartão. <span aria-hidden="true">→</span></a>
         </header>
+        <!-- Tabela de preços ESCONDIDA até o lançamento: para voltar, remova o atributo "hidden" abaixo e apague o bloco "Em breve". -->
+        <div class="plans-hidden" hidden>
         <div class="plans">
           <article class="plan" data-reveal>
             <div class="plan-head"><h3>Básico</h3></div>
-            <p class="plan-price"><strong>Em breve</strong></p>
+            <p class="plan-price"><strong>R$ 247</strong><span>/mês</span><small>ou R$ 2.470 por ano (2 meses grátis)</small><small>Franquia de uso incluída: 100% por mês. Cada 1% além custa R$ 2.</small></p>
             <ul><li>Plantões</li><li>Fichas por voz</li><li>PDFs</li><li>Fechamento do mês</li></ul>
             <a class="button button-outline" href="#entrar" data-plan="Básico">Quero o Básico <span aria-hidden="true">↗</span></a>
           </article>
           <article class="plan plan--featured" data-reveal>
             <div class="plan-head"><h3>Intermediário</h3><span class="badge badge-green">Mais escolhido</span></div>
-            <p class="plan-price"><strong>Em breve</strong></p>
+            <p class="plan-price"><strong>R$ 497</strong><span>/mês</span><small>ou R$ 4.970 por ano (2 meses grátis)</small><small>Franquia de uso incluída: 100% por mês. Cada 1% além custa R$ 3.</small></p>
             <ul><li>Tudo do Básico</li><li>Fotos de evolução</li><li>Projeção e ranking</li><li>Imposto de Renda <span class="soon">em breve</span></li></ul>
             <a class="button button-primary" href="#entrar" data-plan="Intermediário">Quero o Intermediário <span aria-hidden="true">↗</span></a>
           </article>
           <article class="plan" data-reveal>
             <div class="plan-head"><h3>Avançado</h3></div>
-            <p class="plan-price"><strong>Em breve</strong></p>
+            <p class="plan-price"><strong>R$ 697</strong><span>/mês</span><small>ou R$ 6.970 por ano (2 meses grátis)</small><small>Franquia de uso incluída: 100% por mês. Cada 1% além custa R$ 5.</small></p>
             <ul><li>Tudo do Intermediário</li><li>Conferência do pagamento</li><li>Escala pela foto</li><li>Pasta do contador</li></ul>
             <a class="button button-outline" href="#entrar" data-plan="Avançado">Quero o Avançado <span aria-hidden="true">↗</span></a>
           </article>
         </div>
-        <p class="plans-note">Franquia de uso incluída (100% por mês), visível no portal. Valores e condições serão divulgados em breve. Sem fidelidade.</p>
+        <p class="plans-note">Franquia de uso incluída (100% por mês), visível no portal. Cada 1% além da franquia custa R$ 2 (Básico), R$ 3 (Intermediário) ou R$ 5 (Avançado), cobrado à parte e separado na fatura. Pix Automático, cartão ou boleto. Sem fidelidade.</p>
+        </div>
+
+        <div class="waitlist" id="lista-espera" data-waitlist data-reveal>
+          <p class="plan-price"><strong>Em breve</strong></p>
+          <p class="plans-note">Os planos e valores serão divulgados no lançamento. Entre na lista de espera e avisamos você primeiro. Teste grátis de 7 dias, sem cartão.</p>
+          <form class="form" data-key="c107f0f9-f183-4b1e-8f8e-6a01b3426666" novalidate>
+            <div class="form-row">
+              <label class="field"><span class="field-label">Nome</span><input type="text" name="nome" autocomplete="name" required></label>
+              <label class="field"><span class="field-label">E-mail</span><input type="email" name="email" autocomplete="email" required></label>
+            </div>
+            <div class="form-row">
+              <label class="field"><span class="field-label">Celular</span><input type="tel" name="celular" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000" required></label>
+              <label class="field"><span class="field-label">Especialidade</span><input type="text" name="especialidade" autocomplete="off" required></label>
+            </div>
+            <label class="consent">
+              <input type="checkbox" name="aceite" value="sim" required>
+              <span>Li e aceito a <a href="/politica-de-privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a>.</span>
+            </label>
+            <input type="checkbox" name="botcheck" class="form-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="form-foot">
+              <button class="button button-primary" type="submit">Entrar na lista de espera <span aria-hidden="true">↗</span></button>
+              <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+            </div>
+          </form>
+          <div class="form-done" tabindex="-1" role="status">
+            <strong>Você está na lista!</strong>
+            <p>Avisamos assim que os planos forem abertos.</p>
+          </div>
+        </div>
 
         <details class="more" id="comparar">
           <summary>Comparar planos</summary>
